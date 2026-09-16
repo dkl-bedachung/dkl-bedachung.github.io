@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DKL Bedachung | Dachdecker in Hamburg</title>
+    <title>DKL Bedachungen | Dachdecker in Hamburg</title>
 
-    <meta name="description" content="DKL Bedachung – Ihr Dachdeckerbetrieb in Hamburg und Umgebung. Dachklempnerei, Dachabdichtung und Dachsanierung.">
+    <meta name="description"
+          content="DKL Bedachungen – Fachgerechte Dacharbeiten, Dachklempnerei, Dachabdichtung und Dachsanierung in Hamburg und Umgebung.">
 
     <style>
         * {
@@ -21,24 +22,34 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            color: #1b1b1b;
-            background: #ffffff;
+            background: #0b0b0b;
+            color: #171717;
             line-height: 1.6;
         }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(15, 15, 15, 0.96);
             z-index: 1000;
-            border-bottom: 1px solid #333;
+            background: rgba(8, 8, 8, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         nav {
-            max-width: 1150px;
+            max-width: 1250px;
             margin: auto;
-            padding: 18px 25px;
+            padding: 20px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,262 +57,655 @@
 
         .logo {
             color: white;
-            font-size: 25px;
-            font-weight: 800;
-            letter-spacing: 1px;
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
         .logo span {
-            color: #d59b35;
+            color: #d79a3a;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 34px;
+            list-style: none;
         }
 
-        nav a {
+        nav ul a {
             color: white;
-            text-decoration: none;
+            font-size: 14px;
             font-weight: 600;
+            transition: 0.2s;
         }
 
-        nav a:hover {
-            color: #d59b35;
+        nav ul a:hover {
+            color: #d79a3a;
         }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 100vh;
-            padding: 150px 25px 80px;
             display: flex;
             align-items: center;
+            position: relative;
 
             background:
-                linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)),
-                url("https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=2000&q=80")
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.82) 0%,
+                    rgba(0,0,0,0.58) 48%,
+                    rgba(0,0,0,0.25) 100%
+                ),
+                url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2200&q=85")
                 center/cover;
-
-            color: white;
         }
 
         .hero-content {
-            max-width: 1150px;
-            margin: auto;
             width: 100%;
+            max-width: 1250px;
+            margin: auto;
+            padding: 150px 30px 100px;
+            color: white;
+        }
+
+        .hero-label {
+            color: #d79a3a;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 78px);
-            line-height: 1.05;
-            max-width: 800px;
-            margin-bottom: 25px;
+            max-width: 850px;
+            font-size: clamp(50px, 7vw, 92px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
         }
 
         .hero h1 span {
-            color: #d59b35;
+            color: #d79a3a;
         }
 
-        .hero p {
-            font-size: 21px;
+        .hero-text {
             max-width: 650px;
+            color: #e5e5e5;
+            font-size: 19px;
             margin-bottom: 35px;
-            color: #eeeeee;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
-            padding: 15px 27px;
-            background: #d59b35;
+            padding: 16px 27px;
+            background: #d79a3a;
             color: #111;
-            text-decoration: none;
             font-weight: 800;
-            border-radius: 4px;
-            transition: 0.2s;
+            border-radius: 3px;
+            transition: 0.25s;
         }
 
         .button:hover {
-            transform: translateY(-2px);
-            background: #e5ad4b;
+            transform: translateY(-3px);
+            background: #edb254;
         }
 
+        .button-dark {
+            display: inline-block;
+            padding: 15px 27px;
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            font-weight: 700;
+            border-radius: 3px;
+            transition: 0.25s;
+        }
+
+        .button-dark:hover {
+            background: white;
+            color: #111;
+        }
+
+        .hero-info {
+            margin-top: 45px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        .hero-info strong {
+            color: white;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
         section {
-            padding: 90px 25px;
+            padding: 110px 30px;
         }
 
         .container {
-            max-width: 1150px;
+            max-width: 1250px;
             margin: auto;
         }
 
+        .section-label {
+            color: #c4872f;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 13px;
+        }
+
         .section-title {
-            text-align: center;
-            margin-bottom: 55px;
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
         }
 
-        .section-title h2 {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-
-        .section-title p {
+        .section-intro {
+            max-width: 650px;
             color: #666;
             font-size: 18px;
         }
 
+        /* =========================
+           LEISTUNGEN
+        ========================= */
+
         .services {
-            background: #f5f5f5;
+            background: #f4f3f0;
+        }
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            align-items: end;
+            margin-bottom: 55px;
         }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
         }
 
         .service-card {
+            min-height: 320px;
+            padding: 32px;
             background: white;
-            padding: 35px;
-            border-radius: 8px;
-            border: 1px solid #e2e2e2;
-            transition: 0.25s;
+            border: 1px solid #ddd;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.1);
         }
 
-        .service-icon {
-            font-size: 38px;
-            margin-bottom: 20px;
+        .service-number {
+            color: #d79a3a;
+            font-size: 13px;
+            font-weight: 900;
+            margin-bottom: 60px;
         }
 
         .service-card h3 {
             font-size: 24px;
-            margin-bottom: 12px;
+            margin-bottom: 13px;
         }
 
         .service-card p {
             color: #666;
+            font-size: 15px;
         }
 
-        .about {
+        /* =========================
+           FLACHDACH
+        ========================= */
+
+        .flat-roof {
+            background: #111;
+            color: white;
+            padding: 0;
+        }
+
+        .flat-roof-inner {
+            min-height: 650px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 70px;
+        }
+
+        .flat-roof-image {
+            background:
+                linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.25)),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+        .flat-roof-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px;
+        }
+
+        .flat-roof-content .section-label {
+            color: #d79a3a;
+        }
+
+        .flat-roof-content .section-title {
+            color: white;
+            max-width: 600px;
+        }
+
+        .flat-roof-content p {
+            max-width: 600px;
+            color: #bbb;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+           ÜBER UNS
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
             align-items: center;
         }
 
         .about-image {
-            min-height: 430px;
-            border-radius: 8px;
+            min-height: 550px;
 
             background:
-                url("https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&w=1200&q=80")
+                linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.08)),
+                url("https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&w=1500&q=85")
                 center/cover;
         }
 
-        .about-text h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
         .about-text p {
-            color: #555;
-            margin-bottom: 18px;
+            color: #5f5f5f;
+            margin-bottom: 20px;
+            font-size: 17px;
         }
 
-        .location {
-            background: #171717;
+        /* =========================
+           WARUM DKL
+        ========================= */
+
+        .why {
+            background: #f4f3f0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 55px;
+        }
+
+        .why-card {
+            background: white;
+            padding: 35px 30px;
+            border-top: 3px solid #d79a3a;
+        }
+
+        .why-card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .why-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =========================
+           24/7
+        ========================= */
+
+        .availability {
+            background:
+                linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+                url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=85")
+                center/cover;
+
             color: white;
             text-align: center;
         }
 
+        .availability-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .availability .section-title {
+            color: white;
+        }
+
+        .availability p {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .availability-note {
+            max-width: 700px;
+            margin: 25px auto 0;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #aaa !important;
+            font-size: 13px !important;
+        }
+
+        /* =========================
+           EINSATZGEBIET
+        ========================= */
+
+        .location {
+            background: white;
+            text-align: center;
+        }
+
+        .location-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
         .location h2 {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: clamp(38px, 5vw, 60px);
+            margin-bottom: 20px;
         }
 
         .location p {
-            color: #cccccc;
-            font-size: 19px;
-            margin-bottom: 8px;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
+        /* =========================
+           KONTAKT
+        ========================= */
+
         .contact {
-            background: #f5f5f5;
+            background: #f4f3f0;
         }
 
         .contact-box {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 45px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #ddd;
+            background: #111;
+            color: white;
+            padding: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
         }
 
         .contact-box h2 {
-            font-size: 35px;
-            margin-bottom: 15px;
+            font-size: clamp(35px, 5vw, 55px);
+            line-height: 1.05;
+            margin-bottom: 18px;
         }
 
         .contact-box p {
-            color: #666;
-            margin-bottom: 25px;
+            color: #bbb;
+            max-width: 600px;
+        }
+
+        .contact-right {
+            text-align: center;
+            min-width: 250px;
         }
 
         .phone {
             display: block;
-            margin-top: 25px;
+            margin-top: 18px;
+            color: white;
             font-size: 22px;
-            font-weight: bold;
-            color: #222;
-            text-decoration: none;
+            font-weight: 800;
         }
+
+        .email {
+            display: block;
+            margin-top: 8px;
+            color: #d79a3a;
+            font-size: 15px;
+        }
+
+        /* =========================
+           IMPRESSUM / DATENSCHUTZ
+        ========================= */
+
+        .legal {
+            background: #ffffff;
+            padding: 100px 30px;
+        }
+
+        .legal-box {
+            max-width: 900px;
+            margin: 0 auto 90px;
+        }
+
+        .legal-box h2 {
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        .legal-box h3 {
+            font-size: 21px;
+            margin-top: 35px;
+            margin-bottom: 10px;
+        }
+
+        .legal-box p,
+        .legal-box li {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .legal-box ul {
+            padding-left: 25px;
+        }
+
+        .legal-divider {
+            height: 1px;
+            background: #ddd;
+            margin: 80px 0;
+        }
+
+        .legal-box a {
+            color: #b47722;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #0f0f0f;
-            color: #aaa;
-            text-align: center;
-            padding: 30px 20px;
+            background: #080808;
+            color: #888;
+            padding: 45px 30px;
         }
 
-        footer strong {
+        .footer-inner {
+            max-width: 1250px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .footer-logo {
+            color: white;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 7px;
+        }
+
+        .footer-logo span {
+            color: #d79a3a;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
             color: white;
         }
 
-        @media (max-width: 800px) {
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 950px) {
 
             nav ul {
                 display: none;
             }
 
-            .service-grid {
+            .service-grid,
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flat-roof-inner,
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .about {
+            .flat-roof-image {
+                min-height: 400px;
+            }
+
+            .flat-roof-content {
+                padding: 70px 30px;
+            }
+
+            .about-image {
+                min-height: 400px;
+            }
+
+            .contact-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 50px 30px;
+            }
+
+            .contact-right {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 80px 20px;
+            }
+
+            nav {
+                padding: 17px 20px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .hero-content {
+                padding: 130px 20px 80px;
+            }
+
+            .hero h1 {
+                font-size: 53px;
+                letter-spacing: -2px;
+            }
+
+            .hero-text {
+                font-size: 17px;
+            }
+
+            .hero-info {
+                display: block;
+            }
+
+            .hero-info div {
+                margin-bottom: 8px;
+            }
+
+            .services-header {
+                display: block;
+            }
+
+            .service-grid,
+            .why-grid {
                 grid-template-columns: 1fr;
-                gap: 35px;
+            }
+
+            .service-card {
+                min-height: auto;
+            }
+
+            .flat-roof-image {
+                min-height: 300px;
+            }
+
+            .flat-roof-content {
+                padding: 60px 20px;
             }
 
             .about-image {
                 min-height: 300px;
             }
 
-            .hero {
-                padding-top: 120px;
+            .contact-box {
+                padding: 40px 25px;
             }
 
-            .hero p {
-                font-size: 18px;
+            .phone {
+                font-size: 19px;
             }
 
-            section {
-                padding: 70px 20px;
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .legal {
+                padding: 80px 20px;
             }
         }
     </style>
@@ -310,61 +714,111 @@
 <body>
 
 <header>
+
     <nav>
 
-        <div class="logo">
-            DKL <span>BEDACHUNG</span>
-        </div>
+        <a href="#start" class="logo">
+            DKL <span>BEDACHUNGEN</span>
+        </a>
 
         <ul>
             <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#flachdach">Flachdach</a></li>
             <li><a href="#ueber-uns">Über uns</a></li>
-            <li><a href="#einsatzgebiet">Einsatzgebiet</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
 
     </nav>
+
 </header>
+
 
 <main>
 
-    <!-- STARTSEITE -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
-    <section class="hero">
+    <section class="hero" id="start">
 
         <div class="hero-content">
 
+            <div class="hero-label">
+                DKL BEDACHUNGEN · HAMBURG
+            </div>
+
             <h1>
-                Ihr Dach.<br>
-                Unsere <span>Expertise.</span>
+                Qualität,<br>
+                die <span>oben bleibt.</span>
             </h1>
 
-            <p>
-                DKL Bedachung – Ihr zuverlässiger Dachdeckerbetrieb
-                für Hamburg und Umgebung.
+            <p class="hero-text">
+                Fachgerechte Dacharbeiten für Hamburg und Umgebung –
+                zuverlässig, sauber und mit persönlichem Kontakt.
             </p>
 
-            <a href="#kontakt" class="button">
-                Anfrage stellen
-            </a>
+            <div class="hero-buttons">
+
+                <a href="#kontakt" class="button">
+                    Anfrage stellen
+                </a>
+
+                <a href="tel:+4917642716629" class="button-dark">
+                    Jetzt anrufen
+                </a>
+
+            </div>
+
+            <div class="hero-info">
+
+                <div>
+                    <strong>24/7 erreichbar*</strong>
+                </div>
+
+                <div>
+                    <strong>Flachdach</strong>
+                </div>
+
+                <div>
+                    <strong>Dachsanierung</strong>
+                </div>
+
+                <div>
+                    <strong>Dachabdichtung</strong>
+                </div>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- LEISTUNGEN -->
+    <!-- =========================
+         LEISTUNGEN
+    ========================= -->
 
     <section class="services" id="leistungen">
 
         <div class="container">
 
-            <div class="section-title">
+            <div class="services-header">
 
-                <h2>Unsere Leistungen</h2>
+                <div>
 
-                <p>
-                    Professionelle Arbeiten rund ums Dach.
+                    <div class="section-label">
+                        Was wir machen
+                    </div>
+
+                    <h2 class="section-title">
+                        Unsere Leistungen
+                    </h2>
+
+                </div>
+
+                <p class="section-intro">
+                    Fachgerechte Arbeiten rund ums Dach –
+                    individuell auf Ihr Gebäude und Ihr Projekt abgestimmt.
                 </p>
 
             </div>
@@ -372,11 +826,10 @@
 
             <div class="service-grid">
 
-
                 <div class="service-card">
 
-                    <div class="service-icon">
-                        🏠
+                    <div class="service-number">
+                        01
                     </div>
 
                     <h3>
@@ -393,8 +846,8 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">
-                        🛠️
+                    <div class="service-number">
+                        02
                     </div>
 
                     <h3>
@@ -402,7 +855,7 @@
                     </h3>
 
                     <p>
-                        Zuverlässige Abdichtungsarbeiten zum Schutz
+                        Zuverlässige Abdichtungslösungen zum Schutz
                         Ihres Gebäudes vor Feuchtigkeit und Witterung.
                     </p>
 
@@ -411,8 +864,8 @@
 
                 <div class="service-card">
 
-                    <div class="service-icon">
-                        🔨
+                    <div class="service-number">
+                        03
                     </div>
 
                     <h3>
@@ -420,13 +873,30 @@
                     </h3>
 
                     <p>
-                        Sanierung und Instandsetzung von Dächern –
-                        sorgfältig, professionell und zuverlässig.
+                        Sanierung und Instandsetzung von Dächern
+                        mit Blick auf eine saubere und langfristige Lösung.
                     </p>
 
                 </div>
 
 
+                <div class="service-card">
+
+                    <div class="service-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Flachdach
+                    </h3>
+
+                    <p>
+                        Arbeiten rund um moderne Flachdächer –
+                        von der Abdichtung bis zur fachgerechten Instandsetzung.
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
@@ -434,36 +904,85 @@
     </section>
 
 
-    <!-- ÜBER UNS -->
+    <!-- =========================
+         FLACHDACH
+    ========================= -->
 
-    <section id="ueber-uns">
+    <section class="flat-roof" id="flachdach">
 
-        <div class="container about">
+        <div class="flat-roof-inner">
 
+            <div class="flat-roof-image"></div>
 
-            <div class="about-image"></div>
+            <div class="flat-roof-content">
 
+                <div class="section-label">
+                    Unser Schwerpunkt
+                </div>
 
-            <div class="about-text">
-
-                <h2>
-                    DKL Bedachung
+                <h2 class="section-title">
+                    Flachdach.<br>
+                    Modern.<br>
+                    Funktional.
                 </h2>
 
                 <p>
-                    Wir stehen für zuverlässige und fachgerechte
-                    Arbeiten rund ums Dach.
+                    Flachdächer stellen besondere Anforderungen an
+                    Abdichtung, Entwässerung und Verarbeitung.
+                    Wir unterstützen Sie bei der fachgerechten
+                    Umsetzung und Instandsetzung Ihres Projekts.
+                </p>
+
+                <div>
+                    <a href="#kontakt" class="button">
+                        Projekt besprechen
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÜBER UNS
+    ========================= -->
+
+    <section class="about" id="ueber-uns">
+
+        <div class="container about-grid">
+
+            <div class="about-image"></div>
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    Über DKL
+                </div>
+
+                <h2 class="section-title">
+                    Jung. Engagiert.<br>
+                    Persönlich.
+                </h2>
+
+                <p>
+                    Wir sind ein junges Dachdeckerunternehmen aus Hamburg
+                    und stehen für zuverlässige und fachgerechte Arbeiten
+                    rund ums Dach.
                 </p>
 
                 <p>
-                    Ob Dachklempnerei, Abdichtung oder Sanierung –
-                    DKL Bedachung unterstützt Kunden in Hamburg
-                    und Umgebung bei Projekten rund um das Dach.
+                    Von der Dachklempnerei über Abdichtungen bis hin zur
+                    Dachsanierung – wir begleiten unsere Kunden persönlich
+                    und legen Wert auf saubere Arbeit und eine zuverlässige
+                    Ausführung.
                 </p>
 
                 <p>
-                    Unser Anspruch: saubere Arbeit, zuverlässige
-                    Ausführung und eine langfristige Lösung für Ihr Gebäude.
+                    Unser Anspruch: Qualität, transparente Kommunikation
+                    und Lösungen, die langfristig funktionieren.
                 </p>
 
             </div>
@@ -473,11 +992,136 @@
     </section>
 
 
-    <!-- EINSATZGEBIET -->
+    <!-- =========================
+         WARUM DKL
+    ========================= -->
 
-    <section class="location" id="einsatzgebiet">
+    <section class="why">
 
         <div class="container">
+
+            <div class="section-label">
+                Unser Anspruch
+            </div>
+
+            <h2 class="section-title">
+                Warum DKL Bedachungen?
+            </h2>
+
+
+            <div class="why-grid">
+
+                <div class="why-card">
+
+                    <h3>
+                        Persönlicher Kontakt
+                    </h3>
+
+                    <p>
+                        Direkte Kommunikation statt unnötiger Umwege.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <h3>
+                        Saubere Arbeit
+                    </h3>
+
+                    <p>
+                        Wir legen Wert auf eine sorgfältige
+                        und fachgerechte Ausführung.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <h3>
+                        Zuverlässigkeit
+                    </h3>
+
+                    <p>
+                        Absprachen, Kommunikation und eine
+                        zuverlässige Umsetzung stehen für uns im Mittelpunkt.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card">
+
+                    <h3>
+                        Jung & engagiert
+                    </h3>
+
+                    <p>
+                        Motivation, moderne Ideen und persönlicher Einsatz
+                        für jedes Projekt.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         24/7
+    ========================= -->
+
+    <section class="availability">
+
+        <div class="container availability-content">
+
+            <div class="section-label">
+                Erreichbarkeit
+            </div>
+
+            <h2 class="section-title">
+                Sie erreichen uns –
+                rund um die Uhr.*
+            </h2>
+
+            <p>
+                Sie haben eine Frage zu Ihrem Dachprojekt oder möchten
+                eine Anfrage stellen? Kontaktieren Sie uns jederzeit.
+                Wir versuchen, Anfragen so schnell wie möglich zu beantworten.
+            </p>
+
+            <a href="tel:+4917642716629" class="button">
+                +49 176 42716629
+            </a>
+
+            <p class="availability-note">
+                * Kein Notdienst. Die 24/7-Erreichbarkeit ist ohne Gewähr.
+                Als junges Unternehmen mit einem kleinen Team können wir
+                nicht garantieren, dass jederzeit jemand erreichbar ist.
+                Wir versuchen jedoch, Anfragen möglichst schnell zu beantworten.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EINSATZGEBIET
+    ========================= -->
+
+    <section class="location">
+
+        <div class="container location-content">
+
+            <div class="section-label">
+                Einsatzgebiet
+            </div>
 
             <h2>
                 Hamburg & Umgebung
@@ -488,13 +1132,9 @@
             </p>
 
             <p>
-
-                <strong>DKL Bedachung</strong><br>
-
+                <strong>DKL Bedachungen</strong><br>
                 Eddelbüttelstraße 40<br>
-
                 Hamburg
-
             </p>
 
         </div>
@@ -502,7 +1142,9 @@
     </section>
 
 
-    <!-- KONTAKT -->
+    <!-- =========================
+         KONTAKT
+    ========================= -->
 
     <section class="contact" id="kontakt">
 
@@ -510,31 +1152,265 @@
 
             <div class="contact-box">
 
+                <div>
+
+                    <div class="section-label">
+                        Kontakt
+                    </div>
+
+                    <h2>
+                        Ihr Dachprojekt
+                        startet hier.
+                    </h2>
+
+                    <p>
+                        Sie planen eine Dachsanierung, benötigen eine
+                        Abdichtung oder haben ein anderes Anliegen rund
+                        ums Dach? Sprechen Sie uns gerne direkt an.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-right">
+
+                    <a href="tel:+4917642716629" class="button">
+                        Jetzt anrufen
+                    </a>
+
+                    <a href="tel:+4917642716629" class="phone">
+                        +49 176 42716629
+                    </a>
+
+                    <a href="mailto:dklbedachungen@gmail.com" class="email">
+                        dklbedachungen@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMPRESSUM + DATENSCHUTZ
+    ========================= -->
+
+    <section class="legal">
+
+        <div class="container">
+
+            <!-- IMPRESSUM -->
+
+            <div class="legal-box" id="impressum">
+
+                <div class="section-label">
+                    Rechtliche Informationen
+                </div>
+
                 <h2>
-                    Ihr Dachprojekt startet hier.
+                    Impressum
                 </h2>
 
+
+                <h3>
+                    Angaben zum Unternehmen
+                </h3>
+
                 <p>
-                    Sie benötigen Unterstützung bei einer Dachsanierung,
-                    Abdichtung oder im Bereich Dachklempnerei?
-                    Kontaktieren Sie DKL Bedachung direkt.
+                    <strong>DKL Bedachungen</strong><br>
+                    Inhaber: Domenik Leszczynksi<br>
+                    Eddelbüttelstraße 40<br>
+                    Hamburg
                 </p>
 
 
-                <a
-                    href="tel:+4917642716629"
-                    class="button"
-                >
-                    📞 Jetzt anrufen
-                </a>
+                <h3>
+                    Kontakt
+                </h3>
+
+                <p>
+                    Telefon:
+                    <a href="tel:+4917642716629">
+                        +49 176 42716629
+                    </a>
+                </p>
+
+                <p>
+                    E-Mail:
+                    <a href="mailto:dklbedachungen@gmail.com">
+                        dklbedachungen@gmail.com
+                    </a>
+                </p>
 
 
-                <a
-                    href="tel:+4917642716629"
-                    class="phone"
-                >
-                    +49 176 42716629
-                </a>
+                <h3>
+                    Unternehmensform
+                </h3>
+
+                <p>
+                    Kleingewerbe / Einzelunternehmen
+                </p>
+
+
+                <h3>
+                    Handelsregister
+                </h3>
+
+                <p>
+                    Kein Handelsregistereintrag vorhanden.
+                </p>
+
+
+                <h3>
+                    Umsatzsteuer
+                </h3>
+
+                <p>
+                    Angaben zur Umsatzsteuer werden ergänzt,
+                    sofern eine entsprechende Identifikationsnummer
+                    vorhanden ist.
+                </p>
+
+
+                <h3>
+                    Handwerksrechtliche Angaben
+                </h3>
+
+                <p>
+                    Angaben zur zuständigen Handwerkskammer und
+                    gegebenenfalls zur Eintragung in die Handwerksrolle
+                    werden ergänzt, sofern erforderlich.
+                </p>
+
+            </div>
+
+
+            <div class="legal-divider"></div>
+
+
+            <!-- DATENSCHUTZ -->
+
+            <div class="legal-box" id="datenschutz">
+
+                <div class="section-label">
+                    Datenschutz
+                </div>
+
+                <h2>
+                    Datenschutzerklärung
+                </h2>
+
+
+                <h3>
+                    1. Verantwortlicher
+                </h3>
+
+                <p>
+                    Verantwortlich für die Verarbeitung personenbezogener
+                    Daten auf dieser Website ist:
+                </p>
+
+                <p>
+                    <strong>DKL Bedachungen</strong><br>
+                    Inhaber: Domenik Leszczynksi<br>
+                    Eddelbüttelstraße 40<br>
+                    Hamburg
+                </p>
+
+                <p>
+                    Telefon:
+                    <a href="tel:+4917642716629">
+                        +49 176 42716629
+                    </a>
+                    <br>
+
+                    E-Mail:
+                    <a href="mailto:dklbedachungen@gmail.com">
+                        dklbedachungen@gmail.com
+                    </a>
+                </p>
+
+
+                <h3>
+                    2. Allgemeine Hinweise
+                </h3>
+
+                <p>
+                    Der Schutz Ihrer persönlichen Daten ist uns wichtig.
+                    Personenbezogene Daten werden auf dieser Website nur
+                    verarbeitet, soweit dies für den Betrieb der Website,
+                    die Kontaktaufnahme oder die Bearbeitung von Anfragen
+                    erforderlich ist.
+                </p>
+
+
+                <h3>
+                    3. Kontaktaufnahme
+                </h3>
+
+                <p>
+                    Wenn Sie uns telefonisch oder per E-Mail kontaktieren,
+                    werden die von Ihnen übermittelten Angaben zur Bearbeitung
+                    Ihrer Anfrage verwendet.
+                </p>
+
+
+                <h3>
+                    4. Server-Log-Dateien
+                </h3>
+
+                <p>
+                    Beim Besuch dieser Website können durch den
+                    Hosting-Anbieter technische Informationen automatisch
+                    erfasst werden. Dazu können beispielsweise IP-Adresse,
+                    Zeitpunkt des Zugriffs, Browsertyp und Betriebssystem
+                    gehören.
+                </p>
+
+
+                <h3>
+                    5. Externe Inhalte
+                </h3>
+
+                <p>
+                    Diese Website verwendet externe Bildinhalte.
+                    Je nach technischer Einbindung kann dabei eine
+                    Verbindung zu externen Servern hergestellt werden.
+                </p>
+
+
+                <h3>
+                    6. Ihre Rechte
+                </h3>
+
+                <p>
+                    Sie haben im Rahmen der gesetzlichen Vorschriften
+                    insbesondere das Recht auf:
+                </p>
+
+                <ul>
+                    <li>Auskunft über Ihre gespeicherten Daten</li>
+                    <li>Berichtigung unrichtiger Daten</li>
+                    <li>Löschung Ihrer Daten</li>
+                    <li>Einschränkung der Verarbeitung</li>
+                    <li>Widerspruch gegen bestimmte Verarbeitungen</li>
+                    <li>Datenübertragbarkeit, soweit anwendbar</li>
+                </ul>
+
+
+                <h3>
+                    7. Aktualität
+                </h3>
+
+                <p>
+                    Diese Datenschutzerklärung wird angepasst,
+                    wenn sich die technische Ausstattung oder die
+                    eingesetzten Dienste dieser Website ändern.
+                </p>
 
             </div>
 
@@ -545,12 +1421,52 @@
 </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-    <p>
-        © 2026 <strong>DKL Bedachung</strong>
-        · Hamburg und Umgebung
-    </p>
+    <div class="footer-inner">
+
+        <div>
+
+            <div class="footer-logo">
+                DKL <span>BEDACHUNGEN</span>
+            </div>
+
+            <p>
+                © 2026 DKL Bedachungen · Hamburg & Umgebung
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#leistungen">
+                Leistungen
+            </a>
+
+            <a href="#ueber-uns">
+                Über uns
+            </a>
+
+            <a href="#kontakt">
+                Kontakt
+            </a>
+
+            <a href="#impressum">
+                Impressum
+            </a>
+
+            <a href="#datenschutz">
+                Datenschutz
+            </a>
+
+        </div>
+
+    </div>
 
 </footer>
 

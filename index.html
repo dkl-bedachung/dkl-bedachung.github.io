@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DKL Bedachung | Dachdecker in Hamburg</title>
+
+    <meta name="description" content="DKL Bedachung – Ihr Dachdeckerbetrieb in Hamburg und Umgebung. Dachklempnerei, Dachabdichtung und Dachsanierung.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1b1b1b;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.96);
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #d59b35;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #d59b35;
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 25px 80px;
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)),
+                url("https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=2000&q=80")
+                center/cover;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 1150px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1.05;
+            max-width: 800px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d59b35;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 650px;
+            margin-bottom: 35px;
+            color: #eeeeee;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 27px;
+            background: #d59b35;
+            color: #111;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #e5ad4b;
+        }
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .services {
+            background: #f5f5f5;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid #e2e2e2;
+            transition: 0.25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+        }
+
+        .service-icon {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 430px;
+            border-radius: 8px;
+
+            background:
+                url("https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&w=1200&q=80")
+                center/cover;
+        }
+
+        .about-text h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .location {
+            background: #171717;
+            color: white;
+            text-align: center;
+        }
+
+        .location h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .location p {
+            color: #cccccc;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .contact {
+            background: #f5f5f5;
+        }
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .contact-box h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .phone {
+            display: block;
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #222;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #0f0f0f;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-image {
+                min-height: 300px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+
+        <div class="logo">
+            DKL <span>BEDACHUNG</span>
+        </div>
+
+        <ul>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#einsatzgebiet">Einsatzgebiet</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+
+    <!-- STARTSEITE -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Ihr Dach.<br>
+                Unsere <span>Expertise.</span>
+            </h1>
+
+            <p>
+                DKL Bedachung – Ihr zuverlässiger Dachdeckerbetrieb
+                für Hamburg und Umgebung.
+            </p>
+
+            <a href="#kontakt" class="button">
+                Anfrage stellen
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEISTUNGEN -->
+
+    <section class="services" id="leistungen">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Unsere Leistungen</h2>
+
+                <p>
+                    Professionelle Arbeiten rund ums Dach.
+                </p>
+
+            </div>
+
+
+            <div class="service-grid">
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🏠
+                    </div>
+
+                    <h3>
+                        Dachklempnerei
+                    </h3>
+
+                    <p>
+                        Fachgerechte Arbeiten an Dachrinnen,
+                        Blechen und weiteren Bauteilen rund ums Dach.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🛠️
+                    </div>
+
+                    <h3>
+                        Dachabdichtung
+                    </h3>
+
+                    <p>
+                        Zuverlässige Abdichtungsarbeiten zum Schutz
+                        Ihres Gebäudes vor Feuchtigkeit und Witterung.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🔨
+                    </div>
+
+                    <h3>
+                        Dachsanierung
+                    </h3>
+
+                    <p>
+                        Sanierung und Instandsetzung von Dächern –
+                        sorgfältig, professionell und zuverlässig.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ÜBER UNS -->
+
+    <section id="ueber-uns">
+
+        <div class="container about">
+
+
+            <div class="about-image"></div>
+
+
+            <div class="about-text">
+
+                <h2>
+                    DKL Bedachung
+                </h2>
+
+                <p>
+                    Wir stehen für zuverlässige und fachgerechte
+                    Arbeiten rund ums Dach.
+                </p>
+
+                <p>
+                    Ob Dachklempnerei, Abdichtung oder Sanierung –
+                    DKL Bedachung unterstützt Kunden in Hamburg
+                    und Umgebung bei Projekten rund um das Dach.
+                </p>
+
+                <p>
+                    Unser Anspruch: saubere Arbeit, zuverlässige
+                    Ausführung und eine langfristige Lösung für Ihr Gebäude.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EINSATZGEBIET -->
+
+    <section class="location" id="einsatzgebiet">
+
+        <div class="container">
+
+            <h2>
+                Hamburg & Umgebung
+            </h2>
+
+            <p>
+                Wir sind für Kunden in Hamburg und Umgebung im Einsatz.
+            </p>
+
+            <p>
+
+                <strong>DKL Bedachung</strong><br>
+
+                Eddelbüttelstraße 40<br>
+
+                Hamburg
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAKT -->
+
+    <section class="contact" id="kontakt">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>
+                    Ihr Dachprojekt startet hier.
+                </h2>
+
+                <p>
+                    Sie benötigen Unterstützung bei einer Dachsanierung,
+                    Abdichtung oder im Bereich Dachklempnerei?
+                    Kontaktieren Sie DKL Bedachung direkt.
+                </p>
+
+
+                <a
+                    href="tel:+4917642716629"
+                    class="button"
+                >
+                    📞 Jetzt anrufen
+                </a>
+
+
+                <a
+                    href="tel:+4917642716629"
+                    class="phone"
+                >
+                    +49 176 42716629
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>DKL Bedachung</strong>
+        · Hamburg und Umgebung
+    </p>
+
+</footer>
+
+</body>
+</html>

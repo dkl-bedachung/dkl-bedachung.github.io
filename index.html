@@ -1,2647 +1,481 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DLZ-Bedachungen | Hamburg</title>
+    <title>DLZ-Bedachungen | Qualität, die oben bleibt.</title>
 
-<meta name="description" content="DLZ-Bedachungen aus Hamburg – Dacharbeiten, Abdichtung, Sanierung, Dachklempnerei, Kernbohrung und Dachinspektion mit Drohne.">
-<meta name="theme-color" content="#080808">
+    <meta name="description" content="DLZ-Bedachungen – Dacharbeiten, Abdichtungen, Solararbeiten, Sanierungen und weitere Leistungen in Hamburg und Umgebung.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-
-/* =========================================================
-   GRUNDLAYOUT
-========================================================= */
-
-:root{
-    --black:#080808;
-    --dark:#0e0e0e;
-    --dark2:#151515;
-    --dark3:#1d1d1d;
-
-    --copper:#c77b3c;
-    --copper-light:#e0a064;
-
-    --white:#f5f4f0;
-    --gray:#a4a4a4;
-
-    --line:rgba(255,255,255,.09);
-
-    --max:1180px;
-    --radius:18px;
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Inter,Arial,sans-serif;
-    background:var(--black);
-    color:var(--white);
-    line-height:1.65;
-}
-
-body.menu-open{
-    overflow:hidden;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button,
-input,
-textarea,
-select{
-    font-family:inherit;
-}
-
-.container{
-    width:min(calc(100% - 40px),var(--max));
-    margin:auto;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header{
-    position:fixed;
-    z-index:1000;
-    top:0;
-    left:0;
-    width:100%;
-    height:76px;
-
-    background:rgba(8,8,8,.90);
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid var(--line);
-}
-
-.nav{
-    height:76px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-weight:900;
-    font-size:28px;
-    line-height:.8;
-    letter-spacing:-1.5px;
-}
-
-.logo span{
-    color:var(--copper);
-}
-
-.logo small{
-    display:block;
-
-    margin-top:8px;
-
-    font-size:8px;
-    letter-spacing:4px;
-
-    color:var(--gray);
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-
-nav a{
-    font-size:14px;
-    color:#ccc;
-    transition:.2s;
-    cursor:pointer;
-}
-
-nav a:hover,
-nav a.active{
-    color:var(--copper-light);
-}
-
-.nav-cta{
-    padding:10px 17px;
-
-    border:1px solid var(--copper);
-    border-radius:999px;
-
-    color:var(--white)!important;
-}
-
-.menu{
-    display:none;
-
-    border:0;
-    background:none;
-
-    color:white;
-    font-size:28px;
-
-    cursor:pointer;
-}
-
-
-/* =========================================================
-   SEITEN-SYSTEM
-========================================================= */
-
-.page{
-    display:none;
-    min-height:100vh;
-}
-
-.page.active{
-    display:block;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    min-height:760px;
-
-    padding-top:76px;
-
-    display:flex;
-    align-items:center;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.86),
-            rgba(0,0,0,.40)
-        ),
-        url("https://images.pexels.com/photos/37623622/pexels-photo-37623622.jpeg?auto=compress&cs=tinysrgb&w=2200")
-        center/cover;
-}
-
-.hero-content{
-    max-width:760px;
-}
-
-.eyebrow{
-    margin-bottom:18px;
-
-    color:var(--copper-light);
-
-    text-transform:uppercase;
-    letter-spacing:3px;
-
-    font-size:12px;
-    font-weight:800;
-}
-
-.hero h1{
-    margin-bottom:25px;
-
-    font-size:clamp(48px,7vw,86px);
-    line-height:.98;
-
-    letter-spacing:-3px;
-}
-
-.hero h1 span{
-    color:var(--copper);
-}
-
-.hero p{
-    max-width:650px;
-
-    margin-bottom:32px;
-
-    color:#ddd;
-
-    font-size:18px;
-}
-
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.btn{
-    display:inline-flex;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:13px 21px;
-
-    border-radius:999px;
-
-    background:var(--copper);
-    border:1px solid var(--copper);
-
-    color:#111;
-
-    font-weight:800;
-    font-size:14px;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.btn:hover{
-    transform:translateY(-2px);
-    background:var(--copper-light);
-}
-
-.btn.secondary{
-    background:transparent;
-    color:var(--white);
-
-    border-color:rgba(255,255,255,.25);
-}
-
-.hero-meta{
-    display:flex;
-    flex-wrap:wrap;
-    gap:28px;
-
-    margin-top:35px;
-}
-
-.hero-meta div{
-    color:var(--gray);
-    font-size:12px;
-}
-
-.hero-meta strong{
-    display:block;
-
-    color:var(--white);
-    font-size:14px;
-}
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
-
-section{
-    padding:100px 0;
-}
-
-.section-head{
-    max-width:750px;
-    margin-bottom:45px;
-}
-
-.section-label,
-.label{
-    color:var(--copper-light);
-
-    text-transform:uppercase;
-    letter-spacing:3px;
-
-    font-size:11px;
-    font-weight:800;
-}
-
-.section-head h2,
-.about-text h2{
-    margin:10px 0 15px;
-
-    font-size:clamp(34px,5vw,55px);
-    line-height:1.05;
-
-    letter-spacing:-2px;
-}
-
-.section-head p{
-    color:var(--gray);
-}
-
-
-/* =========================================================
-   ÜBER UNS STARTSEITE
-========================================================= */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:55px;
-
-    align-items:center;
-}
-
-.about-image{
-    height:500px;
-
-    border-radius:var(--radius);
-
-    background:
-        url("https://images.pexels.com/photos/38510748/pexels-photo-38510748.jpeg?auto=compress&cs=tinysrgb&w=1400")
-        center/cover;
-}
-
-.about-text p{
-    margin-bottom:18px;
-
-    color:var(--gray);
-}
-
-.about-points{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:12px;
-
-    margin:28px 0;
-}
-
-.about-point{
-    padding:17px;
-
-    background:var(--dark2);
-
-    border:1px solid var(--line);
-    border-radius:14px;
-}
-
-.about-point strong{
-    display:block;
-    font-size:14px;
-}
-
-.about-point span{
-    color:var(--gray);
-    font-size:12px;
-}
-
-
-/* =========================================================
-   INNERE SEITEN
-========================================================= */
-
-.page-hero{
-    padding:155px 0 75px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #17100b,
-            #080808
-        );
-}
-
-.page-hero h1{
-    margin:10px 0 15px;
-
-    font-size:clamp(42px,6vw,70px);
-    line-height:1;
-
-    letter-spacing:-2px;
-}
-
-.page-hero p{
-    max-width:720px;
-
-    color:var(--gray);
-
-    font-size:17px;
-}
-
-
-/* =========================================================
-   LEISTUNGEN
-========================================================= */
-
-.cards{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
-}
-
-.card{
-    padding:27px;
-
-    background:var(--dark2);
-
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-
-    transition:.25s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-
-    border-color:rgba(199,123,60,.5);
-}
-
-.number{
-    color:var(--copper);
-
-    font-size:12px;
-    font-weight:800;
-
-    letter-spacing:2px;
-}
-
-.card h3{
-    margin:9px 0;
-
-    font-size:23px;
-}
-
-.card p{
-    color:var(--gray);
-
-    font-size:14px;
-}
-
-.card ul{
-    margin-top:16px;
-
-    list-style:none;
-}
-
-.card li{
-    margin:7px 0;
-
-    color:#ccc;
-
-    font-size:13px;
-}
-
-.card li::before{
-    content:"✓";
-
-    margin-right:8px;
-
-    color:var(--copper);
-}
-
-.service-image{
-    height:190px;
-
-    margin-bottom:20px;
-
-    border-radius:13px;
-
-    background-position:center;
-    background-size:cover;
-}
-
-
-/* Leistungen Bilder */
-
-.service-card:nth-child(1) .service-image{
-    background-image:url("https://images.pexels.com/photos/37623622/pexels-photo-37623622.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(2) .service-image{
-    background-image:url("https://images.pexels.com/photos/38510748/pexels-photo-38510748.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(3) .service-image{
-    background-image:url("https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(4) .service-image{
-    background-image:url("https://images.pexels.com/photos/5340280/pexels-photo-5340280.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(5) .service-image{
-    background-image:url("https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(6) .service-image{
-    background-image:url("https://images.pexels.com/photos/6474470/pexels-photo-6474470.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(7) .service-image{
-    background-image:url("https://images.pexels.com/photos/6474474/pexels-photo-6474474.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(8) .service-image{
-    background-image:url("https://images.pexels.com/photos/6474459/pexels-photo-6474459.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(9) .service-image{
-    background-image:url("https://images.pexels.com/photos/6474475/pexels-photo-6474475.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(10) .service-image{
-    background-image:url("https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-.service-card:nth-child(11) .service-image{
-    background-image:url("https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=1200");
-}
-
-
-/* =========================================================
-   BOXEN
-========================================================= */
-
-.split{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
-}
-
-.box{
-    padding:32px;
-
-    background:var(--dark2);
-
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-}
-
-.box h3{
-    margin-bottom:12px;
-
-    font-size:24px;
-}
-
-.box p{
-    color:var(--gray);
-}
-
-
-/* =========================================================
-   PROJEKTE
-========================================================= */
-
-.projects{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
-}
-
-.project{
-    min-height:360px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:var(--radius);
-
-    background-position:center;
-    background-size:cover;
-}
-
-.project::after{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            transparent 35%,
-            rgba(0,0,0,.9)
-        );
-}
-
-.project-content{
-    position:absolute;
-
-    z-index:2;
-
-    left:25px;
-    right:20px;
-    bottom:25px;
-}
-
-.project h3{
-    font-size:24px;
-}
-
-.project p{
-    color:#ccc;
-
-    font-size:13px;
-}
-
-
-/* =========================================================
-   SOCIAL MEDIA
-========================================================= */
-
-.social-grid{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:18px;
-}
-
-.social-card{
-    padding:35px;
-
-    background:var(--dark2);
-
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-}
-
-.social-card h3{
-    margin-top:8px;
-
-    font-size:27px;
-}
-
-.social-card p{
-    margin:8px 0 22px;
-
-    color:var(--gray);
-}
-
-
-/* =========================================================
-   KONTAKT
-========================================================= */
-
-.contact-grid{
-    display:grid;
-
-    grid-template-columns:.85fr 1.15fr;
-
-    gap:25px;
-}
-
-.contact-list{
-    display:grid;
-
-    gap:12px;
-}
-
-.contact-item{
-    display:block;
-
-    padding:22px;
-
-    background:var(--dark2);
-
-    border:1px solid var(--line);
-    border-radius:14px;
-}
-
-.contact-item small{
-    display:block;
-
-    color:var(--copper-light);
-
-    text-transform:uppercase;
-    letter-spacing:2px;
-
-    font-size:10px;
-}
-
-.contact-item strong{
-    display:block;
-
-    margin-top:4px;
-}
-
-.form{
-    padding:30px;
-
-    background:var(--dark2);
-
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-}
-
-.form-grid{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:14px;
-}
-
-.field{
-    display:flex;
-
-    flex-direction:column;
-
-    gap:6px;
-}
-
-.field.full{
-    grid-column:1/-1;
-}
-
-.field label{
-    color:#bbb;
-
-    font-size:12px;
-}
-
-.field input,
-.field select,
-.field textarea{
-    width:100%;
-
-    padding:12px;
-
-    background:#0b0b0b;
-
-    border:1px solid var(--line);
-    border-radius:10px;
-
-    color:white;
-
-    outline:none;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-    border-color:var(--copper);
-}
-
-.field textarea{
-    min-height:140px;
-
-    resize:vertical;
-}
-
-
-/* =========================================================
-   RECHTLICHES
-========================================================= */
-
-.legal{
-    max-width:850px;
-}
-
-.legal h2{
-    margin:35px 0 10px;
-
-    font-size:25px;
-}
-
-.legal p,
-.legal li{
-    margin-bottom:10px;
-
-    color:var(--gray);
-}
-
-.legal ul{
-    padding-left:20px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    border-top:1px solid var(--line);
-
-    padding:35px 0;
-
-    background:#050505;
-}
-
-.footer-row{
-    display:flex;
-
-    justify-content:space-between;
-    align-items:center;
-
-    gap:20px;
-}
-
-.footer-links{
-    display:flex;
-
-    gap:18px;
-
-    flex-wrap:wrap;
-}
-
-.footer-links a{
-    color:var(--gray);
-
-    font-size:12px;
-
-    cursor:pointer;
-}
-
-.copyright{
-    margin-top:12px;
-
-    color:#777;
-
-    font-size:12px;
-}
-
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
-
-.whatsapp{
-    position:fixed;
-
-    z-index:900;
-
-    right:20px;
-    bottom:20px;
-
-    width:54px;
-    height:54px;
-
-    display:grid;
-    place-items:center;
-
-    border-radius:50%;
-
-    background:#25d366;
-
-    color:white;
-
-    font-size:11px;
-    font-weight:900;
-
-    box-shadow:0 8px 30px rgba(0,0,0,.35);
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:900px){
-
-    nav{
-        display:none;
-
-        position:absolute;
-
-        top:76px;
-        left:0;
-
-        width:100%;
-
-        padding:20px;
-
-        background:#0b0b0b;
-
-        border-bottom:1px solid var(--line);
-
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    nav.open{
-        display:flex;
-    }
-
-    .menu{
-        display:block;
-    }
-
-    .hero{
-        min-height:700px;
-    }
-
-    .about-grid,
-    .split,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .cards,
-    .projects{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .social-grid{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:600px){
-
-    .container{
-        width:min(calc(100% - 28px),var(--max));
-    }
-
-    section{
-        padding:75px 0;
-    }
-
-    .hero h1{
-        letter-spacing:-2px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .hero-meta{
-        gap:16px;
-    }
-
-    .cards,
-    .projects,
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .field.full{
-        grid-column:auto;
-    }
-
-    .about-image{
-        height:350px;
-    }
-
-    .footer-row{
-        flex-direction:column;
-
-        align-items:flex-start;
-    }
-
-    .page-hero{
-        padding-top:130px;
-    }
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<header class="header">
+    <div class="container nav-wrap">
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+        <a href="index.html" class="logo">
+            DL<span>Z</span>
+            <small>BEDACHUNGEN</small>
+        </a>
 
-<header>
+        <button class="menu" aria-label="Menü öffnen">
+            ☰
+        </button>
 
-<div class="container nav">
+        <nav>
+            <a href="index.html" class="active">Startseite</a>
+            <a href="leistungen.html">Leistungen</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="projekte.html">Projekte</a>
+            <a href="social-media.html">Social Media</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
 
-<a class="logo" href="#start" data-page="start">
-    DL<span>Z</span>
-    <small>BEDACHUNGEN</small>
-</a>
-
-
-<button class="menu" id="menuButton">
-    ☰
-</button>
-
-
-<nav id="navigation">
-
-<a href="#start" data-page="start" class="active">
-    Startseite
-</a>
-
-<a href="#leistungen" data-page="leistungen">
-    Leistungen
-</a>
-
-<a href="#ueber-uns" data-page="ueber-uns">
-    Über uns
-</a>
-
-<a href="#projekte" data-page="projekte">
-    Projekte
-</a>
-
-<a href="#social-media" data-page="social-media">
-    Social Media
-</a>
-
-<a href="#kontakt" data-page="kontakt">
-    Kontakt
-</a>
-
-<a href="#kontakt" data-page="kontakt" class="nav-cta">
-    Kontakt →
-</a>
-
-</nav>
-
-</div>
-
+    </div>
 </header>
 
 
+<main>
 
-<!-- =====================================================
-     STARTSEITE
-===================================================== -->
+    <!-- HERO -->
+    <section class="hero">
 
-<div class="page active" id="page-start">
+        <div class="hero-bg"></div>
 
-<section class="hero">
+        <div class="container hero-content">
 
-<div class="container">
+            <span class="eyebrow">DLZ-BEDACHUNGEN · HAMBURG &amp; UMGEBUNG</span>
 
-<div class="hero-content">
+            <h1>
+                Qualität, die
+                <span>oben</span>
+                bleibt.
+            </h1>
 
-<div class="eyebrow">
-    DLZ-Bedachungen · Hamburg
-</div>
+            <p>
+                Moderne Dacharbeiten, zuverlässige Lösungen und persönlicher
+                Kontakt – für Dächer, die langfristig funktionieren und gut
+                aussehen.
+            </p>
 
+            <div class="hero-buttons">
 
-<h1>
-    Qualität, die
-    <span>oben</span>
-    bleibt.
-</h1>
+                <a href="leistungen.html" class="btn btn-primary">
+                    Unsere Leistungen
+                </a>
 
+                <a href="tel:+4917642716629" class="btn btn-outline">
+                    Jetzt anrufen
+                </a>
 
-<p>
-    Moderne Dacharbeiten aus Hamburg –
-    zuverlässig, sauber und mit persönlichem Kontakt.
-    Von klassischen Dacharbeiten bis zu Abdichtung,
-    Sanierung und Dachinspektion.
-</p>
+            </div>
 
+            <div class="hero-meta">
 
-<div class="buttons">
+                <div>
+                    <strong>24/7</strong>
+                    <span>Erreichbar*</span>
+                </div>
 
-<a href="#leistungen"
-   data-page="leistungen"
-   class="btn">
-    Unsere Leistungen →
-</a>
+                <div>
+                    <strong>50 km</strong>
+                    <span>Um Hamburg</span>
+                </div>
 
+                <div>
+                    <strong>Persönlich</strong>
+                    <span>Direkter Kontakt</span>
+                </div>
 
-<a href="tel:+4917642716629"
-   class="btn secondary">
-    Jetzt anrufen
-</a>
+            </div>
 
-</div>
+        </div>
 
+    </section>
 
-<div class="hero-meta">
 
-<div>
-<strong>24/7 erreichbar*</strong>
-Für Anfragen & Anliegen
-</div>
+    <!-- ÜBER UNS PREVIEW -->
+    <section class="section">
 
-<div>
-<strong>Hamburg & Umgebung</strong>
-ca. 50 km
-</div>
+        <div class="container">
 
-<div>
-<strong>Persönlicher Kontakt</strong>
-Direkt & unkompliziert
-</div>
+            <div class="about-grid">
 
-</div>
+                <div class="about-image">
+                    <img
+                        src="https://images.pexels.com/photos/38510748/pexels-photo-38510748.jpeg?auto=compress&cs=tinysrgb&w=1400"
+                        alt="Dacharbeiten von DLZ-Bedachungen"
+                    >
+                </div>
 
-</div>
 
-</div>
+                <div class="about-text">
 
-</section>
+                    <span class="eyebrow">ÜBER DLZ-BEDACHUNGEN</span>
 
+                    <h2>
+                        Jung. Modern.
+                        <span>Persönlich.</span>
+                    </h2>
 
+                    <p>
+                        DLZ-Bedachungen steht für zuverlässige Dacharbeiten
+                        mit einem modernen Anspruch. Wir verbinden saubere
+                        handwerkliche Arbeit mit direkter Kommunikation und
+                        einer persönlichen Betreuung.
+                    </p>
 
-<section>
+                    <p>
+                        Vom ersten Gespräch bis zur Umsetzung bleiben die
+                        Wege kurz. Unser Ziel ist es, für jedes Projekt eine
+                        passende, nachvollziehbare und langfristige Lösung
+                        zu finden.
+                    </p>
 
-<div class="container about-grid">
 
-<div class="about-image"></div>
+                    <div class="about-points">
 
+                        <div class="about-point">
+                            <span>01</span>
+                            <div>
+                                <strong>Direkter Kontakt</strong>
+                                <p>
+                                    Persönliche Kommunikation statt unnötiger
+                                    Umwege.
+                                </p>
+                            </div>
+                        </div>
 
-<div class="about-text">
+                        <div class="about-point">
+                            <span>02</span>
+                            <div>
+                                <strong>Moderne Lösungen</strong>
+                                <p>
+                                    Klassisches Handwerk kombiniert mit
+                                    modernen Möglichkeiten.
+                                </p>
+                            </div>
+                        </div>
 
-<div class="section-label">
-    DLZ-Bedachungen
-</div>
+                        <div class="about-point">
+                            <span>03</span>
+                            <div>
+                                <strong>Zuverlässige Umsetzung</strong>
+                                <p>
+                                    Saubere Planung und ein klarer Ablauf
+                                    von Anfang bis Ende.
+                                </p>
+                            </div>
+                        </div>
 
-<h2>
-    Dachhandwerk
-    mit Anspruch.
-</h2>
+                    </div>
 
 
-<p>
-    DLZ-Bedachungen steht für zuverlässige
-    Dacharbeiten, saubere Ausführung und
-    direkten persönlichen Kontakt.
-</p>
+                    <a href="ueber-uns.html" class="text-link">
+                        Mehr über uns →
+                    </a>
 
+                </div>
 
-<p>
-    Als junges Unternehmen aus Hamburg setzen
-    wir auf moderne Arbeitsweisen und Lösungen,
-    die zum jeweiligen Gebäude passen.
-</p>
+            </div>
 
+        </div>
 
-<div class="about-points">
+    </section>
 
-<div class="about-point">
-<strong>Persönlicher Kontakt</strong>
-<span>Direkt erreichbar und unkompliziert.</span>
-</div>
 
-<div class="about-point">
-<strong>Hamburg & Umgebung</strong>
-<span>Regional für Sie unterwegs.</span>
-</div>
+    <!-- LEISTUNGEN PREVIEW -->
+    <section class="section section-dark">
 
-<div class="about-point">
-<strong>Moderne Lösungen</strong>
-<span>Sauber geplant und umgesetzt.</span>
-</div>
+        <div class="container">
 
-<div class="about-point">
-<strong>Saubere Arbeit</strong>
-<span>Zuverlässig von Anfang bis Ende.</span>
-</div>
+            <div class="section-head">
 
-</div>
+                <span class="eyebrow">UNSERE LEISTUNGEN</span>
 
+                <h2>
+                    Rund ums Dach.
+                    <span>Aus einer Hand.</span>
+                </h2>
 
-<a href="#ueber-uns"
-   data-page="ueber-uns"
-   class="btn">
-    Mehr über uns →
-</a>
+                <p>
+                    Von klassischen Dacharbeiten bis zu modernen Lösungen –
+                    DLZ-Bedachungen bietet verschiedene Leistungen rund um
+                    Dach, Sanierung, Abdichtung und Inspektion.
+                </p>
 
-</div>
+            </div>
 
-</div>
 
-</section>
+            <div class="cards">
 
-</div>
+                <article class="card service-card">
 
+                    <div class="service-image service-1"></div>
 
+                    <div class="card-body">
 
-<!-- =====================================================
-     LEISTUNGEN
-===================================================== -->
+                        <span class="card-number">01</span>
 
-<div class="page" id="page-leistungen">
+                        <h3>Dacharbeiten</h3>
 
-<section class="page-hero">
+                        <p>
+                            Flachdach, Steildach und Schieferdach –
+                            von Reparaturen bis zu umfangreicheren
+                            Arbeiten rund um die Dachfläche.
+                        </p>
 
-<div class="container">
+                        <a href="dacharbeiten.html" class="service-more">
+                            Mehr erfahren →
+                        </a>
 
-<div class="label">
-    Leistungen
-</div>
+                    </div>
 
-<h1>
-    Alles rund ums Dach.
-</h1>
+                </article>
 
-<p>
-    Von klassischen Dacharbeiten über Abdichtung
-    und Klempnerei bis zu Sanierung, Kernbohrung
-    und Dachinspektion mit Drohne.
-</p>
 
-</div>
+                <article class="card service-card">
 
-</section>
+                    <div class="service-image service-2"></div>
 
+                    <div class="card-body">
 
-<section>
+                        <span class="card-number">02</span>
 
-<div class="container">
+                        <h3>Abdichtung &amp; Flüssigkunststoff</h3>
 
-<div class="cards">
+                        <p>
+                            Lösungen für Dachabdichtungen, Anschlüsse und
+                            geeignete Detailbereiche mit Flüssigkunststoff.
+                        </p>
 
+                        <a href="abdichtung-fluessigkunststoff.html" class="service-more">
+                            Mehr erfahren →
+                        </a>
 
-<!-- 01 -->
+                    </div>
 
-<article class="card service-card">
+                </article>
 
-<div class="service-image"></div>
 
-<div class="number">
-    01
-</div>
+                <article class="card service-card">
 
-<h3>
-    Flachdach
-</h3>
+                    <div class="service-image service-3"></div>
 
-<p>
-    Fachgerechte Arbeiten an Flachdächern –
-    von Reparaturen bis zur Instandsetzung.
-</p>
+                    <div class="card-body">
 
-<ul>
-<li>Flachdacharbeiten</li>
-<li>Reparaturen</li>
-<li>Instandsetzung</li>
-<li>Detailarbeiten</li>
-</ul>
+                        <span class="card-number">03</span>
 
-</article>
+                        <h3>Solararbeiten</h3>
 
+                        <p>
+                            Dachbezogene Arbeiten und Vorbereitung rund um
+                            Solar- und Photovoltaikprojekte.
+                        </p>
 
-<!-- 02 -->
+                        <a href="solararbeiten.html" class="service-more">
+                            Mehr erfahren →
+                        </a>
 
-<article class="card service-card">
+                    </div>
 
-<div class="service-image"></div>
+                </article>
 
-<div class="number">
-    02
-</div>
 
-<h3>
-    Steildach
-</h3>
+                <article class="card service-card">
 
-<p>
-    Arbeiten rund um Steildächer und deren
-    Instandhaltung.
-</p>
+                    <div class="service-image service-4"></div>
 
-<ul>
-<li>Reparaturen</li>
-<li>Instandsetzung</li>
-<li>Dachdetails</li>
-<li>Anschlüsse</li>
-</ul>
+                    <div class="card-body">
 
-</article>
+                        <span class="card-number">04</span>
 
+                        <h3>Montage &amp; Kernbohrung</h3>
 
-<!-- 03 -->
+                        <p>
+                            Unterstützende Montagearbeiten und präzise
+                            Kernbohrungen für unterschiedliche Projekte.
+                        </p>
 
-<article class="card service-card">
+                        <a href="montage-kernbohrung.html" class="service-more">
+                            Mehr erfahren →
+                        </a>
 
-<div class="service-image"></div>
+                    </div>
 
-<div class="number">
-    03
-</div>
+                </article>
 
-<h3>
-    Schieferdach
-</h3>
 
-<p>
-    Schieferarbeiten mit sauberer Ausführung
-    und passenden Details.
-</p>
+                <article class="card service-card">
 
-<ul>
-<li>Schieferarbeiten</li>
-<li>Reparaturen</li>
-<li>Erneuerungen</li>
-<li>Detailarbeiten</li>
-</ul>
+                    <div class="service-image service-5"></div>
 
-</article>
+                    <div class="card-body">
 
+                        <span class="card-number">05</span>
 
-<!-- 04 -->
+                        <h3>Sanierung &amp; Reinigung</h3>
 
-<article class="card service-card">
+                        <p>
+                            Dachsanierungen und Reinigungsarbeiten für den
+                            langfristigen Erhalt Ihrer Dachfläche.
+                        </p>
 
-<div class="service-image"></div>
+                        <a href="sanierung-reinigung.html" class="service-more">
+                            Mehr erfahren →
+                        </a>
 
-<div class="number">
-    04
-</div>
+                    </div>
 
-<h3>
-    Dachabdichtung
-</h3>
+                </article>
 
-<p>
-    Abdichtungen für Dächer, Anschlüsse und
-    sensible Übergänge.
-</p>
 
-<ul>
-<li>Flachdachabdichtung</li>
-<li>Detailabdichtungen</li>
-<li>Anschlüsse</li>
-<li>Übergänge</li>
-</ul>
+                <article class="card service-card">
 
-</article>
+                    <div class="service-image service-6"></div>
 
+                    <div class="card-body">
 
-<!-- 05 -->
+                        <span class="card-number">06</span>
 
-<article class="card service-card">
+                        <h3>Dachinspektion</h3>
 
-<div class="service-image"></div>
+                        <p>
+                            Moderne Dachkontrolle mit Drohne für einen
+                            besseren Überblick über schwer zugängliche
+                            Bereiche.
+                        </p>
 
-<div class="number">
-    05
-</div>
+                        <a href="dachinspektion.html" class="service-more">
+                            Mehr erfahren →
+                        </a>
 
-<h3>
-    Dachklempnerei
-</h3>
+                    </div>
 
-<p>
-    Metallarbeiten am Dach für saubere
-    Abschlüsse und funktionierende Entwässerung.
-</p>
+                </article>
 
-<ul>
-<li>Dachrinnen</li>
-<li>Blecharbeiten</li>
-<li>Anschlüsse</li>
-<li>Abschlüsse</li>
-</ul>
+            </div>
 
-</article>
 
+            <div class="center-button">
 
-<!-- 06 -->
+                <a href="leistungen.html" class="btn btn-primary">
+                    Alle Leistungen ansehen
+                </a>
 
-<article class="card service-card">
+            </div>
 
-<div class="service-image"></div>
+        </div>
 
-<div class="number">
-    06
-</div>
+    </section>
 
-<h3>
-    Montagearbeiten
-</h3>
 
-<p>
-    Montagearbeiten rund ums Dach und
-    individuelle Sonderlösungen.
-</p>
+    <!-- CTA -->
+    <section class="section">
 
-<ul>
-<li>Montage</li>
-<li>Durchführungen</li>
-<li>Anschlüsse</li>
-<li>Sonderlösungen</li>
-</ul>
+        <div class="container">
 
-</article>
+            <div class="cta-box">
 
+                <span class="eyebrow">IHR PROJEKT</span>
 
-<!-- 07 -->
+                <h2>
+                    Sie planen ein
+                    <span>Projekt?</span>
+                </h2>
 
-<article class="card service-card">
+                <p>
+                    Egal ob Reparatur, Sanierung, Abdichtung oder
+                    Dachinspektion – sprechen Sie uns einfach an.
+                </p>
 
-<div class="service-image"></div>
+                <a href="kontakt.html" class="btn btn-primary">
+                    Projekt anfragen
+                </a>
 
-<div class="number">
-    07
-</div>
+            </div>
 
-<h3>
-    Flüssigkunststoff
-</h3>
+        </div>
 
-<p>
-    Flexible Abdichtung für Details,
-    Anschlüsse und schwer zugängliche Bereiche.
-</p>
+    </section>
 
-<ul>
-<li>Detailabdichtungen</li>
-<li>Anschlüsse</li>
-<li>Reparaturen</li>
-<li>Instandsetzung</li>
-</ul>
+</main>
 
-</article>
 
+<!-- FOOTER -->
+<footer class="footer">
 
-<!-- 08 -->
+    <div class="container">
 
-<article class="card service-card">
+        <div class="footer-row">
 
-<div class="service-image"></div>
+            <div>
 
-<div class="number">
-    08
-</div>
+                <a href="index.html" class="logo">
+                    DL<span>Z</span>
+                    <small>BEDACHUNGEN</small>
+                </a>
 
-<h3>
-    Dachsanierung
-</h3>
+                <p>
+                    Qualität, die oben bleibt.
+                </p>
 
-<p>
-    Sanierung und Instandsetzung zur Erhaltung
-    und Verbesserung des Daches.
-</p>
+            </div>
 
-<ul>
-<li>Sanierung</li>
-<li>Instandsetzung</li>
-<li>Reparaturen</li>
-<li>Werterhalt</li>
-</ul>
 
-</article>
+            <div class="footer-links">
 
+                <a href="leistungen.html">Leistungen</a>
+                <a href="ueber-uns.html">Über uns</a>
+                <a href="projekte.html">Projekte</a>
+                <a href="social-media.html">Social Media</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
 
-<!-- 09 -->
+            </div>
 
-<article class="card service-card">
+        </div>
 
-<div class="service-image"></div>
 
-<div class="number">
-    09
-</div>
+        <div class="footer-bottom">
 
-<h3>
-    Dachreinigung
-</h3>
+            <span>
+                © <span class="year"></span> DLZ-Bedachungen
+            </span>
 
-<p>
-    Reinigung und Pflege für ein sauberes
-    Erscheinungsbild und Werterhalt.
-</p>
+            <span>
+                Hamburg &amp; Umgebung
+            </span>
 
-<ul>
-<li>Dachreinigung</li>
-<li>Verschmutzungen</li>
-<li>Pflege</li>
-<li>Werterhalt</li>
-</ul>
+        </div>
 
-</article>
-
-
-<!-- 10 -->
-
-<article class="card service-card">
-
-<div class="service-image"></div>
-
-<div class="number">
-    10
-</div>
-
-<h3>
-    Kernbohrung
-</h3>
-
-<p>
-    Präzise Kernbohrungen für Durchführungen
-    und technische Installationen.
-</p>
-
-<ul>
-<li>Kernbohrungen</li>
-<li>Durchführungen</li>
-<li>Technische Lösungen</li>
-<li>Individuelle Arbeiten</li>
-</ul>
-
-</article>
-
-
-<!-- 11 -->
-
-<article class="card service-card">
-
-<div class="service-image"></div>
-
-<div class="number">
-    11
-</div>
-
-<h3>
-    Dachinspektion mit Drohne
-</h3>
-
-<p>
-    Sichtkontrolle und Dokumentation schwer
-    erreichbarer Dachbereiche per Drohne.
-</p>
-
-<ul>
-<li>Dachkontrolle</li>
-<li>Drohneninspektion</li>
-<li>Dokumentation</li>
-<li>Sichtbare Schwachstellen</li>
-</ul>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<!-- =====================================================
-     ÜBER UNS
-===================================================== -->
-
-<div class="page" id="page-ueber-uns">
-
-<section class="page-hero">
-
-<div class="container">
-
-<div class="label">
-    Über uns
-</div>
-
-<h1>
-    Mehr als nur ein Dachdeckerbetrieb.
-</h1>
-
-<p>
-    Direkte Kommunikation, zuverlässige Arbeit
-    und ein persönlicher Umgang mit unseren Kunden.
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container split">
-
-<div class="box">
-
-<h3>
-    Jung. Modern. Persönlich.
-</h3>
-
-<p>
-    DLZ-Bedachungen ist ein junges Unternehmen
-    aus Hamburg. Wir setzen auf moderne Arbeitsweisen,
-    saubere Ausführung und Lösungen, die zum jeweiligen
-    Gebäude passen.
-</p>
-
-</div>
-
-
-<div class="box">
-
-<h3>
-    Vom ersten Gespräch bis zur Umsetzung.
-</h3>
-
-<p>
-    Unser Anspruch ist ein unkomplizierter und
-    nachvollziehbarer Ablauf. Wir sprechen klar über
-    die Aufgabe, planen gemeinsam und setzen die
-    Arbeit zuverlässig um.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container about-grid">
-
-<div class="about-text">
-
-<div class="section-label">
-    Unser Anspruch
-</div>
-
-<h2>
-    Qualität, die überzeugt.
-</h2>
-
-<p>
-    Ob Reparatur, Sanierung, Abdichtung oder
-    Inspektion: Wir möchten, dass unsere Arbeit
-    langfristig überzeugt.
-</p>
-
-
-<div class="about-points">
-
-<div class="about-point">
-<strong>Persönlicher Kontakt</strong>
-<span>Direkter Ansprechpartner.</span>
-</div>
-
-<div class="about-point">
-<strong>Regional</strong>
-<span>Hamburg & Umgebung.</span>
-</div>
-
-<div class="about-point">
-<strong>Modern</strong>
-<span>Praktische Lösungen.</span>
-</div>
-
-<div class="about-point">
-<strong>Zuverlässig</strong>
-<span>Sauber und nachvollziehbar.</span>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="about-image"></div>
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<!-- =====================================================
-     PROJEKTE
-===================================================== -->
-
-<div class="page" id="page-projekte">
-
-<section class="page-hero">
-
-<div class="container">
-
-<div class="label">
-    Projekte
-</div>
-
-<h1>
-    Qualität, die überzeugt.
-</h1>
-
-<p>
-    Ein Einblick in Arbeiten rund um Dach,
-    Abdichtung und Sanierung.
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container projects">
-
-
-<article class="project"
-style="background-image:url('https://images.pexels.com/photos/37623622/pexels-photo-37623622.jpeg?auto=compress&cs=tinysrgb&w=1400')">
-
-<div class="project-content">
-
-<h3>
-    Dacharbeiten
-</h3>
-
-<p>
-    Saubere Arbeiten rund ums Dach.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="project"
-style="background-image:url('https://images.pexels.com/photos/38510748/pexels-photo-38510748.jpeg?auto=compress&cs=tinysrgb&w=1400')">
-
-<div class="project-content">
-
-<h3>
-    Abdichtung
-</h3>
-
-<p>
-    Details und Übergänge fachgerecht ausgeführt.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="project"
-style="background-image:url('https://images.pexels.com/photos/6474459/pexels-photo-6474459.jpeg?auto=compress&cs=tinysrgb&w=1400')">
-
-<div class="project-content">
-
-<h3>
-    Sanierung
-</h3>
-
-<p>
-    Instandsetzung und Werterhalt.
-</p>
-
-</div>
-
-</article>
-
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<!-- =====================================================
-     SOCIAL MEDIA
-===================================================== -->
-
-<div class="page" id="page-social-media">
-
-<section class="page-hero">
-
-<div class="container">
-
-<div class="label">
-    Social Media
-</div>
-
-<h1>
-    Folge DLZ-Bedachungen.
-</h1>
-
-<p>
-    Einblicke in Arbeiten, Projekte und den Alltag
-    rund ums Dach.
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container social-grid">
-
-
-<div class="social-card">
-
-<div class="label">
-    Instagram
-</div>
-
-<h3>
-    @dlz.bedachungen
-</h3>
-
-<p>
-    Fotos, Projekte und aktuelle Einblicke
-    von DLZ-Bedachungen.
-</p>
-
-<a
-href="https://www.instagram.com/dlz.bedachungen/"
-target="_blank"
-class="btn">
-
-Instagram öffnen →
-
-</a>
-
-</div>
-
-
-<div class="social-card">
-
-<div class="label">
-    TikTok
-</div>
-
-<h3>
-    @dlzbedachungen
-</h3>
-
-<p>
-    Kurze Videos und Einblicke direkt
-    von der Arbeit.
-</p>
-
-<a
-href="https://www.tiktok.com/@dlzbedachungen"
-target="_blank"
-class="btn">
-
-TikTok öffnen →
-
-</a>
-
-</div>
-
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<!-- =====================================================
-     KONTAKT
-===================================================== -->
-
-<div class="page" id="page-kontakt">
-
-<section class="page-hero">
-
-<div class="container">
-
-<div class="label">
-    Kontakt
-</div>
-
-<h1>
-    Direkt mit uns sprechen.
-</h1>
-
-<p>
-    Du hast eine Frage, möchtest ein Projekt
-    besprechen oder eine Anfrage stellen?
-    Melde dich direkt.
-</p>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container contact-grid">
-
-
-<div class="contact-list">
-
-
-<a
-href="tel:+4917642716629"
-class="contact-item">
-
-<small>
-    Telefon
-</small>
-
-<strong>
-    +49 176 42716629
-</strong>
-
-</a>
-
-
-<a
-href="mailto:info@dlz-bedachungen.de"
-class="contact-item">
-
-<small>
-    E-Mail
-</small>
-
-<strong>
-    info@dlz-bedachungen.de
-</strong>
-
-</a>
-
-
-<div class="contact-item">
-
-<small>
-    Adresse
-</small>
-
-<strong>
-    Eddelbüttelstraße 40<br>
-    21073 Hamburg
-</strong>
-
-</div>
-
-
-<div class="contact-item">
-
-<small>
-    Einsatzgebiet
-</small>
-
-<strong>
-    Hamburg & Umgebung · ca. 50 km
-</strong>
-
-</div>
-
-
-</div>
-
-
-<form
-class="form"
-action="mailto:info@dlz-bedachungen.de"
-method="post"
-enctype="text/plain">
-
-
-<div class="form-grid">
-
-
-<div class="field">
-
-<label>
-    Name
-</label>
-
-<input
-type="text"
-name="Name"
-required>
-
-</div>
-
-
-<div class="field">
-
-<label>
-    E-Mail
-</label>
-
-<input
-type="email"
-name="E-Mail"
-required>
-
-</div>
-
-
-<div class="field">
-
-<label>
-    Telefon
-</label>
-
-<input
-type="tel"
-name="Telefon">
-
-</div>
-
-
-<div class="field">
-
-<label>
-    Leistung
-</label>
-
-<select name="Leistung">
-
-<option>
-Bitte auswählen
-</option>
-
-<option>
-Flachdach
-</option>
-
-<option>
-Steildach
-</option>
-
-<option>
-Schieferdach
-</option>
-
-<option>
-Dachabdichtung
-</option>
-
-<option>
-Dachklempnerei
-</option>
-
-<option>
-Montagearbeiten
-</option>
-
-<option>
-Flüssigkunststoff
-</option>
-
-<option>
-Dachsanierung
-</option>
-
-<option>
-Dachreinigung
-</option>
-
-<option>
-Kernbohrung
-</option>
-
-<option>
-Dachinspektion mit Drohne
-</option>
-
-</select>
-
-</div>
-
-
-<div class="field full">
-
-<label>
-    Nachricht
-</label>
-
-<textarea
-name="Nachricht"
-required></textarea>
-
-</div>
-
-
-<div class="field full">
-
-<button
-type="submit"
-class="btn">
-
-Anfrage senden →
-
-</button>
-
-</div>
-
-
-</div>
-
-</form>
-
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<!-- =====================================================
-     IMPRESSUM
-===================================================== -->
-
-<div class="page" id="page-impressum">
-
-<section class="page-hero">
-
-<div class="container">
-
-<div class="label">
-    Rechtliches
-</div>
-
-<h1>
-    Impressum
-</h1>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container legal">
-
-
-<h2>
-    Angaben zum Unternehmen
-</h2>
-
-<p>
-
-<strong>
-DLZ-Bedachungen
-</strong>
-<br>
-
-Inhaber:
-Dominik Krzysztof Leszczynski
-
-<br>
-
-Eddelbüttelstraße 40
-
-<br>
-
-21073 Hamburg
-
-</p>
-
-
-<h2>
-    Kontakt
-</h2>
-
-<p>
-
-Telefon:
-+49 176 42716629
-
-<br>
-
-E-Mail:
-info@dlz-bedachungen.de
-
-</p>
-
-
-<h2>
-    Unternehmensform
-</h2>
-
-<p>
-Kleingewerbe
-</p>
-
-
-<h2>
-    Hinweis
-</h2>
-
-<p>
-Die vollständigen rechtlichen Pflichtangaben
-sind vor der Veröffentlichung entsprechend
-der für den Betrieb maßgeblichen Angaben
-zu ergänzen und zu prüfen.
-</p>
-
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<!-- =====================================================
-     DATENSCHUTZ
-===================================================== -->
-
-<div class="page" id="page-datenschutz">
-
-<section class="page-hero">
-
-<div class="container">
-
-<div class="label">
-    Rechtliches
-</div>
-
-<h1>
-    Datenschutz
-</h1>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="container legal">
-
-
-<h2>
-    Allgemeine Hinweise
-</h2>
-
-<p>
-Der Schutz deiner persönlichen Daten ist uns wichtig.
-Diese Website verarbeitet personenbezogene Daten
-nur im Rahmen der geltenden gesetzlichen Bestimmungen.
-</p>
-
-
-<h2>
-    Kontaktaufnahme
-</h2>
-
-<p>
-Wenn du uns per E-Mail oder über das Kontaktformular
-kontaktierst, werden die von dir übermittelten Angaben
-zur Bearbeitung deiner Anfrage verwendet.
-</p>
-
-
-<h2>
-    Externe Inhalte
-</h2>
-
-<p>
-Diese Website kann externe Inhalte und Dienste wie
-Google Fonts, Pexels sowie Verlinkungen zu Instagram,
-TikTok und WhatsApp verwenden.
-</p>
-
-
-<h2>
-    Hinweis
-</h2>
-
-<p>
-Diese Datenschutzerklärung ist eine allgemeine Vorlage
-und sollte vor der Veröffentlichung rechtlich geprüft
-und an die tatsächlich eingesetzten Dienste angepasst
-werden.
-</p>
-
-
-</div>
-
-</section>
-
-</div>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-<div class="container footer-row">
-
-
-<div>
-
-<a class="logo"
-href="#start"
-data-page="start">
-
-DL<span>Z</span>
-
-<small>
-BEDACHUNGEN
-</small>
-
-</a>
-
-<p class="copyright">
-
-© <span id="year"></span>
-DLZ-Bedachungen · Qualität, die oben bleibt.
-
-</p>
-
-</div>
-
-
-<div class="footer-links">
-
-<a
-href="#impressum"
-data-page="impressum">
-
-Impressum
-
-</a>
-
-
-<a
-href="#datenschutz"
-data-page="datenschutz">
-
-Datenschutz
-
-</a>
-
-
-<a
-href="https://www.instagram.com/dlz.bedachungen/"
-target="_blank">
-
-Instagram
-
-</a>
-
-
-<a
-href="https://www.tiktok.com/@dlzbedachungen"
-target="_blank">
-
-TikTok
-
-</a>
-
-</div>
-
-
-</div>
+    </div>
 
 </footer>
 
 
-
-<!-- =====================================================
-     WHATSAPP
-===================================================== -->
-
+<!-- WHATSAPP -->
 <a
-href="https://wa.me/4917642716629"
-target="_blank"
-class="whatsapp"
-aria-label="WhatsApp">
-
-WA
-
+    href="https://wa.me/4917642716629"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="WhatsApp"
+>
+    WhatsApp
 </a>
 
 
-
-<script>
-
-/* =========================================================
-   SEITEN-NAVIGATION
-========================================================= */
-
-const pages = document.querySelectorAll(".page");
-const navLinks = document.querySelectorAll("[data-page]");
-const navigation = document.getElementById("navigation");
-const menuButton = document.getElementById("menuButton");
-
-
-function showPage(pageName){
-
-    pages.forEach(page => {
-
-        page.classList.remove("active");
-
-    });
-
-
-    const selectedPage =
-        document.getElementById("page-" + pageName);
-
-
-    if(selectedPage){
-
-        selectedPage.classList.add("active");
-
-    }
-
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(link.dataset.page === pageName){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-
-    navigation.classList.remove("open");
-
-    document.body.classList.remove("menu-open");
-
-
-    /*
-       URL wird angepasst.
-
-       Beispiel:
-       deine-domain.de/#leistungen
-    */
-
-    if(history.pushState){
-
-        history.pushState(
-            null,
-            "",
-            "#" + pageName
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   LINKS
-========================================================= */
-
-navLinks.forEach(link => {
-
-    link.addEventListener("click", function(event){
-
-        /*
-           Externe Links werden nicht abgefangen.
-        */
-
-        if(!this.dataset.page){
-
-            return;
-
-        }
-
-        event.preventDefault();
-
-        showPage(this.dataset.page);
-
-    });
-
-});
-
-
-/* =========================================================
-   DIREKTE LINKS ÜBER HASH
-========================================================= */
-
-function loadFromHash(){
-
-    let pageName =
-        window.location.hash.replace("#","");
-
-
-    if(!pageName){
-
-        pageName = "start";
-
-    }
-
-
-    const validPages = [
-        "start",
-        "leistungen",
-        "ueber-uns",
-        "projekte",
-        "social-media",
-        "kontakt",
-        "impressum",
-        "datenschutz"
-    ];
-
-
-    if(!validPages.includes(pageName)){
-
-        pageName = "start";
-
-    }
-
-
-    pages.forEach(page => {
-
-        page.classList.remove("active");
-
-    });
-
-
-    const page =
-        document.getElementById(
-            "page-" + pageName
-        );
-
-
-    if(page){
-
-        page.classList.add("active");
-
-    }
-
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(link.dataset.page === pageName){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-
-    window.scrollTo(0,0);
-
-}
-
-
-/* =========================================================
-   BROWSER ZURÜCK / VOR
-========================================================= */
-
-window.addEventListener(
-    "popstate",
-    loadFromHash
-);
-
-window.addEventListener(
-    "hashchange",
-    loadFromHash
-);
-
-
-/* =========================================================
-   MOBILE MENÜ
-========================================================= */
-
-menuButton.addEventListener("click", function(){
-
-    navigation.classList.toggle("open");
-
-    document.body.classList.toggle("menu-open");
-
-});
-
-
-/* =========================================================
-   JAHR
-========================================================= */
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-/* =========================================================
-   STARTSEITE LADEN
-========================================================= */
-
-loadFromHash();
-
-</script>
-
+<script src="script.js"></script>
 
 </body>
 </html>

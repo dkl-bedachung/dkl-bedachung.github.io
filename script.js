@@ -1,76 +1,80 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
+"use strict";
 
-    if (toggle && nav) {
-        toggle.addEventListener("click", function () {
-            const isOpen = nav.classList.toggle("open");
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
-            document.body.classList.toggle("menu-open", isOpen);
-            toggle.setAttribute("aria-expanded", String(isOpen));
-            toggle.setAttribute(
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener("click", () => {
+            const isOpen = mainNav.classList.toggle("is-open");
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
                 "aria-label",
                 isOpen ? "Menü schließen" : "Menü öffnen"
             );
-            toggle.textContent = isOpen ? "×" : "☰";
         });
 
-        nav.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", function () {
-                nav.classList.remove("open");
-                document.body.classList.remove("menu-open");
-                toggle.setAttribute("aria-expanded", "false");
-                toggle.setAttribute("aria-label", "Menü öffnen");
-                toggle.textContent = "☰";
+        mainNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                mainNav.classList.remove("is-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Menü öffnen");
             });
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                mainNav.classList.remove("is-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Menü öffnen");
+            }
         });
     }
 
-    document.querySelectorAll("[data-year]").forEach(function (element) {
+    document.querySelectorAll("[data-year]").forEach((element) => {
         element.textContent = new Date().getFullYear();
     });
 
-    const form = document.querySelector("#contact-form");
+    const contactForm = document.getElementById("contactForm");
 
-    if (form) {
-        form.addEventListener("submit", function (event) {
+    if (contactForm) {
+        contactForm.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            if (!form.reportValidity()) {
+            if (!contactForm.reportValidity()) {
                 return;
             }
 
-            const data = new FormData(form);
-
-            const name = data.get("name") || "";
-            const email = data.get("email") || "";
-            const phone = data.get("phone") || "";
-            const service = data.get("service") || "";
-            const message = data.get("message") || "";
+            const name = document.getElementById("name").value.trim();
+            const contact = document.getElementById("contact").value.trim();
+            const service = document.getElementById("service").value;
+            const message = document.getElementById("message").value.trim();
+            const status = document.getElementById("formStatus");
 
             const subject = encodeURIComponent(
-                "Website-Anfrage – " + service
+                "Website-Anfrage von " + name
             );
 
             const body = encodeURIComponent(
-                "Neue Anfrage über die DLZ-Bedachungen-Website\n\n" +
+                "Neue Anfrage über die Website von DLZ-Bedachungen\n\n" +
                 "Name: " + name + "\n" +
-                "E-Mail: " + email + "\n" +
-                "Telefon: " + phone + "\n" +
-                "Leistung: " + service + "\n\n" +
+                "Telefon oder E-Mail: " + contact + "\n" +
+                "Gewünschte Leistung: " + (service || "Nicht angegeben") + "\n\n" +
                 "Nachricht:\n" + message
             );
 
-            const status = document.querySelector(".form-status");
+            const mailto =
+                "mailto:info@dlz-bedachungen.de" +
+                "?subject=" + subject +
+                "&body=" + body;
 
             if (status) {
                 status.textContent =
                     "Dein E-Mail-Programm wird geöffnet. Bitte prüfe die Nachricht und sende sie dort ab.";
             }
 
-            window.location.href =
-                "mailto:info@dlz-bedachungen.de?subject=" +
-                subject + "&body=" + body;
+            window.location.href = mailto;
         });
     }
 });

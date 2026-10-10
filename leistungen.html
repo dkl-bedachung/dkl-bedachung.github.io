@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Leistungen | DLZ-Bedachungen</title>
+    <title>Unsere Leistungen | DLZ-Bedachungen Hamburg</title>
 
-    <meta name="description" content="Die Leistungen von DLZ-Bedachungen in Hamburg und Umgebung. Dacharbeiten, Abdichtung, Flüssigkunststoff, Solararbeiten, Montage, Sanierung, Reinigung und Dachinspektion.">
+    <meta name="description"
+          content="Entdecken Sie die sechs Leistungskategorien von DLZ-Bedachungen in Hamburg: Dacharbeiten, Abdichtung, Klempnerei, Montage, Sanierung und Dachinspektion mit Drohne.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#080808">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,321 +17,486 @@
 <body>
 
 <header class="header">
-    <div class="container nav-wrap">
+
+    <div class="container nav-container">
 
         <a href="index.html" class="logo">
-            DL<span>Z</span>
-            <small>BEDACHUNGEN</small>
+            <span class="logo-main">DLZ</span>
+            <span class="logo-sub">BEDACHUNGEN</span>
         </a>
 
-        <button class="menu" aria-label="Menü öffnen">
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Menü öffnen"
+                aria-expanded="false">
             ☰
         </button>
 
-        <nav>
+        <nav class="nav" id="mainNav">
             <a href="index.html">Startseite</a>
             <a href="leistungen.html" class="active">Leistungen</a>
-            <a href="ueber-uns.html">Über uns</a>
-            <a href="projekte.html">Projekte</a>
-            <a href="social-media.html">Social Media</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="index.html#ueber-uns">Über uns</a>
+            <a href="index.html#kundenzufriedenheit">Unser Anspruch</a>
+            <a href="index.html#kontakt" class="nav-contact">Kontakt</a>
         </nav>
 
     </div>
+
 </header>
 
 
 <main>
 
-<section class="page-hero">
+    <!-- LEISTUNGEN HERO -->
 
-    <div class="page-hero-bg"
-         style="background-image:url('https://images.pexels.com/photos/37623622/pexels-photo-37623622.jpeg?auto=compress&cs=tinysrgb&w=2200');">
-    </div>
+    <section class="page-hero">
 
-    <div class="container page-hero-content">
+        <div class="page-hero-image"></div>
+        <div class="page-hero-overlay"></div>
 
-        <span class="eyebrow">UNSERE LEISTUNGEN</span>
+        <div class="container page-hero-content">
 
-        <h1>
-            Leistungen rund ums
-            <span>Dach.</span>
-        </h1>
+            <span class="eyebrow">UNSERE LEISTUNGEN</span>
 
-        <p>
-            Von klassischen Dacharbeiten über Abdichtungen und Sanierungen
-            bis hin zu modernen Dachinspektionen.
-        </p>
-
-    </div>
-
-</section>
-
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-head">
-
-            <span class="eyebrow">DLZ-BEDACHUNGEN</span>
-
-            <h2>
-                Lösungen, die
-                <span>zusammenpassen.</span>
-            </h2>
+            <h1>
+                Das Dach im Blick.<br>
+                <span>Qualität im Detail.</span>
+            </h1>
 
             <p>
-                Wir bieten verschiedene Leistungen rund um Dach, Sanierung,
-                Abdichtung und Instandhaltung. Wählen Sie den Bereich,
-                über den Sie mehr erfahren möchten.
+                Von Dacharbeiten über Abdichtung bis zur Dachinspektion
+                mit Drohne: Entdecken Sie unsere sechs Leistungskategorien
+                und sprechen Sie mit uns über Ihr Vorhaben.
             </p>
 
-        </div>
-
-
-        <div class="cards">
-
-            <article class="card service-card">
-
-                <div class="service-image service-1"></div>
-
-                <div class="card-body">
-
-                    <span class="card-number">01</span>
-
-                    <h3>Dacharbeiten</h3>
-
-                    <p>
-                        Flachdach, Steildach und Schieferdach – von
-                        Reparaturen bis zu umfangreicheren Arbeiten.
-                    </p>
-
-                    <a href="dacharbeiten.html" class="service-more">
-                        Mehr erfahren →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="card service-card">
-
-                <div class="service-image service-2"></div>
-
-                <div class="card-body">
-
-                    <span class="card-number">02</span>
-
-                    <h3>Abdichtung &amp; Flüssigkunststoff</h3>
-
-                    <p>
-                        Abdichtungslösungen für Dachflächen, Anschlüsse
-                        und geeignete Detailbereiche.
-                    </p>
-
-                    <a href="abdichtung-fluessigkunststoff.html" class="service-more">
-                        Mehr erfahren →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="card service-card">
-
-                <div class="service-image service-3"></div>
-
-                <div class="card-body">
-
-                    <span class="card-number">03</span>
-
-                    <h3>Solararbeiten</h3>
-
-                    <p>
-                        Dachbezogene Arbeiten und Vorbereitung rund um
-                        Solar- und Photovoltaikprojekte.
-                    </p>
-
-                    <a href="solararbeiten.html" class="service-more">
-                        Mehr erfahren →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="card service-card">
-
-                <div class="service-image service-4"></div>
-
-                <div class="card-body">
-
-                    <span class="card-number">04</span>
-
-                    <h3>Montage &amp; Kernbohrung</h3>
-
-                    <p>
-                        Präzise Kernbohrungen und unterstützende
-                        Montagearbeiten für unterschiedliche Projekte.
-                    </p>
-
-                    <a href="montage-kernbohrung.html" class="service-more">
-                        Mehr erfahren →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="card service-card">
-
-                <div class="service-image service-5"></div>
-
-                <div class="card-body">
-
-                    <span class="card-number">05</span>
-
-                    <h3>Sanierung &amp; Reinigung</h3>
-
-                    <p>
-                        Dachsanierungen und Reinigungsarbeiten zum
-                        langfristigen Erhalt der Dachfläche.
-                    </p>
-
-                    <a href="sanierung-reinigung.html" class="service-more">
-                        Mehr erfahren →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="card service-card">
-
-                <div class="service-image service-6"></div>
-
-                <div class="card-body">
-
-                    <span class="card-number">06</span>
-
-                    <h3>Dachinspektion</h3>
-
-                    <p>
-                        Moderne Dachkontrolle mit Drohne für einen
-                        besseren Überblick über schwer zugängliche Bereiche.
-                    </p>
-
-                    <a href="dachinspektion.html" class="service-more">
-                        Mehr erfahren →
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section section-dark">
-
-    <div class="container">
-
-        <div class="cta-box">
-
-            <span class="eyebrow">IHR PROJEKT</span>
-
-            <h2>
-                Sie brauchen Hilfe
-                <span>am Dach?</span>
-            </h2>
-
-            <p>
-                Kontaktieren Sie uns und schildern Sie uns kurz Ihr
-                Vorhaben. Wir melden uns persönlich bei Ihnen.
-            </p>
-
-            <a href="kontakt.html" class="btn btn-primary">
+            <a href="index.html#kontakt" class="btn btn-primary">
                 Projekt anfragen
             </a>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+
+    <!-- EINLEITUNG -->
+
+    <section class="services-intro section-padding">
+
+        <div class="container services-intro-grid">
+
+            <div>
+                <span class="section-label">WAS WIR FÜR SIE TUN</span>
+
+                <h2>
+                    Die passende Lösung<br>
+                    <span>für Ihr Dach.</span>
+                </h2>
+            </div>
+
+            <div>
+                <p>
+                    Jedes Gebäude und jedes Dach stellt andere Anforderungen.
+                    Deshalb schauen wir genau hin, hören Ihnen zu und besprechen,
+                    welche Arbeiten für Ihr Projekt sinnvoll sind.
+                </p>
+
+                <p>
+                    Unser Ziel ist eine fachgerechte Ausführung und eine
+                    Zusammenarbeit, bei der Sie sich gut informiert und
+                    zuverlässig betreut fühlen.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECHS LEISTUNGSKATEGORIEN -->
+
+    <section class="all-services-section">
+
+        <div class="container">
+
+            <div class="all-services-grid">
+
+
+                <!-- 01 -->
+
+                <article class="detail-service" id="flachdach">
+
+                    <div class="detail-service-image image-flachdach">
+                        <span class="image-number">01</span>
+                    </div>
+
+                    <div class="detail-service-content">
+
+                        <span class="section-label">01 / DACHARBEITEN</span>
+
+                        <h2>Flachdach & Dachabdichtung</h2>
+
+                        <p>
+                            Ein Flachdach muss zuverlässig vor Regen,
+                            Feuchtigkeit und Witterung schützen.
+                            Eine sorgfältige Ausführung und passende
+                            Abdichtungslösungen sind dafür entscheidend.
+                        </p>
+
+                        <ul>
+                            <li>Flachdacharbeiten</li>
+                            <li>Dachabdichtung</li>
+                            <li>Bearbeitung von Anschlüssen und Details</li>
+                        </ul>
+
+                        <a href="index.html#kontakt" class="text-link">
+                            Anfrage stellen <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 02 -->
+
+                <article class="detail-service" id="steildach">
+
+                    <div class="detail-service-image image-steildach">
+                        <span class="image-number">02</span>
+                    </div>
+
+                    <div class="detail-service-content">
+
+                        <span class="section-label">02 / DACHARBEITEN</span>
+
+                        <h2>Steildach & Schieferdach</h2>
+
+                        <p>
+                            Steildächer prägen das Erscheinungsbild eines
+                            Gebäudes und müssen gleichzeitig zuverlässig
+                            vor äußeren Einflüssen schützen.
+                        </p>
+
+                        <ul>
+                            <li>Arbeiten am Steildach</li>
+                            <li>Schieferarbeiten</li>
+                            <li>Instandhaltung und Ausbesserungen nach Bedarf</li>
+                        </ul>
+
+                        <a href="index.html#kontakt" class="text-link">
+                            Anfrage stellen <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 03 -->
+
+                <article class="detail-service" id="klempnerei">
+
+                    <div class="detail-service-image image-klempnerei">
+                        <span class="image-number">03</span>
+                    </div>
+
+                    <div class="detail-service-content">
+
+                        <span class="section-label">03 / DETAILARBEITEN</span>
+
+                        <h2>Dachklempnerei & Flüssigkunststoff</h2>
+
+                        <p>
+                            Bei Dachanschlüssen und Übergängen kommt es
+                            auf eine präzise Verarbeitung an.
+                            Je nach Situation können Metallarbeiten oder
+                            Flüssigkunststofflösungen eingesetzt werden.
+                        </p>
+
+                        <ul>
+                            <li>Dachrinnen und Blecharbeiten</li>
+                            <li>Anschlüsse und Übergänge</li>
+                            <li>Flüssigkunststoffarbeiten</li>
+                        </ul>
+
+                        <a href="index.html#kontakt" class="text-link">
+                            Anfrage stellen <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 04 -->
+
+                <article class="detail-service" id="montage">
+
+                    <div class="detail-service-image image-montage">
+                        <span class="image-number">04</span>
+                    </div>
+
+                    <div class="detail-service-content">
+
+                        <span class="section-label">04 / MONTAGE</span>
+
+                        <h2>Montagearbeiten & Kernbohrung</h2>
+
+                        <p>
+                            Bei Montagearbeiten und gezielten Bohrungen
+                            sind eine gute Vorbereitung, präzises Arbeiten
+                            und die Abstimmung auf die baulichen
+                            Gegebenheiten besonders wichtig.
+                        </p>
+
+                        <ul>
+                            <li>Montagearbeiten</li>
+                            <li>Kernbohrungen nach Absprache</li>
+                            <li>Abstimmung auf das jeweilige Bauvorhaben</li>
+                        </ul>
+
+                        <a href="index.html#kontakt" class="text-link">
+                            Anfrage stellen <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 05 -->
+
+                <article class="detail-service" id="sanierung">
+
+                    <div class="detail-service-image image-sanierung">
+                        <span class="image-number">05</span>
+                    </div>
+
+                    <div class="detail-service-content">
+
+                        <span class="section-label">05 / PFLEGE & ERHALT</span>
+
+                        <h2>Dachsanierung & Dachreinigung</h2>
+
+                        <p>
+                            Dächer sind über Jahre Wind und Wetter
+                            ausgesetzt. Je nach Zustand können
+                            Reinigungs-, Reparatur- oder Sanierungsarbeiten
+                            sinnvoll sein.
+                        </p>
+
+                        <ul>
+                            <li>Dachsanierung</li>
+                            <li>Dachreinigung</li>
+                            <li>Begutachtung und Besprechung des Dachzustands</li>
+                        </ul>
+
+                        <a href="index.html#kontakt" class="text-link">
+                            Anfrage stellen <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 06 -->
+
+                <article class="detail-service" id="drohne">
+
+                    <div class="detail-service-image image-drohne">
+                        <span class="image-number">06</span>
+                    </div>
+
+                    <div class="detail-service-content">
+
+                        <span class="section-label">06 / DACHINSPEKTION</span>
+
+                        <h2>Dachinspektion mit Drohne</h2>
+
+                        <p>
+                            Mit einer Drohne lassen sich Dachbereiche
+                            aus der Luft visuell begutachten.
+                            Das kann helfen, schwer erreichbare Stellen
+                            zu betrachten und mögliche Auffälligkeiten
+                            für die weitere Prüfung zu dokumentieren.
+                        </p>
+
+                        <ul>
+                            <li>Visuelle Kontrolle aus der Luft</li>
+                            <li>Aufnahmen schwer erreichbarer Dachbereiche</li>
+                            <li>Unterstützung bei der ersten Einschätzung</li>
+                        </ul>
+
+                        <a href="index.html#kontakt" class="text-link">
+                            Anfrage stellen <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KUNDENZUFRIEDENHEIT -->
+
+    <section class="service-promise">
+
+        <div class="container service-promise-grid">
+
+            <div>
+                <span class="section-label">WAS FÜR UNS ZÄHLT</span>
+
+                <h2>
+                    Ihr Projekt.<br>
+                    Unsere Verantwortung.<br>
+                    <span>Ihre Zufriedenheit.</span>
+                </h2>
+            </div>
+
+            <div>
+                <p>
+                    Wir möchten, dass Sie sich von Anfang an gut beraten
+                    fühlen. Deshalb sind uns verständliche Absprachen,
+                    offene Kommunikation und ein sorgfältiger Umgang
+                    mit Ihrem Auftrag wichtig.
+                </p>
+
+                <p>
+                    Haben Sie Fragen zu einer Leistung? Sprechen Sie uns an.
+                    Gemeinsam klären wir, was für Ihr Dach und Ihr Vorhaben
+                    infrage kommt.
+                </p>
+
+                <a href="index.html#kontakt" class="btn btn-primary">
+                    Kontakt aufnehmen
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KONTAKT CTA -->
+
+    <section class="bottom-cta">
+
+        <div class="container bottom-cta-content">
+
+            <span class="section-label">IHR ANLIEGEN IST UNS WICHTIG</span>
+
+            <h2>
+                Lassen Sie uns<br>
+                <span>darüber sprechen.</span>
+            </h2>
+
+            <p>
+                Erzählen Sie uns von Ihrem Vorhaben.
+                Wir freuen uns darauf, Sie kennenzulernen.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="tel:+4917642716629" class="btn btn-primary">
+                    Jetzt anrufen
+                </a>
+
+                <a href="mailto:info@dlz-bedachungen.de"
+                   class="btn btn-outline">
+                    E-Mail schreiben
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </main>
 
 
+<!-- FOOTER -->
+
 <footer class="footer">
 
-    <div class="container">
+    <div class="container footer-top">
 
-        <div class="footer-row">
+        <a href="index.html" class="logo footer-logo">
+            <span class="logo-main">DLZ</span>
+            <span class="logo-sub">BEDACHUNGEN</span>
+        </a>
 
-            <div>
+        <p>
+            Qualität, die oben bleibt.<br>
+            Ihr Ansprechpartner für Dacharbeiten in Hamburg.
+        </p>
 
-                <a href="index.html" class="logo">
-                    DL<span>Z</span>
-                    <small>BEDACHUNGEN</small>
-                </a>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/dlz.bedachungen/"
+               target="_blank"
+               rel="noopener noreferrer">Instagram ↗</a>
 
-                <p>Qualität, die oben bleibt.</p>
-
-            </div>
-
-            <div class="footer-links">
-
-                <a href="leistungen.html">Leistungen</a>
-                <a href="ueber-uns.html">Über uns</a>
-                <a href="projekte.html">Projekte</a>
-                <a href="social-media.html">Social Media</a>
-                <a href="kontakt.html">Kontakt</a>
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-
-            </div>
-
+            <a href="https://www.tiktok.com/@dlzbedachungen"
+               target="_blank"
+               rel="noopener noreferrer">TikTok ↗</a>
         </div>
 
-        <div class="footer-bottom">
+    </div>
 
-            <span>
-                © <span class="year"></span> DLZ-Bedachungen
-            </span>
+    <div class="container footer-bottom">
 
-            <span>
-                Hamburg &amp; Umgebung
-            </span>
+        <span>
+            © <span id="currentYear"></span> DLZ-Bedachungen
+        </span>
 
+        <div class="footer-links">
+            <a href="index.html">Startseite</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
         </div>
+
+        <span class="footer-slogan">Qualität, die oben bleibt.</span>
 
     </div>
 
 </footer>
 
 
-<a
-    href="https://wa.me/4917642716629"
-    class="whatsapp"
-    target="_blank"
-    rel="noopener"
->
-    WhatsApp
-</a>
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
 
+    menuToggle.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("nav-open");
 
-<script src="script.js"></script>
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Menü schließen" : "Menü öffnen"
+        );
+
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll("#mainNav a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            mainNav.classList.remove("nav-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Menü öffnen");
+            menuToggle.textContent = "☰";
+        });
+    });
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+</script>
 
 </body>
 </html>

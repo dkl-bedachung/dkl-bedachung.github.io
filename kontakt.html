@@ -3,252 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontakt | DLZ-Bedachungen</title>
+<title>Kontakt | DLZ-Bedachungen Hamburg</title>
+<meta name="description" content="Kontaktiere DLZ-Bedachungen in Hamburg. Telefon, E-Mail und Kontaktformular für Dacharbeiten und weitere Anliegen.">
+<meta name="theme-color" content="#120d09">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header class="header">
-<div class="container nav-wrap">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-<a href="index.html" class="logo">DL<span>Z</span><small>BEDACHUNGEN</small></a>
-<button class="menu" aria-label="Menü öffnen">☰</button>
-
-<nav>
-<a href="index.html">Startseite</a>
-<a href="leistungen.html">Leistungen</a>
-<a href="ueber-uns.html">Über uns</a>
-<a href="projekte.html">Projekte</a>
-<a href="social-media.html">Social Media</a>
-<a href="kontakt.html" class="active">Kontakt</a>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html"><span class="brand-main">DLZ<span class="brand-dot">.</span></span><span class="brand-sub">BEDACHUNGEN</span></a>
+<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+<nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+<a href="index.html">Startseite</a><a href="ueber-uns.html">Über uns</a><a href="leistungen.html">Leistungen</a><a href="projekte.html">Projekte</a><a href="social-media.html">Social Media</a><a href="kontakt.html" aria-current="page" class="nav-cta">Kontakt ↗</a>
 </nav>
-
 </div>
 </header>
 
-
-<main>
+<main id="main">
 
 <section class="page-hero">
-
-<div class="page-hero-bg"
-style="background-image:url('https://images.pexels.com/photos/5340280/pexels-photo-5340280.jpeg?auto=compress&cs=tinysrgb&w=2200');"></div>
-
-<div class="container page-hero-content">
-
-<span class="eyebrow">KONTAKT</span>
-
-<h1>
-Lassen Sie uns über Ihr
-<span>Projekt sprechen.</span>
-</h1>
-
+<div class="container">
+<p class="eyebrow">KONTAKT · DLZ-BEDACHUNGEN</p>
+<h1>Lass uns über<br><em>dein Projekt sprechen.</em></h1>
 <p>
-Sie haben eine Frage oder möchten ein Projekt anfragen?
-Kontaktieren Sie DLZ-Bedachungen direkt.
+Du hast eine Frage, planst Dacharbeiten oder möchtest eine
+bestehende Dachfläche prüfen lassen? Beschreibe uns dein Anliegen
+oder melde dich direkt telefonisch.
 </p>
-
 </div>
 </section>
 
-
 <section class="section">
+<div class="container contact-grid">
 
-<div class="container">
+<div class="contact-details">
+<p class="eyebrow">DIREKT ERREICHBAR</p>
+<h2>Der direkte<br><em>Draht zu DLZ.</em></h2>
 
-<div class="contact-grid">
-
-<div>
-
-<div class="contact-list">
-
-<div class="contact-item">
-<strong>Telefon</strong>
-<span>
-<a href="tel:+4917642716629">
-+49 176 42716629
-</a>
-</span>
+<div class="contact-detail">
+<span class="contact-label">TELEFON</span>
+<a href="tel:+4917642716629">+49 176 42716629</a>
 </div>
 
-<div class="contact-item">
-<strong>E-Mail</strong>
-<span>
-<a href="mailto:info@dlz-bedachungen.de">
-info@dlz-bedachungen.de
-</a>
-</span>
+<div class="contact-detail">
+<span class="contact-label">E-MAIL</span>
+<a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a>
 </div>
 
-<div class="contact-item">
-<strong>Adresse</strong>
-<span>
-Eddelbüttelstraße 40<br>
-21073 Hamburg
-</span>
+<div class="contact-detail">
+<span class="contact-label">ANSCHRIFT</span>
+<p>Eddelbüttelstraße 40<br>21073 Hamburg</p>
 </div>
 
-<div class="contact-item">
-<strong>Servicegebiet</strong>
-<span>
-Hamburg &amp; Umgebung – ca. 50 km
-</span>
+<div class="contact-detail">
+<span class="contact-label">EINSATZGEBIET</span>
+<p>Hamburg und bis zu 50 km Umgebung</p>
 </div>
 
+<a class="btn btn-outline" href="https://wa.me/4917642716629" target="_blank" rel="noopener noreferrer">Über WhatsApp schreiben ↗</a>
 </div>
 
+<div class="form-panel">
+<p class="eyebrow">DEINE ANFRAGE</p>
+<h2>Was können wir<br><em>für dich tun?</em></h2>
+
+<p class="form-intro">
+Fülle die Felder aus. Beim Absenden wird dein E-Mail-Programm
+mit einer vorbereiteten Nachricht geöffnet.
+</p>
+
+<form id="contactForm">
+<div class="form-row">
+<div class="form-field">
+<label for="name">Name *</label>
+<input type="text" id="name" name="name" autocomplete="name" required>
 </div>
 
-
-<div>
-
-<form
-class="form"
-action="mailto:info@dlz-bedachungen.de"
-method="post"
-enctype="text/plain"
->
-
-<div class="form-grid">
-
-<div class="field">
-
-<label for="name">Name</label>
-
-<input
-type="text"
-id="name"
-name="Name"
-placeholder="Ihr Name"
-required
->
-
+<div class="form-field">
+<label for="contact">E-Mail oder Telefonnummer *</label>
+<input type="text" id="contact" name="contact" autocomplete="email" required>
+</div>
 </div>
 
-
-<div class="field">
-
-<label for="email">E-Mail</label>
-
-<input
-type="email"
-id="email"
-name="E-Mail"
-placeholder="Ihre E-Mail-Adresse"
-required
->
-
-</div>
-
-</div>
-
-
-<div class="form-grid">
-
-<div class="field">
-
-<label for="telefon">Telefon</label>
-
-<input
-type="tel"
-id="telefon"
-name="Telefon"
-placeholder="Ihre Telefonnummer"
->
-
-</div>
-
-
-<div class="field">
-
-<label for="leistung">Leistung</label>
-
-<select id="leistung" name="Leistung">
-
+<div class="form-field">
+<label for="service">Welche Leistung interessiert dich?</label>
+<select id="service" name="service">
 <option value="">Bitte auswählen</option>
-
 <option>Dacharbeiten</option>
-<option>Abdichtung & Flüssigkunststoff</option>
+<option>Abdichtung / Flüssigkunststoff</option>
 <option>Solararbeiten</option>
-<option>Montage & Kernbohrung</option>
-<option>Sanierung & Reinigung</option>
-<option>Dachinspektion</option>
-
+<option>Montage / Kernbohrung</option>
+<option>Dachsanierung</option>
+<option>Dachreinigung</option>
+<option>Dachinspektion mit Drohne</option>
+<option>Sonstiges</option>
 </select>
-
 </div>
 
+<div class="form-field">
+<label for="message">Deine Nachricht *</label>
+<textarea id="message" name="message" rows="6" required placeholder="Beschreibe kurz dein Anliegen und das Objekt."></textarea>
 </div>
 
+<label class="checkbox-field">
+<input type="checkbox" id="privacy" required>
+<span>Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen. *</span>
+</label>
 
-<div class="field">
+<button type="submit" class="btn btn-copper form-submit">E-Mail vorbereiten ↗</button>
 
-<label for="nachricht">Nachricht</label>
+<p class="form-note">
+Mit dem Absenden wird dein E-Mail-Programm geöffnet. Die Nachricht
+wird nicht automatisch von dieser Website verschickt.
+</p>
 
-<textarea
-id="nachricht"
-name="Nachricht"
-placeholder="Erzählen Sie uns kurz von Ihrem Projekt..."
-required
-></textarea>
-
-</div>
-
-
-<button type="submit" class="btn btn-primary">
-Anfrage senden
-</button>
-
+<p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
 </form>
-
 </div>
 
 </div>
-
-</div>
-
 </section>
 
 </main>
 
-
-<footer class="footer">
-<div class="container">
-
-<div class="footer-row">
-
-<div>
-<a href="index.html" class="logo">DL<span>Z</span><small>BEDACHUNGEN</small></a>
-<p>Qualität, die oben bleibt.</p>
+<footer class="site-footer">
+<div class="container footer-main">
+<div class="footer-brand"><a class="brand" href="index.html"><span class="brand-main">DLZ<span class="brand-dot">.</span></span><span class="brand-sub">BEDACHUNGEN</span></a><p>Qualität, die oben bleibt.</p></div>
+<div class="footer-column"><h3>Navigation</h3><a href="index.html">Startseite</a><a href="leistungen.html">Leistungen</a><a href="projekte.html">Projekte</a></div>
+<div class="footer-column"><h3>Kontakt</h3><a href="tel:+4917642716629">+49 176 42716629</a><a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a></div>
+<div class="footer-column"><h3>Rechtliches</h3><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
 </div>
-
-<div class="footer-links">
-<a href="leistungen.html">Leistungen</a>
-<a href="ueber-uns.html">Über uns</a>
-<a href="projekte.html">Projekte</a>
-<a href="social-media.html">Social Media</a>
-<a href="kontakt.html">Kontakt</a>
-<a href="impressum.html">Impressum</a>
-<a href="datenschutz.html">Datenschutz</a>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-<span>© <span class="year"></span> DLZ-Bedachungen</span>
-<span>Hamburg &amp; Umgebung</span>
-</div>
-
-</div>
+<div class="container footer-bottom"><span>© <span data-year></span> DLZ-Bedachungen</span><span>Hamburg & Umgebung</span></div>
 </footer>
-
-<a href="https://wa.me/4917642716629" class="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-
-<script src="script.js"></script>
-
+<a class="floating-contact" href="https://wa.me/4917642716629" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
 </body>
 </html>

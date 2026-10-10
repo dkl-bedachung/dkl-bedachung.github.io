@@ -4,134 +4,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Impressum | DLZ-Bedachungen</title>
+<meta name="theme-color" content="#120d09">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header class="header">
-<div class="container nav-wrap">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-<a href="index.html" class="logo">DL<span>Z</span><small>BEDACHUNGEN</small></a>
-<button class="menu" aria-label="Menü öffnen">☰</button>
-
-<nav>
-<a href="index.html">Startseite</a>
-<a href="leistungen.html">Leistungen</a>
-<a href="ueber-uns.html">Über uns</a>
-<a href="projekte.html">Projekte</a>
-<a href="social-media.html">Social Media</a>
-<a href="kontakt.html">Kontakt</a>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="index.html"><span class="brand-main">DLZ<span class="brand-dot">.</span></span><span class="brand-sub">BEDACHUNGEN</span></a>
+<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+<nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+<a href="index.html">Startseite</a><a href="ueber-uns.html">Über uns</a><a href="leistungen.html">Leistungen</a><a href="projekte.html">Projekte</a><a href="social-media.html">Social Media</a><a href="kontakt.html" class="nav-cta">Kontakt ↗</a>
 </nav>
-
 </div>
 </header>
 
-
-<main>
+<main id="main">
 
 <section class="page-hero">
-
-<div class="container page-hero-content">
-
-<span class="eyebrow">RECHTLICHES</span>
-
+<div class="container">
+<p class="eyebrow">RECHTLICHE INFORMATIONEN</p>
 <h1>Impressum</h1>
-
-<p>
-Angaben gemäß den gesetzlichen Informationspflichten.
-</p>
-
+<p>Angaben zum Anbieter dieser Website.</p>
 </div>
-
 </section>
 
-
 <section class="section">
+<div class="container legal-copy">
 
-<div class="container">
+<div class="notice-box">
+<strong>Vor Veröffentlichung prüfen:</strong> Ergänze und überprüfe sämtliche Angaben,
+die für dein Unternehmen gesetzlich erforderlich sind. Dieser Text ist eine Vorlage
+und ersetzt keine rechtliche Prüfung.
+</div>
 
-<div class="legal">
-
-<h2>Angaben zum Unternehmen</h2>
+<h2>Angaben gemäß den gesetzlichen Vorgaben</h2>
 
 <p>
 <strong>DLZ-Bedachungen</strong><br>
-Inhaber: Dominik Krzysztof Leszczynski<br>
 Eddelbüttelstraße 40<br>
-21073 Hamburg
+21073 Hamburg<br>
+Deutschland
 </p>
 
-<p>
-Telefon:
-<a href="tel:+4917642716629">+49 176 42716629</a><br>
+<h2>Kontakt</h2>
 
-E-Mail:
-<a href="mailto:info@dlz-bedachungen.de">
-info@dlz-bedachungen.de
-</a>
+<p>
+Telefon: <a href="tel:+4917642716629">+49 176 42716629</a><br>
+E-Mail: <a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a>
 </p>
 
-
-<h2>Unternehmensform</h2>
+<h2>Unternehmensangaben</h2>
 
 <p>
-Kleingewerbe
+Bitte ergänze hier die zutreffenden Angaben zur Rechtsform, zur
+vertretungsberechtigten Person und gegebenenfalls zu Registereinträgen,
+Umsatzsteuerangaben oder weiteren gesetzlich erforderlichen Informationen.
+Nur tatsächlich zutreffende Angaben eintragen.
 </p>
 
-
-<h2>Hinweis</h2>
+<h2>Berufsrechtliche Angaben</h2>
 
 <p>
-Die vollständigen rechtlichen Pflichtangaben, insbesondere
-Steuerangaben und weitere gesetzlich erforderliche Angaben,
-sollten vor der Veröffentlichung der Website geprüft und
-vollständig ergänzt werden.
+Falls für die angebotenen Tätigkeiten besondere berufsrechtliche Angaben,
+Zulassungen oder Eintragungen erforderlich sind, müssen diese hier
+entsprechend der tatsächlichen Situation ergänzt werden.
+</p>
+
+<h2>Verantwortlichkeit für Inhalte</h2>
+
+<p>
+Die Inhalte dieser Website werden mit Sorgfalt erstellt. Eine
+Gewähr für Vollständigkeit und Aktualität kann im Rahmen dieser
+Vorlage nicht übernommen werden. Gesetzlich vorgeschriebene
+Verantwortlichkeitsangaben müssen vor Veröffentlichung ergänzt werden.
 </p>
 
 </div>
-
-</div>
-
 </section>
 
 </main>
 
-
-<footer class="footer">
-<div class="container">
-
-<div class="footer-row">
-
-<div>
-<a href="index.html" class="logo">DL<span>Z</span><small>BEDACHUNGEN</small></a>
-<p>Qualität, die oben bleibt.</p>
+<footer class="site-footer">
+<div class="container footer-main">
+<div class="footer-brand"><a class="brand" href="index.html"><span class="brand-main">DLZ<span class="brand-dot">.</span></span><span class="brand-sub">BEDACHUNGEN</span></a><p>Qualität, die oben bleibt.</p></div>
+<div class="footer-column"><h3>Navigation</h3><a href="index.html">Startseite</a><a href="leistungen.html">Leistungen</a><a href="kontakt.html">Kontakt</a></div>
+<div class="footer-column"><h3>Kontakt</h3><a href="tel:+4917642716629">+49 176 42716629</a><a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a></div>
+<div class="footer-column"><h3>Rechtliches</h3><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
 </div>
-
-<div class="footer-links">
-<a href="leistungen.html">Leistungen</a>
-<a href="ueber-uns.html">Über uns</a>
-<a href="projekte.html">Projekte</a>
-<a href="social-media.html">Social Media</a>
-<a href="kontakt.html">Kontakt</a>
-<a href="impressum.html">Impressum</a>
-<a href="datenschutz.html">Datenschutz</a>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-<span>© <span class="year"></span> DLZ-Bedachungen</span>
-<span>Hamburg &amp; Umgebung</span>
-</div>
-
-</div>
+<div class="container footer-bottom"><span>© <span data-year></span> DLZ-Bedachungen</span><span>Hamburg & Umgebung</span></div>
 </footer>
-
-<script src="script.js"></script>
-
 </body>
 </html>

@@ -1,182 +1,635 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<title>DLZ-Bedachungen | Qualität, die oben bleibt.</title>
-<meta name="description" content="DLZ-Bedachungen aus Hamburg. Dacharbeiten, Abdichtung, Flüssigkunststoff, Solararbeiten, Montage, Kernbohrung, Sanierung, Reinigung und Dachinspektion mit Drohne.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11100f">
+    <meta name="description" content="DLZ-Bedachungen aus Hamburg – moderne Dacharbeiten, zuverlässige Lösungen und persönlicher Kontakt in Hamburg und bis zu 50 km Umgebung.">
+    <meta name="author" content="DLZ-Bedachungen">
+    <title>DLZ-Bedachungen | Qualität, die oben bleibt.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Startseiten-Anpassungen: Das Hero-Bild ist direkt eingebettet. */
+        :root {
+            --black: #11100f;
+            --dark: #171513;
+            --dark2: #211c18;
+            --dark3: #30251e;
+            --copper: #c77b3c;
+            --copper-light: #efb77d;
+            --white: #f8f4ef;
+            --gray: #c0b6ad;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .header {
+            border-bottom: 1px solid rgba(239,183,125,.22);
+        }
+
+        .logo span,
+        .hero h1 span,
+        .eyebrow,
+        .about-text h2 span {
+            color: var(--copper-light);
+        }
+
+        .hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: min(850px, calc(100svh - 78px));
+            display: flex;
+            align-items: center;
+            background: #11100f;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background-image: none;
+            background-size: cover;
+            background-position: center right;
+            background-repeat: no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(
+                90deg,
+                rgba(17,16,15,.97) 0%,
+                rgba(17,16,15,.88) 36%,
+                rgba(17,16,15,.48) 63%,
+                rgba(17,16,15,.16) 100%
+            );
+        }
+
+        .hero-content {
+            width: 100%;
+            padding-top: 105px;
+            padding-bottom: 78px;
+        }
+
+        .hero .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: .18em;
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        .hero .eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 27px;
+            height: 1px;
+            background: var(--copper-light);
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            margin: 22px 0;
+            font-family: Manrope, Inter, sans-serif;
+            font-size: clamp(3.2rem, 7vw, 6.7rem);
+            line-height: .99;
+            letter-spacing: -.065em;
+            font-weight: 800;
+        }
+
+        .hero-content > p {
+            max-width: 610px;
+            color: #e0d8d1;
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            line-height: 1.85;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 31px;
+        }
+
+        .btn {
+            min-height: 52px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            padding: 0 23px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: .92rem;
+            letter-spacing: .01em;
+            text-decoration: none;
+            transition:
+                transform .2s ease,
+                background .2s ease,
+                border-color .2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            color: #1a120b !important;
+            background: linear-gradient(135deg, #f0bd88, #c77b3c) !important;
+            border: 1px solid #e4a46a !important;
+            box-shadow: 0 8px 28px rgba(199,123,60,.18);
+        }
+
+        .btn-primary:hover {
+            background: #f4c99e !important;
+        }
+
+        .btn-outline {
+            color: var(--white) !important;
+            border: 1px solid rgba(239,183,125,.72) !important;
+            background: rgba(20,17,14,.35) !important;
+        }
+
+        .btn-outline:hover {
+            background: rgba(199,123,60,.15) !important;
+            border-color: var(--copper-light) !important;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 30px;
+            margin-top: 55px;
+            color: #e2d8ce;
+            font-size: .82rem;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-meta strong {
+            color: var(--copper-light);
+            font-size: .78rem;
+            letter-spacing: .08em;
+        }
+
+        .about-preview {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .about-image {
+            overflow: hidden;
+            border: 1px solid rgba(239,183,125,.22);
+        }
+
+        .about-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 390px;
+            object-fit: cover;
+        }
+
+        .about-point strong {
+            color: var(--copper-light);
+        }
+
+        .detail-cta {
+            border: 1px solid rgba(239,183,125,.34);
+            background: linear-gradient(
+                120deg,
+                rgba(199,123,60,.16),
+                rgba(33,28,24,.8)
+            );
+            padding: clamp(28px, 5vw, 62px);
+        }
+
+        .footer {
+            border-top: 1px solid rgba(239,183,125,.22);
+        }
+
+        .footer a:hover {
+            color: var(--copper-light);
+        }
+
+        .whatsapp {
+            background: linear-gradient(135deg, #efb77d, #c77b3c) !important;
+            color: #1a120b !important;
+            border: 1px solid rgba(255,255,255,.18);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 760px;
+                min-height: min(820px, calc(100svh - 68px));
+            }
+
+            .hero-bg {
+                background-position: 58% center;
+            }
+
+            .hero-overlay {
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(17,16,15,.93),
+                        rgba(17,16,15,.75)
+                    ),
+                    linear-gradient(
+                        0deg,
+                        rgba(17,16,15,.28),
+                        transparent
+                    );
+            }
+
+            .hero-content {
+                padding-top: 80px;
+                padding-bottom: 55px;
+            }
+
+            .hero h1 {
+                font-size: clamp(3rem, 12vw, 5rem);
+            }
+
+            .hero-meta {
+                margin-top: 36px;
+                gap: 13px 18px;
+            }
+
+            .hero-meta span {
+                font-size: .76rem;
+            }
+
+            .about-preview {
+                padding-top: 65px;
+                padding-bottom: 65px;
+            }
+
+            .about-image img {
+                min-height: 260px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .btn {
+                transition: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
 <header class="header">
-<div class="container nav-wrap">
-<a class="logo" href="index.html"><strong>DLZ</strong><span>BEDACHUNGEN</span></a>
-<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
-<nav class="nav">
-<a href="index.html">Startseite</a>
-<a href="ueber-uns.html">Über uns</a>
-<a href="leistungen.html">Leistungen</a>
-<a href="projekte.html">Projekte</a>
-<a href="social-media.html">Social Media</a>
-<a class="nav-contact" href="kontakt.html">Kontakt</a>
-</nav>
-</div>
+    <div class="container header-inner">
+
+        <a href="index.html" class="logo"
+           aria-label="DLZ-Bedachungen – Startseite">
+            DL<span>Z</span>
+            <small>BEDACHUNGEN</small>
+        </a>
+
+        <button class="menu"
+                type="button"
+                aria-label="Menü öffnen"
+                aria-expanded="false"
+                aria-controls="main-nav">
+            ☰
+        </button>
+
+        <nav id="main-nav" aria-label="Hauptnavigation">
+            <a href="index.html" class="active" aria-current="page">Startseite</a>
+            <a href="leistungen.html">Leistungen</a>
+            <a href="ueber-uns.html">Über uns</a>
+            <a href="projekte.html">Projekte</a>
+            <a href="social-media.html">Social Media</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+
+    </div>
 </header>
 
 <main>
-<section class="hero">
-<div class="hero-overlay"></div>
-<div class="container hero-content">
-<p class="eyebrow">DLZ-Bedachungen · Hamburg</p>
-<h1>Qualität, die<br><span>oben bleibt.</span></h1>
-<p class="hero-text">Moderne Dacharbeiten aus Hamburg – zuverlässig, sauber und mit persönlichem Kontakt. Wir begleiten dein Projekt von der ersten Anfrage bis zur Umsetzung.</p>
-<div class="button-row">
-<a class="btn" href="leistungen.html">Unsere Leistungen <span>→</span></a>
-<a class="btn btn-outline" href="kontakt.html">Kontakt aufnehmen</a>
-</div>
-<div class="hero-points">
-<span>Hamburg & Umgebung</span>
-<span>Persönlicher Kontakt</span>
-<span>Transparente Absprachen</span>
-</div>
-</div>
-</section>
 
-<section class="intro section">
-<div class="container two-col">
-<div class="image-frame">
-<img src="https://images.pexels.com/photos/roofing/pexels-photo-roofing.jpeg" alt="Dacharbeiten an einem Gebäude" onerror="this.style.display='none'">
-<div class="image-caption">DLZ-Bedachungen · Hamburg</div>
-</div>
-<div>
-<p class="eyebrow">Handwerk mit Anspruch</p>
-<h2>Dacharbeiten, die<br><span>durchdacht sind.</span></h2>
-<p>Ein Dach muss funktionieren, schützen und langfristig zum Gebäude passen. Deshalb setzen wir auf eine saubere Planung, klare Kommunikation und eine fachgerechte Ausführung im vereinbarten Leistungsumfang.</p>
-<p>Als junges Unternehmen aus Hamburg legen wir besonderen Wert auf persönlichen Kontakt. Wir hören zu, besprechen die Möglichkeiten und finden eine Lösung, die zum jeweiligen Projekt passt.</p>
-<a class="text-link" href="ueber-uns.html">Mehr über uns erfahren →</a>
-</div>
-</div>
-</section>
+    <!-- HERO / STARTBEREICH -->
+    <section class="hero" aria-labelledby="hero-title">
 
-<section class="section section-dark">
-<div class="container">
-<div class="section-heading">
-<div>
-<p class="eyebrow">Unsere Leistungen</p>
-<h2>Alles rund ums Dach.</h2>
-<p class="muted">Entdecke unsere Leistungsbereiche und finde den passenden Ansprechpartner für dein Vorhaben.</p>
-</div>
-<a class="text-link" href="leistungen.html">Alle Leistungen →</a>
-</div>
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
 
-<div class="cards">
-<article class="card">
-<img src="https://images.pexels.com/photos/roofing/pexels-photo-roofing.jpeg" alt="Dacharbeiten" onerror="this.style.display='none'">
-<div class="card-body">
-<span class="card-number">01 / DACH</span>
-<h3>Dacharbeiten</h3>
-<p>Flachdach, Steildach und Schieferarbeiten – passend zum Gebäude und Projekt.</p>
-<a class="text-link" href="dacharbeiten.html">Details ansehen →</a>
-</div>
-</article>
+        <div class="container hero-content">
 
-<article class="card">
-<img src="https://images.pexels.com/photos/roof-waterproofing/pexels-photo-roof-waterproofing.jpeg" alt="Dachabdichtung" onerror="this.style.display='none'">
-<div class="card-body">
-<span class="card-number">02 / ABDICHTUNG</span>
-<h3>Abdichtung & Flüssigkunststoff</h3>
-<p>Abdichtungslösungen für geeignete Dachflächen und Anschlüsse.</p>
-<a class="text-link" href="abdichtung.html">Details ansehen →</a>
-</div>
-</article>
+            <span class="eyebrow">
+                DLZ-BEDACHUNGEN · HAMBURG &amp; UMGEBUNG
+            </span>
 
-<article class="card">
-<img src="https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg" alt="Solarmodule auf einem Dach" onerror="this.style.display='none'">
-<div class="card-body">
-<span class="card-number">03 / SOLAR</span>
-<h3>Solararbeiten</h3>
-<p>Arbeiten rund um die Montage und das Dachumfeld von Solaranlagen.</p>
-<a class="text-link" href="solararbeiten.html">Details ansehen →</a>
-</div>
-</article>
+            <h1 id="hero-title">
+                Qualität, die <span>oben</span> bleibt.
+            </h1>
 
-<article class="card">
-<img src="https://images.pexels.com/photos/8961065/pexels-photo-8961065.jpeg" alt="Handwerkliche Montagearbeiten" onerror="this.style.display='none'">
-<div class="card-body">
-<span class="card-number">04 / MONTAGE</span>
-<h3>Montage & Kernbohrung</h3>
-<p>Montagearbeiten und Kernbohrungen nach Projektanforderung.</p>
-<a class="text-link" href="montage-kernbohrung.html">Details ansehen →</a>
-</div>
-</article>
+            <p>
+                Moderne Dacharbeiten, zuverlässige Lösungen und persönlicher
+                Kontakt – für Privatkunden, Gewerbe, Hausverwaltungen und
+                Immobilienbesitzer in Hamburg und bis zu 50 km Umgebung.
+            </p>
 
-<article class="card">
-<img src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg" alt="Arbeiten an einem Gebäude" onerror="this.style.display='none'">
-<div class="card-body">
-<span class="card-number">05 / SANIERUNG</span>
-<h3>Sanierung & Reinigung</h3>
-<p>Arbeiten zur Instandhaltung, Erneuerung und Reinigung von Dachflächen.</p>
-<a class="text-link" href="sanierung-reinigung.html">Details ansehen →</a>
-</div>
-</article>
+            <div class="hero-buttons">
 
-<article class="card">
-<img src="https://images.pexels.com/photos/442589/pexels-photo-442589.jpeg" alt="Dachlandschaft aus der Luft" onerror="this.style.display='none'">
-<div class="card-body">
-<span class="card-number">06 / INSPEKTION</span>
-<h3>Dachinspektion mit Drohne</h3>
-<p>Dachflächen aus der Luft betrachten und schwer zugängliche Bereiche prüfen.</p>
-<a class="text-link" href="dachinspektion-drohne.html">Details ansehen →</a>
-</div>
-</article>
-</div>
-</div>
-</section>
+                <a href="leistungen.html" class="btn btn-primary">
+                    Unsere Leistungen
+                    <span aria-hidden="true">↗</span>
+                </a>
 
-<section class="section">
-<div class="container about-preview">
-<div>
-<p class="eyebrow">Warum DLZ?</p>
-<h2>Gute Arbeit beginnt<br><span>mit guter Kommunikation.</span></h2>
-<p>Uns ist wichtig, dass du weißt, was gemacht werden soll, welche Schritte anstehen und welche Kosten vereinbart wurden. Wir legen Wert auf verständliche Absprachen und einen persönlichen Ansprechpartner.</p>
-<a class="btn" href="ueber-uns.html">Lerne uns kennen →</a>
-</div>
-<div class="values">
-<div><strong>01</strong><h3>Persönlich</h3><p>Direkte Kommunikation und kurze Wege.</p></div>
-<div><strong>02</strong><h3>Durchdacht</h3><p>Individuelle Betrachtung jedes Projekts.</p></div>
-<div><strong>03</strong><h3>Transparent</h3><p>Klare Absprachen zu Umfang und Kosten.</p></div>
-<div><strong>04</strong><h3>Regional</h3><p>Aus Hamburg für Hamburg und Umgebung.</p></div>
-</div>
-</div>
-</section>
+                <a href="kontakt.html" class="btn btn-outline">
+                    Kontakt aufnehmen
+                    <span aria-hidden="true">↗</span>
+                </a>
 
-<section class="cta">
-<div class="container cta-inner">
-<div>
-<p class="eyebrow">Dein Projekt beginnt hier</p>
-<h2>Du hast etwas auf dem Dach vor?</h2>
-<p>Erzähl uns, was du planst. Wir besprechen gemeinsam die nächsten Schritte.</p>
-</div>
-<a class="btn btn-dark" href="kontakt.html">Jetzt Kontakt aufnehmen →</a>
-</div>
-</section>
+            </div>
+
+            <div class="hero-meta" aria-label="Unsere Schwerpunkte">
+
+                <span>
+                    <strong>01</strong>
+                    Hamburg &amp; Umgebung
+                </span>
+
+                <span>
+                    <strong>02</strong>
+                    Persönlicher Kontakt
+                </span>
+
+                <span>
+                    <strong>03</strong>
+                    Saubere Umsetzung
+                </span>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- KURZER ÜBER-UNS-EINBLICK -->
+    <section class="section about-preview" aria-labelledby="about-title">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div class="about-image">
+                    <img
+                        src="https://images.pexels.com/photos/38510748/pexels-photo-38510748.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400"
+                        alt="Dacharbeiten und Dachflächen – Einblick in das Handwerk"
+                        loading="lazy">
+                </div>
+
+                <div class="about-text">
+
+                    <span class="eyebrow">
+                        ÜBER DLZ-BEDACHUNGEN
+                    </span>
+
+                    <h2 id="about-title">
+                        Jung. Modern. <span>Persönlich.</span>
+                    </h2>
+
+                    <p>
+                        Gute Dacharbeit beginnt mit einem klaren Gespräch
+                        und endet mit einer sauberen Umsetzung. Genau darauf
+                        legen wir bei DLZ-Bedachungen Wert.
+                    </p>
+
+                    <p>
+                        Als moderner Dachdeckerbetrieb aus Hamburg setzen wir
+                        auf zuverlässige Arbeit, durchdachte Lösungen und
+                        einen direkten Ansprechpartner – vom ersten Kontakt
+                        bis zum Abschluss des Projekts.
+                    </p>
+
+                    <div class="about-points">
+
+                        <div class="about-point">
+                            <strong>01</strong>
+                            <span>Persönlicher Ansprechpartner</span>
+                        </div>
+
+                        <div class="about-point">
+                            <strong>02</strong>
+                            <span>Moderne Arbeitsweise</span>
+                        </div>
+
+                        <div class="about-point">
+                            <strong>03</strong>
+                            <span>Qualität &amp; Zuverlässigkeit</span>
+                        </div>
+
+                    </div>
+
+                    <a href="ueber-uns.html" class="btn btn-primary">
+                        Mehr über uns
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- KONTAKT-AUFRUF -->
+    <section class="section home-cta" aria-labelledby="cta-title">
+
+        <div class="container">
+
+            <div class="detail-cta">
+
+                <span class="eyebrow">DEIN PROJEKT</span>
+
+                <h2 id="cta-title">
+                    Reden wir über <em>dein Dach.</em>
+                </h2>
+
+                <p>
+                    Du hast Fragen oder planst Dacharbeiten in Hamburg und
+                    Umgebung? Melde dich direkt bei uns – unkompliziert
+                    und persönlich.
+                </p>
+
+                <a href="kontakt.html" class="btn btn-primary">
+                    Jetzt Kontakt aufnehmen
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
 </main>
 
+
+<!-- FOOTER -->
 <footer class="footer">
-<div class="container footer-grid">
-<div><a class="logo" href="index.html"><strong>DLZ</strong><span>BEDACHUNGEN</span></a><p>Qualität, die oben bleibt.</p><p class="muted">Dacharbeiten aus Hamburg und Umgebung.</p></div>
-<div><h3>Navigation</h3><a href="ueber-uns.html">Über uns</a><a href="leistungen.html">Leistungen</a><a href="projekte.html">Projekte</a><a href="kontakt.html">Kontakt</a></div>
-<div><h3>Kontakt</h3><a href="tel:+4917642716629">+49 176 42716629</a><a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a><p>Eddelbüttelstraße 40<br>21073 Hamburg</p></div>
-<div><h3>Social Media</h3><a href="https://www.instagram.com/dlz.bedachungen/" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@dlzbedachungen" target="_blank" rel="noopener">TikTok</a></div>
-</div>
-<div class="footer-bottom"><div class="container"><span>© <span data-year></span> DLZ-Bedachungen</span><div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></div>
+
+    <div class="container">
+
+        <div class="footer-row">
+
+            <div>
+
+                <a href="index.html" class="logo"
+                   aria-label="DLZ-Bedachungen Startseite">
+                    DL<span>Z</span>
+                    <small>BEDACHUNGEN</small>
+                </a>
+
+                <p>
+                    Qualität, die oben bleibt.<br>
+                    Hamburg und bis zu 50 km Umgebung.
+                </p>
+
+            </div>
+
+            <div class="footer-contact">
+
+                <strong>Kontakt</strong>
+
+                <a href="tel:+4917642716629">
+                    +49 176 42716629
+                </a>
+
+                <a href="kontakt.html">
+                    Kontaktformular öffnen ↗
+                </a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <strong>Navigation</strong>
+
+                <a href="leistungen.html">Leistungen</a>
+                <a href="ueber-uns.html">Über uns</a>
+                <a href="projekte.html">Projekte</a>
+                <a href="social-media.html">Social Media</a>
+                <a href="kontakt.html">Kontakt</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <strong>Social Media</strong>
+
+                <a href="https://www.instagram.com/dlz.bedachungen/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Instagram ↗
+                </a>
+
+                <a href="https://www.tiktok.com/@dlzbedachungen"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    TikTok ↗
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span class="year"></span> DLZ-Bedachungen
+            </span>
+
+            <div>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+
+        </div>
+
+    </div>
 </footer>
 
-<a class="floating-contact" href="https://wa.me/4917642716629" target="_blank" rel="noopener" aria-label="WhatsApp Kontakt">WA</a>
+
+<!-- WHATSAPP-KONTAKT -->
+<a href="https://wa.me/4917642716629"
+   class="whatsapp"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="DLZ-Bedachungen über WhatsApp kontaktieren">
+    WhatsApp ↗
+</a>
+
+
+<!--
+    Das optimierte DLZ-Hero-Bild ist direkt in dieser HTML-Datei eingebettet.
+    Die folgenden Zeichenketten werden zusammengesetzt. Es wird keine
+    separate DLZ-Hero.png benötigt.
+-->
+<script>
+    (function () {
+        const embeddedHeroImage = [
+            "UklGRn4mAABXRUJQVlA4IHImAACwIAGdASq8AtkBPwmCuFarqLgyorFa8wAhCWduwZgOeh5ROON9ELVovEG0S6/5yu415+n19wxv8M/cH1WdTvMX8Z3GTojM/298A715linuj9/8B75y9bv4j/TewHwhNAz+f/5j0n9DX2N7CJAV2L19XcB/13AlAqIywPGa7JW4QR+XmCcAkOWCKse2GJP6tCazo0ols7L5Kod4ZH0f/ZaeM2cNjO48E7i0W04qK2tKeKlo5cGovHPJHBTyn/5yQlkLamDqDlR4SBtWNxAhs/kiQp9pnXRYBnawS38EOMco35DI9B+FGOjA3l8ErGBIFlBmWhgFlNQH0zoJ2CjOKuOw+Rtz6zYGqYsrdrF29uJ1Y7unSTa5xuYEpZomQkN2RfMqpdOxjucDBHNgJsH715wn1WYUYNVvaFNMWV4f7/0cW/JUSJtD9xCH/lsJ2I0Bs8I6FgdVoyoeah8IfOpwIW1BsGVmItaE2tHeNDA9jV4HkFd14CNu0dFATJlVlHx7HyYkjNfSqhFie7I0tDXJEaIGunZqKFMyPStpcy6eEvDlXRX3VImDTfkW4YkQW+0Tc7aqxx788SEqETjEvCUdvQcJ1ekwIBtfegwYs3xMRCkU3CrACYEOmMa6ltnnPinj638cxwE0mx3yRieJs726OhsIR3Ho25c73LSvxGt1LKxHsrbhoPKZaD/vePP9PZZfHRhRK68nsx2o1LXsiY1UALsyGMiJuDiCuG/KN4wnbw1Q5YvFdkJbMCqKzLFJMgkewdBIEJ2oCPlZEq8NTMZ1qp270F6bZL/aebgXFQ78mMjqiPJEd+xEock5011f0cnUTiIJSYo0YHVBnaidvdBYa3vZLdSO4twaTAsJ8dojkHz5",
+            "cowfT5Kf+uQZLpPHPJJo+TqXhqJ4fE/BQrLZk1RFba/zjzN4tpLIVznkhj/wDi7EQtshUtR2GcL2qU6beOEHVCHvjAmZ+k5EhKIjZDTr1SH6HFJBAroZ7wGc+SUr4Hbpekvd19HO0xniLFncfKA8tlt/B1rHbMsEvspKckfWXuRQRiXLnVYwhDCcvmxg87XYaCgPUUKOYAx1PAOQWdFgzevsLDEk55YhCrcdZQhTgb0SxvVuqsTE2tFL8QZY+1rv0OVRGT9WmcuVbVnB5GSVrfCv7/qXgGfWc50/YPaB+oi+ZUBcpZDM87PcqLOxXU2L/gNWRCIGli1oNwPH4vQV26T0u2qkdKvff/8dcor3//RSNx7x2w9LoGIeGgRDL8y405ZTGpJwxZxtBAYnlYmaG/C2LKnMAJVei5wjHy/8NKavlTywtGB9a3m3nwipwQ3wZuyc0g+/5GowxBQg67DVl14FdFdIBlZy0FD62G/2GUgwHypYZ1rb8GiCtkvfT42/q6vHE7t8/42yZE7hgjlZDYJe2g6Q5zfJE4WLO4GNK6RlWILrRg4UgGCcEWNg8q5UX/Y6UyzMm3YS4pHfQB6oVmwkfKjYYxR966unTo6EDvDhgG8xTjf67OHG4RgbMQ9E5WX9F7PfUIqcZm8EW2lUQAd7LemKhkpv9T2cC2dTF16WFttI8Bh8a6+37DldeFaosegSPjWI/bOB4+u62YdLGeIvb+v8Ms6/0i6X3r1RgKy7GeyPtUVnGWC42hKCOy+XsJ7wIoIjrIxsI5PU8dzXYUaHO3etMtgC+cKsGa1pyyRQOWOjgfQT/2KNTh8YNtAGcTMC/KcbjTm1AGYusg7Dg7BO63qwL53etwkzsH8v8efXDfXXbDcUPxuV1LI5Mn/GVcD1",
+            "0cgTHtgdqBBC+7q3BEN1QUMd8fyI2IlsoKKllmSShFEtW/AfjvQlGIC23poJVzkjKlLrrsW22j5F5jz5FZBBZe267NPD6LuNp0qVEaDkAgfED5r7cUVYpeet5oiBjkLG6k6P5n6sj93FRzSu8NkDanKqcyg1MFFhMK2KHuSJRauDfE3BAwOrBKwpjoE8VxpABVPjr0ogzaKbkbZOJkzVPjcaKaPx20gOwJDAFHcyKUnvSpaOrdzagesVPQTRL9bqFAgPWt9J79pM7wyW1/Q4NHQyGSTNYEJfjUExmT87qOGeTshFViQFikGg0gznH6uTaBWmbdKuPxkk72+MhIulEpocKUJPpXx9VpWOCKsVP+QP0Hucc1Y3UacsRYz7aWwLF1/EhlBIt7TBxI7l+dXqrG7kNR0EalFAiofyY8Wv85WjNFOpOWS0CRDCMBqB8LquOOonlUQ3Y+yzjjzRcbjFZSl0B7r3BIkPqEbuaoUDILvMe8MSbhUOvWSBAWvrbvT+Q7oaOzPuqrVqnaG6349Qdo7c+UyGzy6Pt35zz72/KTl+x4I8vFmrGT5kimt1MQhx6YGU4Dkx6Hx+u/yp1kUZVyMciFZpbjoIvEBfYqs72owtVqPQCs1tztwccug8T1O94k3/jTC+S03knEHZi4UOlPd0FIRTgXo+nGyRCI29yPzeZxOTF9DYXhEYu4eK/YHQU/MuRAEdyA7nC9anmAUetC+OpHpyGEOdaEKYwzjEEu97y7rLQ0MG77lw3pjDwU7PxBF82v5a0lRnMOEm7ztjGWVDn/FLYhrSBGy9zX/pH0TsJHYWeDUQBr3IIk1SMKJF2+001zzSoemNg8q6SacB8fFodtdsZW3JDKV5jtjcGy0XJCO+QK29mFKo0omISf8Zg8q5",
+            "UxXSg7R0whxFaiw4xhgqWFlCyORWL5hBp0bkEOv9gPKuU+ZWEdTxhGop8UpeywG5zs8nvCDH96sod1WURcaqwXQ6eVT4ejLgcjcIxP5ILlXTXCb2Oo0PCclYVEbBe5GouCF4pUDFCj7QCHGrnAHxe5wGHlFsGYAdG2v+KpHgfOkHRhDQ8bCItLqRQbZRsGZ+VzDhQF0tgzzYMSUernaErwVBBqz8Mh4UJF3+CvWmk6gHCG0azGY49AkgcrZqTGjng/5BaC7KWrS4yT++UDKUJeBsNzaV/dKWgPfV9Xo4pwEUYFG4nT2cOl2u0NRAhqFzxiBdkfq5jtTXtSrFsgXYei14YJBKKlfCiuBsv8Unwgjb5tslp0m5x4Qjhx9na/lAMxS1ydb3SSlc+0fjgrTHJ0iXgU9m17MyMAD+78LciNTt1MtPLHIIhfdoKzeQETyx9qomAwl13H1EAZtcwzmwlDq3XpImNVJ1WSpsc70G9/laBUw9g2xdHvcKFiQZSAQj9+ChTrMSLtAAa+gtJa99sE0ol+G7FfRpOCpHmp66VP5UK8dv2o0MQxTpGdDlrRtwtfcbApr7m4XNWvqIc6R6JAk1gw+8A4pWq9h+/ClkvXezRDz9ffUMmFG8/2jtS4OkrzNCgSQdpx8bjOU/wYJmaG5WxJcHURrmoIivLsh+zpb99WhYvsN9FFDMZOeXnM1SoXsaHXTb1paO/hzgnqiQRXFSBYvD+vxXt+edbH5bx2CtXfqxQ9kP4SYgv4tyfqGSE3r/phzB8A0Jbty/VqrQ93k7iA5xEWTVCKVcEAMYLYhNoOHydHod8tPGXaw+R1VHqQ+pO1yjdtABFyILdVs2TYTnQntC+CD6LvFLpWP6f8MsaRR5gGnCXrtDg2RRNBLNkE4f",
+            "oZNeZkuojUvdU9ThOEvQx4V56o8gEvd/HKDBGVZyBw3/Idijk8vBDO1JnTI4QEIY0EufNSHEdYzVta3GQQl8M3J5RmT/4Pb0epNZbib6/UYtqabG0+iKT/TTGFJLKY8eQ8/bfOzm12VFIWEK13Ta4CwdzVdA3HteL2r9QTWqOVXpa1mthHOeuXiz/n7lpGh35z01MbY085tC69Va2d+pzQaJkABe3qXoVxBiClXp1klNJItZGPqysncv5amtGLqm2uHqle2AZYNY54HmBgb5+ZdA6mH2um6mKxfiRoIEXXIDP3nIk4Nb7vERi52/8m0fAQXlF0020pwoe5xNatZdhlaSYGkf1wutxmgyJs/AuK9j+ZplRDLJcqd6+MYCyejs0PA9otcJ5ofcDTcC3itxGI63B4KSqeruBMVxgySvTjfodUwca3AmIRkHSftdkKcOpBNlXzPHQMa+oHTNxzUbKHhyr32IpfY68suDsLpEkUqzVAZPUJ2nFBgKogSoWnmYwyFwhzAaqgo9dT0tmPG7H1QRhyHrQ66yWsapk17zaOAChqnW80AUw2W1SGPKOG7Gcr7WE667RyY7qY0xOoavWh+I59E23IkwGadhGheoVWjL6/+aOpZO7mBObr7jxo7szKBdEY8InxjIpNzoUPjSS+DQ4MHNPHI0qmTT916FjjYhf09LK+LIL/ePANjdQI0Pv3niWMfbOXGtCH1mBG6h1FJ4UGb09fOJ2kPDGm2erqeSqLWpWckv58ckKaNLZD3VHIG1Jfy47HToqDXcUM4L2z9cuPTl9ZbC1awhLYWHH/aJedhQDoIdAEY5rQIIcIwEX3V5E1BvKghtAXLKr1IGKG7O48bvX6hYNOSJTh8irqYGUjJN0tjVmfiEW8Uk/YixltWc",
+            "R424F9a3tnvexiLczDVECP1DX5g1S+fcitTqdJzs3jF3FVP4m4W6INK+HfdTx4lgfuj+JGXlUrkGkOIGPyRL9uixszsfCHS306L0IHWLJuH5l8Y94+8GgqHU2AIPZ4boqrunKngpALABSHBF6iAYsLEZngqE5+kXFyTODSL/xo0C86ZZMbOw17lqGE06gDIy6zVUkIXxH4Lc0a6zCWIp70fJVtNiW069e8585+oYlnb/CNHC7j4mSjIxdlTE5HidHc+kyCrSmn5FTKzFj2bsKkQlYgBl/MOAvcho89XtjxuokNwOrJuH5mrNsYXx7fekx47wvjhj6esgO7txUHu0ZN+OAAjAaQOINy5bgWljKGEGkIAzztEAzPwmRnhvWSXMEmSFmennq2Tf6TiHRyp/Wa0mk3st8fSU4BU/nuLhLOkm0+cSUdoARfz/SzV6yNJ4g1mtEntE5deiAS/cA4yp58XMKrpoX4IvPPE3Zl0d4OoXZkwxNVgfQD6xi6Fg5/Zx/M+kwerlNMgliTcyC/aTmdHwqkr75su4rpp697DIx5YPrBGHBeseVPYD5JRft8eSBbyYUWqTNEPem+tbgbeHnIPzRw63XbDRA78Qds5HtPVUCZFYrDAiMJ58EUsW9FwkITG745cVHJngfJVEFmlbFGb3Omb6uc536AwP4dwpA85wRdeSv+xV51aeEi0RrEUh5RsqTWqG3WBIkXjwAKeey/6swOi6Os+Mhb6atYDdRpI3qc1FTXRNriSRq1GoTfHc6ibCUEkbSgS6RPgv3yzkYxLa5q7DFqikBI/gwu0R5hnDNwS8jm0TzZtSP86MYdhNSZc7rA2CfoZPvJoUcgyHlZGkyU/v6d/x7SD1CbSi9kV9WfO3dEl7HcTeoW/Ppk+xM8UO",
+            "GWeXyKIQC3pXhxGMbTcmjYtdX6+pHcWzf0jFeU2PjAj6eRajDhNWblIGN9fgdCDgOphuvZO71bG/7aqi/qg5OMRAp81o3/6bJy7+QstbAGqG0XwMZ0BW2j0w6P5rAlRRoz8F3c/LiTsNm/Uq2Bvzh4OSQ/eiA6o2xo1SBk7/fcMh1hLJnhPo2/GQoyl9Raw8+QAd/a4m8gqMXIRcnhsQ18ZsSM6jTzBRTksHRAT9rnRY8qPV8igLCWkfcG9FeFCE5m12cdcTPEbv0ZS7Nr/I5Q+sX3KahdLMC+hyJbYdqceaR992PTU9ldq5/HFz8r1dULhfk2yQ3OrfW7KC2TQbLOLzEzyJWpSPrPBhlfq7+SOVxIgdqEY1lwt1AJ/sjXHOwYE/86n8tRg8+CwmgR/kEUJuHPD+c/PBDXflKXkCbInn4zVVCHXsNLI1GdEWV6bQXHHk/aksuGS55ArhAuN7Aj7yjW2XnMX7zcAgxBY9KtyyOzuyzzEc0mep96ZgP3cLqtDSf09A63c/8ttLStyr9ag4C/qkF+JLJuqQdc90VqpuJax6ElQbgWmANDc74UCwi5Qp52UdBVvfQWAMO+xcc23ZZm+971v1qlaKVOi7OjyXfGG9Coc48imLNC4kwu1Spgpe/Kfdu9H4JE16d7O/ywfBIKMABqOq48hqip3zowNluzPgNWhfryOI7g8X83R+XWFYmHSuIpLF0F3fH1nKtw07VQl2XklCnquBn0VFUhNpzmOGhIVeR+amUAb7fwK59GZ/Vn4MRlNYbdfITHeegzZm3E9NXn1tBKAUaR4cBpVCw5hQlWNjefn5VK2jKrxMkjA8trAlAi2yKm/2GrD6C7ASp6pWSsHvNuolEmYmhNqaKqMIURm8YCa9GsCmvi4woV6l",
+            "yxXqGbHeT01HqMj/+rfk0P6WYKlFFwrb3XTum9aCy4HNxzbX/8YeNGL+CjVZozLOX2SCIvJSpBliPX5ugzqFzkcl8rhiX+xi/WHyY4WGOZtV2xAyp1IAHFof+/FCBjSh1LZI1XcYIj5vie2zOOw8sTRf56ag53CgTD7MRpqVi2QIccpmNha2wgPFmVJNAsAYZTfYNuea+hqLF3C9sGz4L20q4HyuRQTbkY3elz/mFLyS6DdCyd952viHLX09/KWnc9XP3C6iHxQZozsJCOWr6kv082coUSUhi95Vw6R75CS6rZZP4ZtZi0hmowcmgDkyjR16qvFyutBHiOoftOaqTy+HS6Ks67JcgE0HMsczJzzi5j5iPbNTp2GenUVk7BSfA1jQdXzN/CUVy6P7Bn+J81n8FWCMA9EloUppqmwgObQEks7+YP8BAHSANShxt3IbwgFcnpgZh35C5ro3j+A6Km73vrvzWpZFFFcjgdAvg2dCSE11qDpoUf5im5TTf2VvzOaLh5DPpHpSJjKNizWkzKEEGW9jYMZejL4PqoEB43l1QsEt2PcJ9shrUhEX9eVxnwca1+5heV1lU4i7Yu9Tek6HpKbWMUxWtAcd0nvTOilDGi5NrukUsujaY5RyVbiP9cqeWqjEjMHPK8Km4Tzh3AHLzBEgZfRC16XkQ1ZY4CwK6Wd6jzXul3MrLiI9eg4+G8HvPySMjkLXIG0HjQXHYA1A/kcfir69IM2DJ85Ly082EXj9xNIgEguJe5FvP60RJmDSifdsppD4ic6kKVVCcIsyZ/041WbZL7eyWoBbHo+XHX21PWTYerFG+Bv7/5dW3y5Dk0rdL0U2vQJ3Y5KRKgnTb3IiqM8awviUE4ZUzXwBtQpPzKnSONNc16PIwiz1XsiI",
+            "x35lj8sCwucQNHYfDDMyOTqS6PZdMpGgyxBJVkjRMKyHDcn4Nw8LHW4Zz140nH6bQVsEJWkCxRMh1TyF1T/cY2qW/h4iQflPq2fE2Aiml7tv8B2L+J7pZXbUkhTTBe06I4MugayjT8T5E5rzvSTnKaCY3+VNarx68DWT1Q05XnWi1BCVGUXX0k2IWkenj3YVKqsOCIpNI7YQQf6+VBrq86QHrZztsEdIJuEhHwgUJyYJAJj1KmdVdpEDHgZ2ecLRYBMGlHh6vHjPPd1ii/II2qWkebQ3oM+09lElGhN1EE8GvW5UBPUhubEjP1CTXfZwZOiZvDp5ZYsUa2mMVTkkf34uxiWHy8y8KGrULhOCgK2LflVpRDs2/6nqkNxmadatjkuq1+Of1w1A+Hhg5phxOG/4BqYn1bvagfr4KhPtt50/m4cziRDLfKThynF1lrTx9/GYTLsYHvCY3hQTHDmh9Gd5fV6mBUuAi70QxhJzkh14N2JaPRNpmRqKTVmmCpEcpKrOS3lb+WpBCg0dWVGgpH4N5IBbmKTImhvnng0DNXNDYrra1W+QFsHK8A+jtyu9kY7yvHdKX5s5rhYnrqxSKTJIe1sM+E+H1oU3HqV+J1/n4/z8Jm5cdM7zQnMAWKjhQy4NYgoFbUa4UnYxpIajzGkHE4sM+XZ17FCbexRu+QyDhFWj8YwevBFmFzDxf4fSCMhhCawyJy6ew2JhPVIM6n4E+RE7+RHUQDO3KFW1UELHFD7yew6ckoDHBXsWhVRkYgBxO5iXIKhPlZTIxO3HpQo7CaAFW1ll9yW5RCQqJlYJTkBSeAVob5Ua6uzcN4Q/UXtwL+BH47RLayT024bVkRsjv+NPSoRTBNYCGKuMsC9pTsqVGtBTp2fz/DZ3jmaNDInH",
+            "IGfJHpGZJCuhjSzMdS8+bevFSzHBzhdLqib0rkQleS95flTAy14Geodhxw5vmz8L/QqlLSb1s65OrOMHRksFIVtqxczCpd8QHVhHQITrwON71BNlSDwyC6s1LJYZukA4d1JEQrqNYocwrTJMKGbwjspWD6VgQlnqyP0DLkuM2lpooAI20f5dcAjqjcehu3h0jE73qLTJSaYE/d/PwcXr+22QDG73qgPS5lKatatMr335Odf5lnyvK29biW1McewTdB46OdIEkxMxQhDKD3JQjwW1bKVukJVQVOtMTjSchQoPWsYwB0rzFbjtvaw3kXPNHZvpr7wn98++uwFBEbr+1SbKZ4XqIlxahGe+oobRuE5bRle0ZEaiIPSLfOFQb+IaKUG23Fo0ABnCNnNMrZFv02bxfOWjHa/dKOdb9wN/xsDtsioodz1u4qtu6fG3EqeWiPLHdtfd7CskA1Ke7FTdCp1nFheW39MS0FlczHJJnMNMzes9+rb8/KnKWvoyF5nxsraxlCByw8SP3V/353QdvaWODUKVMo9XVFSWgGZEWpgtf2aFWhdkvTsP5FNkI3+xugoNT5fH5Lg97SUMm7Ga4XL1JVZMJ88OYhNlaVmnyFWmRjAPmT0ATsXn/c3vJipJjy4cSbJFTvm/SqUEvxTjcSZOlAicja/Vpa/VtFohhckN5OY7wl6s/F0oy6zT2pmaPB8ta4NffK90AR++6QzP61WK3l13lHHZl7T3gzF/0IZRaCLU+90r5G68LK2WeiljH4EVB3a/onU1woAY6o3pSI1weE492fuvx9POapNcEw3UaWfi3EJfa9kRPVr78iNcZHT6rd1WwVaGUvx1TLZkdohEmYIPiyi3PSAwNqBkOGyq1VjwM2NRdbrPZl0F0YPpTU4Z",
+            "eIet1W9DZv5kicRbtNoWnU+eC70dCyn4SC8rF9K/4hQs2HpyqLl5NIP6jnCmqdFtKiVvYUOhtbywxU4TDh2mdLLcq66C6Hjzix21Cvq3bmrkwtpxTlYB5V8KfDnt9L4xe4fTu4e1IZRJ8zm2IjA79pcnJDFSFN6HVAgY5TZu2Ny5BThlJrUjQar+R1QVFB56qrPBtJmMMYJReeFyW2ooZpK1ocRdEkNS5Sy6KQc29vGpeiJRQjHhBy4p0PPAN7Ta/168/hs4L+CKW9/edZBQAeILt1PqNQh9VmdVF8eHxRkat2GC/uumXNk0L5eak2FJhGdJ7x1edUVQEpm6iS7KNedp7PuyJ6rlzjzoiFprA8jWS9GXKkYrJiCK4P2J5HCtZiyG4rGwJUOaCXJ7/ocUZbp+L7In520tNFfeHm3ldZ4a9yWSjUbY/Qg69b6z9uQugDTrUxeeHELa3advKlHY26rX3JP2ijhzRGZ9LafqdUaLLjXNvS9QZ2DweQdeOKQ5lKAL1jgH/iH/ACWZLT3pozkgJjV8NWssHlgND8MPq5pLp9lrTeqSTpMZquz7D9OgdlxVbfederTuZJ9PITXF2w8yvnHQuoSw+4CZay+MR7FZUjpvtZNpNu/GP0KROmvoimOpDdkWhrKO6EC2o88DuVQrU6tQOeEZxesNEZevlzp270JTJHUk4OfuQy0ejXc3TBjgh+fs2C6X5wOQvcibyhHxLI5uV/vAltIgb/yUdyTdYbQu/dqrxAkqZGjSubEG/XHrkZI5icy7Dg9vK3nIlXYZm90aQCjTZpWxuKl8VUuew5n0WnfLw8kQOup0C5qkjO1HeMlzO9juw1hPdDWw/SywPRcd5mnqQKWhdk6wYuHQHj/FJji/U8BVCR1eS+P3zsIt",
+            "xvhZ9a/wvmLBszOKznLbesesjTK2be2rUf+D081ryRoHegL2FhBAeklYHsJcr+rfrj7nHspoFac77BaS0UE0Y18Ky9VhZ0QUdGAkfWejCUvOwBxHiSBiMAuMD6UEXcZnyXmCWRgTxnF3krD52tkPVJV0x/gntMoiKMWsXVbVKXKZ9tq/m2XTiIFt8Q+aCxBiA7uPanNe87bcbQXGSiU/t9VBQRx8pDwLyOL/XVKoTQwiyhrWykR4Wsa0Mf6uiJJSVw8CswDAY9pyCtke2pObZnj6bAuskdNN0ylriJz7vHN9jgzz4bQ7uh617eHv+7S+vonJpFhACXSU3Aw54rKjYKul1CH1NF/xG/x84b/PW41F49yAPN9rVMMVewZyDSocYWHXYXbzlQCg1SnyHrE/lrjCTI8ePzkTTNIboy4PYF2ODgULAEb2CX2p9KR5fxlhmgowKWAte8qVAypAh6x35ldY4Kfc6mWqAi9hXMMpjEUOD+7fjHf5q36dKRhEShlyp+3K7K4kZCFbjYQtw7dbDbEZFD0dKNKXT73VZ7m7498Wc1JjdF+DYzwjMPe1R+BBQKQB/gcVmgkIskM6MbnM4vmZuJ8VQ2bQekgafoUnhI6YSds8PbArud0/4IDUAH2xxj21XrkSMYUwignEeLurGQ9ZVLca26tqQuJJXsI/+o70sBZ4y+dQS6c+PuyLTZRqByU6ju9n0W5IVrNXTI+wbBFchJLfvxqNsyAnX58KqucZoG7FRSqlYXdFnsRlqfySq6sJNG//Rl8nj1NSBsmcOWyl5P/JMw0Wf9yxE3Zejid1jRD5e/zcizUE0IGC4ZyQL1O6M3sUfQVNtI3Fq1Fmvpd/UhV+1m4BNmzSD4Lb7Vwm4uRhwHnjP5oc2Eq8C+8/A2P+",
+            "tQxQ8BJ4EkC/EEsrultIHkFBNw/Z0w24vYArR4CAXk3C3VAi6ajA1rsHyVFDTb/SCpmSdy/uxqnriKfcAO8WxZ5hlJGOL/C2pG+2eqyqTHNldlhVzPs0BnNHBWcBzmhwFFAyvmh+Vig2Z7dRqg+cdbU1Pclp7s9r9vFq84F4EGSi2hOzBgQKo+Ym6naHg+HtkP71F/S9Pa721GV+CBtpnOTxrSDz4PdjvnPsRoWbkBVf7NOTcGfhnmvPN9VJFpTFsECUJxX7fmOo2wUZHpFmVoJsw/GVA0p8PGuB/f/r1Gu8sHRZCvC7Jo4dY2ZLmhXXaZ6lVEDfq2rqE3JuydKqYjpHP9inCVdk8hdLB6koyWTX/yg8zpKVFs6bejFvP8U0oHxpoFN/PN9UPUgbtY5PzASuSt5sMGu1MsmzZdpsylo69nyC6qBMk1TLCQ4HKCBxn59QU464nQlZlNSl3Wv6qMiLyZ1GtUf9OhJ2TL5dvyhDTnlXonJZAJJW59B7d5hLeJq55Qf/3z29IV1EE4/7fj5VgC3qRfqVvbqYhapK6NOntiuFADYBkddwYlyvzcMSEB/QnOsIAWjDX/YR1FMISQd43UWqpQfpPAi4zMQ7JLRxMw7+sL7MfA9YOfz8IxEih6msDJZoedg4hW68MlrVBv6HarGXrBswll9GK+vLSc/hBvh74HacgCDFhnFNCrzQSM9wNk0X/GLE3fNbdWvD6yEhCRtUtNRi60fSmuIyACRzs5n3XpVacx+RE3cx0e3nMcMkLkw7RPpELw+2zoPLgMQ67W0YNooODSwPUpb6GU/13ShRo4fQD2X7wo732x4HkzEvqcRIU8HhLh9bmGvD/qm/yvp3LYVXfy76PJnCbQHow6lQaUiav9syHVW6it+4EfKr",
+            "mRTLpw5wj0BKJQInjvXQkJ4W/rrqO07+sj50uihEP/SUTNRS+ZQXIku6J5Luv+AAXRtUZGxECOsgEk/tJAwFxcgAiyD6AwQnGp9UgwjrkPoAWaWnwxmS2BJPhZNDuqHhXUUIH2cbptXsoJQPjs9ul0pc0zGM5xgLyErGuL+S71C/xVBW4j3CwgGKi+FkBsw1/MwPYHUDw2AQLU/zwg1MWKbfF4vS0h4VHTN6N2oOLe6zDbc+NaCeYz4Jcumx/nvMhoVg8wP7+qkq7CqCJkJUN8YSyGSz6FOqA8QjsUdhBQgecPee6jqGQxABDqu1htvf+K7+/i+sRbc41CUaJBPZ/sAGHSotWfBWCGDBqmAKh4KhJgxj9rqz1OuzBu7x636jCjCMEs40bB1iCbJWhB0hCNyyWwXdIDoP/soglHjWHhzIIch/DH2VNsNKi2UM9Has/Q+PvICp29L/1YBf1+aS2TiuuwtT3cTBfVnZhVINPLiInv3GRmQsuV6yxp4HVt8xaDVc6/fc/houu6Lt2iUAqVfkpLAcNvfUnyI4/fs5kynuJJoxMsSqk/Kz/BDV9DxXnj+P2kBC8mphIcqZWgBuZuGlSDJeSCEll8mjj6Q0JXE56Q6NMSX8SPsrXC0biG/4yR80SQFdM+PWpHdeqdpvI14sfD+MHX/AT6o9Xwh8njVec81y3R9M3TWRYqXvAPHos/zQpBm8uEyKAgjD5HIkF1FYs0rW7O01al8tDITHkZgB0pOj+pFakBkzC/DxcimfiRzsADwvanBGlDT1xsjh21v2+a4rvcLAofnUB2V6dPrUFaDeLd2B+qGgddYmGilf8ZGReFDZiyuZXO5dmldf9bSYEHjMdIezHcrMIIdKeyVzYFKBdqlQTsk2ZjOo8GwQ9fb4",
+            "oWBwe6rzVsu6tkzykMltEd29eUwi4GqHeXcIXcQ/PlCto6m3JXYTKh98rB7SVPnstMts87yi05F6uC18HwJjnQSkUKeL2hGYdyfeb2G9wifrPvsg3uzJ9TvQDZ4welWT+3OqvFCPEUIT3wsx2IoTa7x7egW4lLeMbtBDhywv6tbsxTPAxEPlPmicOBViakAm7JcxSIot14/pCiQumqyDR7DAQIlV3pg0KsKHtmga5otzD0pweStUYdR5/aWfxO0Nku9r8SxL146iTCHrHP2lWarfarsz8LhHuA+vKl12i04KJh4jDx+FOjuvfaVqzyW+0hEIn3uNSA8O/5Q+mwmJj9wdOJstQRuYZbAdRNR9P9QNuNt5GjTt4NxquTKE0E5gt3QuH0jWhdUKkQCkdAISxOy1VbnSarTH8GuqL0fHtH/SBwW9JJ8DHvjnWGHUNweitK9CC5AiahLgRVQKZsdSGxUVlDyOTQAEHnbPpSDyFva7d5nqbOzXVaCJSAGNhotQa2qXGWp/cTxaPQAaBaPZEeyI9n6mI4rgD9EAAA=="
+        ].join("");
+
+        const hero = document.querySelector(".hero-bg");
+
+        if (hero) {
+            hero.style.backgroundImage =
+                'url("data:image/webp;base64,' + embeddedHeroImage + '")';
+        }
+    })();
+</script>
+
+<script src="script.js"></script>
+
+<script>
+    document.querySelectorAll('.year').forEach(function (element) {
+        if (!element.textContent.trim()) {
+            element.textContent = new Date().getFullYear();
+        }
+    });
+</script>
+
 </body>
 </html>

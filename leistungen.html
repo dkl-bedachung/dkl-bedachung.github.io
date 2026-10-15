@@ -6,23 +6,147 @@
 <title>Leistungen | DLZ-Bedachungen Hamburg</title>
 <meta name="description" content="Entdecke die Leistungen von DLZ-Bedachungen: Dacharbeiten, Abdichtung, Solararbeiten, Montage, Sanierung und Dachinspektion mit Drohne in Hamburg und Umgebung.">
 <meta name="theme-color" content="#120d09">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
+
+<style>
+/* Hero-Bild im Stil der Startseite */
+
+.page-hero {
+  position: relative;
+  min-height: 490px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 7, 6, .94) 0%,
+      rgba(8, 7, 6, .76) 45%,
+      rgba(8, 7, 6, .25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      #090807 0%,
+      transparent 45%
+    ),
+    url("dlz-hero.png") center 45% / cover no-repeat;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  padding-bottom: 65px;
+}
+
+.page-hero h1 {
+  max-width: 750px;
+}
+
+.page-hero > .container > p:last-child {
+  max-width: 650px;
+}
+
+/* Leistungskacheln ohne Bilder */
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.service-card > img {
+  display: none !important;
+}
+
+.service-card-content {
+  flex: 1;
+  min-height: 220px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: linear-gradient(145deg, #201711, #100e0c);
+  border: 1px solid rgba(199, 123, 60, .35);
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.service-card:hover .service-card-content {
+  border-color: #e0a064;
+}
+
+.service-card-content h3 {
+  margin-bottom: 12px;
+}
+
+.service-card-content p {
+  flex: 1;
+}
+
+.service-card-content .card-link {
+  margin-top: 22px;
+  color: #e0a064;
+}
+
+/* Mobile Darstellung */
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 440px;
+    background-position: 60% center;
+  }
+
+  .page-hero .container {
+    padding-top: 90px;
+    padding-bottom: 45px;
+  }
+
+  .service-card-content {
+    min-height: 200px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card-content {
+    min-height: 190px;
+    padding: 17px;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <header class="site-header">
 <div class="container header-inner">
-<a class="brand" href="index.html"><span class="brand-main">DLZ<span class="brand-dot">.</span></span><span class="brand-sub">BEDACHUNGEN</span></a>
-<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+
+<a class="brand" href="index.html">
+<span class="brand-main">DLZ<span class="brand-dot">.</span></span>
+<span class="brand-sub">BEDACHUNGEN</span>
+</a>
+
+<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav">
+<span></span><span></span><span></span>
+</button>
+
 <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
-<a href="index.html">Startseite</a><a href="ueber-uns.html">Über uns</a><a href="leistungen.html" aria-current="page">Leistungen</a><a href="projekte.html">Projekte</a><a href="social-media.html">Social Media</a><a href="kontakt.html" class="nav-cta">Kontakt ↗</a>
+<a href="index.html">Startseite</a>
+<a href="ueber-uns.html">Über uns</a>
+<a href="leistungen.html" aria-current="page">Leistungen</a>
+<a href="projekte.html">Projekte</a>
+<a href="social-media.html">Social Media</a>
+<a href="kontakt.html" class="nav-cta">Kontakt ↗</a>
 </nav>
+
 </div>
 </header>
 
@@ -30,14 +154,18 @@
 
 <section class="page-hero">
 <div class="container">
+
 <p class="eyebrow">LEISTUNGEN · DLZ-BEDACHUNGEN</p>
+
 <h1>Arbeiten rund<br>ums <em>Dach.</em></h1>
+
 <p>
 Von Dacharbeiten über Abdichtungen bis hin zu Sanierung und Inspektion:
 Jedes Gebäude stellt eigene Anforderungen. Wir besprechen mit dir,
 welche Arbeiten für dein Vorhaben infrage kommen und welche Punkte
 vor der Ausführung geklärt werden sollten.
 </p>
+
 </div>
 </section>
 
@@ -46,40 +174,66 @@ vor der Ausführung geklärt werden sollten.
 
 <div class="section-heading">
 <p class="eyebrow">UNSERE LEISTUNGSBEREICHE</p>
+
 <h2>Die passende Richtung<br>für dein <em>Vorhaben.</em></h2>
+
 <p>Wähle den Bereich, der zu deinem Anliegen passt, und erfahre mehr über die einzelnen Arbeiten.</p>
 </div>
 
 <div class="service-grid">
 
 <a class="service-card" href="dacharbeiten.html">
-<img src="https://images.unsplash.com/photo-1635424710928-9c8b4c6f4f5f?auto=format&fit=crop&w=1000&q=85" alt="Dachfläche und Dachkonstruktion" loading="lazy">
-<div class="service-card-content"><span class="service-index">01 / DACH</span><h3>Dacharbeiten</h3><p>Flachdach, Steildach und Schieferarbeiten – abgestimmt auf das Gebäude und den Zustand der Dachfläche.</p><span class="card-link">Details ansehen ↗</span></div>
+<div class="service-card-content">
+<span class="service-index">01 / DACH</span>
+<h3>Dacharbeiten</h3>
+<p>Flachdach, Steildach und Schieferarbeiten – abgestimmt auf das Gebäude und den Zustand der Dachfläche.</p>
+<span class="card-link">Details ansehen ↗</span>
+</div>
 </a>
 
 <a class="service-card" href="abdichtung.html">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85" alt="Handwerkliche Arbeiten auf einer Baustelle" loading="lazy">
-<div class="service-card-content"><span class="service-index">02 / ABDICHTUNG</span><h3>Abdichtung</h3><p>Dachabdichtung und Flüssigkunststoff für geeignete Flächen, Anschlüsse und Detailbereiche.</p><span class="card-link">Details ansehen ↗</span></div>
+<div class="service-card-content">
+<span class="service-index">02 / ABDICHTUNG</span>
+<h3>Abdichtung</h3>
+<p>Dachabdichtung und Flüssigkunststoff für geeignete Flächen, Anschlüsse und Detailbereiche.</p>
+<span class="card-link">Details ansehen ↗</span>
+</div>
 </a>
 
 <a class="service-card" href="solararbeiten.html">
-<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=85" alt="Solarmodule auf einer Dachfläche" loading="lazy">
-<div class="service-card-content"><span class="service-index">03 / SOLAR</span><h3>Solararbeiten</h3><p>Abstimmung rund um Dachflächen und Solarvorhaben, bei denen Zustand, Befestigung und Anschlüsse wichtig sind.</p><span class="card-link">Details ansehen ↗</span></div>
+<div class="service-card-content">
+<span class="service-index">03 / SOLAR</span>
+<h3>Solararbeiten</h3>
+<p>Abstimmung rund um Dachflächen und Solarvorhaben, bei denen Zustand, Befestigung und Anschlüsse wichtig sind.</p>
+<span class="card-link">Details ansehen ↗</span>
+</div>
 </a>
 
 <a class="service-card" href="montage-kernbohrung.html">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85" alt="Handwerkliche Montagearbeiten" loading="lazy">
-<div class="service-card-content"><span class="service-index">04 / MONTAGE</span><h3>Montage & Kernbohrung</h3><p>Montagearbeiten und abgestimmte Durchführungen, bei denen Lage, Untergrund und Anschlüsse berücksichtigt werden.</p><span class="card-link">Details ansehen ↗</span></div>
+<div class="service-card-content">
+<span class="service-index">04 / MONTAGE</span>
+<h3>Montage & Kernbohrung</h3>
+<p>Montagearbeiten und abgestimmte Durchführungen, bei denen Lage, Untergrund und Anschlüsse berücksichtigt werden.</p>
+<span class="card-link">Details ansehen ↗</span>
+</div>
 </a>
 
 <a class="service-card" href="sanierung-reinigung.html">
-<img src="https://images.unsplash.com/photo-1635424710928-9c8b4c6f4f5f?auto=format&fit=crop&w=1000&q=85" alt="Dach eines Gebäudes" loading="lazy">
-<div class="service-card-content"><span class="service-index">05 / ERHALT</span><h3>Sanierung & Reinigung</h3><p>Arbeiten zur Instandsetzung und Pflege, passend zum Zustand und zur Art der jeweiligen Dachfläche.</p><span class="card-link">Details ansehen ↗</span></div>
+<div class="service-card-content">
+<span class="service-index">05 / ERHALT</span>
+<h3>Sanierung & Reinigung</h3>
+<p>Arbeiten zur Instandsetzung und Pflege, passend zum Zustand und zur Art der jeweiligen Dachfläche.</p>
+<span class="card-link">Details ansehen ↗</span>
+</div>
 </a>
 
 <a class="service-card" href="dachinspektion-drohne.html">
-<img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1000&q=85" alt="Drohne für Luftaufnahmen" loading="lazy">
-<div class="service-card-content"><span class="service-index">06 / INSPEKTION</span><h3>Dachinspektion mit Drohne</h3><p>Visuelle Aufnahmen zur ersten Einschätzung von Dachflächen und schwer zugänglichen Bereichen.</p><span class="card-link">Details ansehen ↗</span></div>
+<div class="service-card-content">
+<span class="service-index">06 / INSPEKTION</span>
+<h3>Dachinspektion mit Drohne</h3>
+<p>Visuelle Aufnahmen zur ersten Einschätzung von Dachflächen und schwer zugänglichen Bereichen.</p>
+<span class="card-link">Details ansehen ↗</span>
+</div>
 </a>
 
 </div>
@@ -88,8 +242,15 @@ vor der Ausführung geklärt werden sollten.
 
 <section class="contact-band">
 <div class="container contact-band-inner">
-<div><p class="eyebrow">NICHT SICHER, WAS DU BRAUCHST?</p><h2>Beschreibe uns dein Anliegen.</h2><p>Wir stimmen gemeinsam ab, welcher Bereich für dein Projekt relevant ist.</p></div>
+
+<div>
+<p class="eyebrow">NICHT SICHER, WAS DU BRAUCHST?</p>
+<h2>Beschreibe uns dein Anliegen.</h2>
+<p>Wir stimmen gemeinsam ab, welcher Bereich für dein Projekt relevant ist.</p>
+</div>
+
 <a class="btn btn-copper" href="kontakt.html">Kontakt aufnehmen ↗</a>
+
 </div>
 </section>
 
@@ -97,13 +258,43 @@ vor der Ausführung geklärt werden sollten.
 
 <footer class="site-footer">
 <div class="container footer-main">
-<div class="footer-brand"><a class="brand" href="index.html"><span class="brand-main">DLZ<span class="brand-dot">.</span></span><span class="brand-sub">BEDACHUNGEN</span></a><p>Qualität, die oben bleibt.</p></div>
-<div class="footer-column"><h3>Navigation</h3><a href="index.html">Startseite</a><a href="ueber-uns.html">Über uns</a><a href="projekte.html">Projekte</a></div>
-<div class="footer-column"><h3>Kontakt</h3><a href="tel:+4917642716629">+49 176 42716629</a><a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a></div>
-<div class="footer-column"><h3>Rechtliches</h3><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+
+<div class="footer-brand">
+<a class="brand" href="index.html">
+<span class="brand-main">DLZ<span class="brand-dot">.</span></span>
+<span class="brand-sub">BEDACHUNGEN</span>
+</a>
+<p>Qualität, die oben bleibt.</p>
 </div>
-<div class="container footer-bottom"><span>© <span data-year></span> DLZ-Bedachungen</span><span>Hamburg & Umgebung</span></div>
+
+<div class="footer-column">
+<h3>Navigation</h3>
+<a href="index.html">Startseite</a>
+<a href="ueber-uns.html">Über uns</a>
+<a href="projekte.html">Projekte</a>
+</div>
+
+<div class="footer-column">
+<h3>Kontakt</h3>
+<a href="tel:+4917642716629">+49 176 42716629</a>
+<a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a>
+</div>
+
+<div class="footer-column">
+<h3>Rechtliches</h3>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
+
+</div>
+
+<div class="container footer-bottom">
+<span>© <span data-year></span> DLZ-Bedachungen</span>
+<span>Hamburg & Umgebung</span>
+</div>
 </footer>
+
 <a class="floating-contact" href="https://wa.me/4917642716629" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+
 </body>
 </html>

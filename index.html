@@ -1,936 +1,598 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DLZ-Bedachungen | Qualität, die oben bleibt.</title>
-<meta name="description" content="DLZ-Bedachungen aus Hamburg. Dacharbeiten, Abdichtung, Sanierung und Montage in Hamburg und bis zu 50 km Umgebung. Persönlich, zuverlässig und transparent.">
-<meta name="theme-color" content="#17100b">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
-
-<style>
-/* =====================================================
-   DLZ-BEDACHUNGEN – STARTSEITE IM FLYER-STIL
-   Schwarz · Hellkupfer · klare Typografie
-   ===================================================== */
-
-:root {
-    --dlz-black: #100d0a;
-    --dlz-dark: #19130f;
-    --dlz-panel: #211811;
-    --dlz-copper: #d99a62;
-    --dlz-copper-light: #f0bd8b;
-    --dlz-white: #f8f5f0;
-    --dlz-muted: #b9aea4;
-    --dlz-line: rgba(217,154,98,.28);
-}
-
-body {
-    background: var(--dlz-black);
-    color: var(--dlz-white);
-    font-family: 'Inter', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body a {
-    transition: color .25s ease, background .25s ease,
-                border-color .25s ease, transform .25s ease;
-}
-
-body .brand-dot {
-    color: var(--dlz-copper-light);
-}
-
-body .brand-sub {
-    letter-spacing: .22em;
-}
-
-body .site-header {
-    background: rgba(16,13,10,.91);
-    border-bottom: 1px solid rgba(217,154,98,.16);
-    backdrop-filter: blur(16px);
-}
-
-body .main-nav a:hover,
-body .main-nav a[aria-current="page"] {
-    color: var(--dlz-copper-light);
-}
-
-body .main-nav .nav-cta {
-    background: var(--dlz-copper);
-    color: var(--dlz-black);
-    border: 1px solid var(--dlz-copper);
-    border-radius: 4px;
-    font-weight: 800;
-}
-
-body .main-nav .nav-cta:hover {
-    background: var(--dlz-copper-light);
-    color: var(--dlz-black);
-}
-
-/* HERO */
-
-.dlz-hero {
-    min-height: min(850px, 100svh);
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    isolation: isolate;
-    background:
-        linear-gradient(90deg,
-            rgba(13,10,8,.97) 0%,
-            rgba(13,10,8,.89) 34%,
-            rgba(13,10,8,.48) 68%,
-            rgba(13,10,8,.25) 100%),
-        linear-gradient(0deg,
-            rgba(13,10,8,.82) 0%,
-            transparent 40%),
-        url("dlz-hero.png") center center / cover no-repeat,
-        var(--dlz-dark);
-}
-
-.dlz-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background:
-        radial-gradient(ellipse at 75% 40%,
-            rgba(217,154,98,.12),
-            transparent 42%);
-}
-
-.dlz-hero::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--dlz-copper),
-        transparent
-    );
-    opacity: .8;
-}
-
-.dlz-hero-inner {
-    width: min(1180px, calc(100% - 48px));
-    margin: 0 auto;
-    padding: 150px 0 105px;
-    position: relative;
-    z-index: 1;
-}
-
-.dlz-logo-line {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin-bottom: 31px;
-    color: var(--dlz-copper-light);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: .25em;
-    text-transform: uppercase;
-}
-
-.dlz-logo-line::before {
-    content: "";
-    width: 38px;
-    height: 2px;
-    background: var(--dlz-copper);
-}
-
-.dlz-hero h1 {
-    max-width: 850px;
-    margin: 0;
-    font-family: 'Manrope', sans-serif;
-    font-size: clamp(42px, 6.2vw, 82px);
-    line-height: 1.04;
-    letter-spacing: -.055em;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.dlz-hero h1 span {
-    color: var(--dlz-copper-light);
-    display: block;
-}
-
-.dlz-hero-description {
-    max-width: 570px;
-    margin: 26px 0 0;
-    color: #eee6df;
-    font-size: clamp(16px, 1.6vw, 19px);
-    line-height: 1.8;
-}
-
-.dlz-hero-description strong {
-    color: var(--dlz-copper-light);
-    font-weight: 700;
-}
-
-.dlz-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-    margin-top: 35px;
-}
-
-.dlz-button {
-    min-height: 52px;
-    padding: 0 23px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    border: 1px solid var(--dlz-copper);
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: .025em;
-}
-
-.dlz-button-primary {
-    background: var(--dlz-copper);
-    color: var(--dlz-black);
-}
-
-.dlz-button-primary:hover {
-    background: var(--dlz-copper-light);
-    border-color: var(--dlz-copper-light);
-    color: var(--dlz-black);
-    transform: translateY(-2px);
-}
-
-.dlz-button-secondary {
-    background: rgba(16,13,10,.35);
-    color: var(--dlz-white);
-    border-color: rgba(248,245,240,.48);
-}
-
-.dlz-button-secondary:hover {
-    color: var(--dlz-copper-light);
-    border-color: var(--dlz-copper);
-    transform: translateY(-2px);
-}
-
-.dlz-hero-bottom {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 17px;
-    margin-top: 58px;
-    color: #d4c6ba;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-}
-
-.dlz-hero-bottom .divider {
-    width: 27px;
-    height: 1px;
-    background: var(--dlz-copper);
-}
-
-/* KURZER EINSTIEG */
-
-.dlz-intro {
-    padding: 105px 0;
-    background:
-        radial-gradient(ellipse at 0% 0%,
-            rgba(217,154,98,.07),
-            transparent 42%),
-        var(--dlz-black);
-}
-
-.dlz-container {
-    width: min(1180px, calc(100% - 48px));
-    margin: 0 auto;
-}
-
-.dlz-section-label {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin: 0 0 20px;
-    color: var(--dlz-copper-light);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-}
-
-.dlz-section-label::before {
-    content: "";
-    width: 28px;
-    height: 1px;
-    background: var(--dlz-copper);
-}
-
-.dlz-intro-grid {
-    display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    gap: 80px;
-    align-items: start;
-}
-
-.dlz-intro h2,
-.dlz-services h2,
-.dlz-values h2,
-.dlz-contact h2 {
-    margin: 0;
-    font-family: 'Manrope', sans-serif;
-    font-size: clamp(30px, 4vw, 49px);
-    line-height: 1.15;
-    letter-spacing: -.045em;
-    font-weight: 800;
-}
-
-.dlz-intro h2 em,
-.dlz-services h2 em,
-.dlz-values h2 em,
-.dlz-contact h2 em {
-    color: var(--dlz-copper-light);
-    font-style: normal;
-}
-
-.dlz-intro-copy p {
-    color: var(--dlz-muted);
-    font-size: 15px;
-    line-height: 1.9;
-    margin: 0 0 18px;
-}
-
-.dlz-text-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 13px;
-    margin-top: 8px;
-    color: var(--dlz-copper-light);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 800;
-}
-
-.dlz-text-link:hover {
-    color: var(--dlz-white);
-    gap: 18px;
-}
-
-/* LEISTUNGEN */
-
-.dlz-services {
-    padding: 100px 0 110px;
-    background: #19130f;
-    border-top: 1px solid rgba(217,154,98,.13);
-    border-bottom: 1px solid rgba(217,154,98,.13);
-}
-
-.dlz-services-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 35px;
-    margin-bottom: 42px;
-}
-
-.dlz-services-heading > p {
-    max-width: 360px;
-    margin: 0 0 5px;
-    color: var(--dlz-muted);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.dlz-service-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
-}
-
-.dlz-service-card {
-    min-height: 220px;
-    position: relative;
-    padding: 27px 23px;
-    overflow: hidden;
-    border: 1px solid var(--dlz-line);
-    background: linear-gradient(145deg, #251b14, #17110d);
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.dlz-service-card::before {
-    content: "";
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    right: -65px;
-    top: -65px;
-    border: 1px solid rgba(217,154,98,.22);
-    transform: rotate(45deg);
-}
-
-.dlz-service-card:hover {
-    border-color: var(--dlz-copper);
-    background: linear-gradient(145deg, #302117, #1c140e);
-    transform: translateY(-4px);
-}
-
-.dlz-service-number {
-    color: var(--dlz-copper);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .16em;
-}
-
-.dlz-service-card h3 {
-    margin: 28px 0 9px;
-    color: var(--dlz-white);
-    font-family: 'Manrope', sans-serif;
-    font-size: 20px;
-    line-height: 1.25;
-    font-weight: 800;
-}
-
-.dlz-service-card p {
-    margin: 0;
-    color: var(--dlz-muted);
-    font-size: 13px;
-    line-height: 1.7;
-}
-
-.dlz-service-arrow {
-    position: absolute;
-    right: 22px;
-    bottom: 22px;
-    color: var(--dlz-copper-light);
-    font-size: 20px;
-}
-
-/* VERTRAUEN */
-
-.dlz-values {
-    padding: 100px 0;
-    background: var(--dlz-black);
-}
-
-.dlz-values-heading {
-    max-width: 680px;
-    margin-bottom: 42px;
-}
-
-.dlz-values-heading > p:last-child {
-    max-width: 520px;
-    color: var(--dlz-muted);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.dlz-values-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    border-top: 1px solid var(--dlz-line);
-    border-bottom: 1px solid var(--dlz-line);
-}
-
-.dlz-value {
-    padding: 30px 27px 31px 0;
-}
-
-.dlz-value + .dlz-value {
-    border-left: 1px solid var(--dlz-line);
-    padding-left: 27px;
-}
-
-.dlz-value-number {
-    color: var(--dlz-copper);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: .14em;
-}
-
-.dlz-value h3 {
-    margin: 20px 0 11px;
-    color: var(--dlz-white);
-    font-family: 'Manrope', sans-serif;
-    font-size: 19px;
-    font-weight: 800;
-}
-
-.dlz-value p {
-    margin: 0;
-    color: var(--dlz-muted);
-    font-size: 13px;
-    line-height: 1.85;
-}
-
-/* KONTAKTABSCHLUSS */
-
-.dlz-contact {
-    padding: 78px 0;
-    background:
-        linear-gradient(100deg,
-            rgba(217,154,98,.11),
-            rgba(217,154,98,.025) 65%),
-        #1b140f;
-    border-top: 1px solid var(--dlz-line);
-    border-bottom: 1px solid var(--dlz-line);
-}
-
-.dlz-contact-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 35px;
-}
-
-.dlz-contact h2 {
-    font-size: clamp(29px, 3.5vw, 43px);
-}
-
-.dlz-contact-inner > div > p:last-child {
-    margin: 14px 0 0;
-    color: var(--dlz-muted);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* FOOTER */
-
-body .site-footer {
-    background: #100d0a;
-    border-top: 1px solid rgba(217,154,98,.2);
-}
-
-body .site-footer a:hover {
-    color: var(--dlz-copper-light);
-}
-
-body .footer-column h3 {
-    color: var(--dlz-copper-light);
-}
-
-body .floating-contact {
-    background: var(--dlz-copper);
-    color: var(--dlz-black);
-    border: 1px solid var(--dlz-copper-light);
-    border-radius: 4px;
-    font-weight: 800;
-}
-
-body .floating-contact:hover {
-    background: var(--dlz-copper-light);
-    transform: translateY(-2px);
-}
-
-/* MOBILE */
-
-@media (max-width: 900px) {
-    .dlz-intro-grid {
-        grid-template-columns: 1fr;
-        gap: 27px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DLZ Bedachungen | Qualität, die oben bleibt.</title>
+  <meta name="description" content="DLZ Bedachungen – Dacharbeiten in Hamburg und Umgebung.">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --black: #090909;
+      --dark: #17120f;
+      --copper: #c77b3c;
+      --copper-light: #e5a66d;
+      --white: #f5f1eb;
+      --gray: #b8b0a7;
     }
 
-    .dlz-services-heading {
-        display: block;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .dlz-services-heading > p {
-        margin-top: 18px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .dlz-service-grid {
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Navigation */
+
+    .topbar {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 22px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      background: linear-gradient(#090909d9, transparent);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--copper-light);
+    }
+
+    .logo small {
+      display: block;
+      margin-top: 4px;
+      color: var(--gray);
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .nav a {
+      transition: color .2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--copper-light);
+    }
+
+    .nav .nav-contact {
+      padding: 11px 17px;
+      border: 1px solid var(--copper);
+      color: var(--copper-light);
+    }
+
+    /* Hero-Bild */
+
+    .hero {
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      padding: 155px 8% 100px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 6, 5, .94) 0%,
+          rgba(7, 6, 5, .75) 42%,
+          rgba(7, 6, 5, .15) 100%
+        ),
+        linear-gradient(
+          0deg,
+          var(--black) 0%,
+          transparent 35%
+        ),
+        url("dlz-hero.png") center 45% / cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--copper-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(43px, 6.5vw, 78px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--copper-light);
+    }
+
+    .hero-subtitle {
+      margin-top: 22px;
+      color: var(--gray);
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 21px;
+      border: 1px solid var(--copper);
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--copper);
+      color: #100b07;
+    }
+
+    .btn:hover {
+      background: var(--copper-light);
+      border-color: var(--copper-light);
+      color: #100b07;
+    }
+
+    /* Leistungen */
+
+    .services {
+      padding: 50px 6% 65px;
+      background: var(--black);
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(26px, 3vw, 36px);
+    }
+
+    .section-heading span {
+      color: var(--copper-light);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 13px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      min-height: 135px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 15px;
+      border: 1px solid #755034;
+      background: linear-gradient(145deg, #211812, #100e0c);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--copper-light);
+    }
+
+    .service-card h3 {
+      margin-bottom: 9px;
+      color: var(--copper-light);
+      font-size: 15px;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .service-more {
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    /* Kontakt */
+
+    .contact {
+      padding: 65px 6%;
+      background: var(--dark);
+      border-top: 1px solid #38271b;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact h2 {
+      margin-bottom: 24px;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .contact h2 span {
+      color: var(--copper-light);
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 17px;
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .contact-details strong {
+      color: var(--copper-light);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #514033;
+      border-radius: 0;
+      outline: none;
+      background: #0c0b0a;
+      color: var(--white);
+      font: inherit;
+      font-size: 14px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--copper);
+    }
+
+    .contact-form textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      padding: 15px;
+      border: 0;
+      background: var(--copper);
+      color: #100b07;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+
+    .contact-form button:hover {
+      background: var(--copper-light);
+    }
+
+    /* Footer */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 24px 6%;
+      border-top: 1px solid #30251c;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a:hover {
+      color: var(--copper-light);
+    }
+
+    /* Handy */
+
+    @media (max-width: 900px) {
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .nav {
+        gap: 12px;
+      }
+
+      .service-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .dlz-contact-inner {
+    @media (max-width: 600px) {
+      .topbar {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        gap: 11px 15px;
+        font-size: 12px;
+      }
+
+      .nav .nav-contact {
+        padding: 7px 10px;
+      }
+
+      .hero {
+        min-height: 650px;
+        padding: 200px 6% 75px;
+        background-position: 60% center;
+      }
+
+      h1 {
+        font-size: clamp(42px, 11vw, 62px);
+        letter-spacing: -1px;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+      }
+
+      .services,
+      .contact {
+        padding: 45px 5%;
+      }
+
+      .service-grid {
+        gap: 10px;
+      }
+
+      .service-card {
+        min-height: 120px;
+        padding: 15px 12px;
+      }
+
+      .service-card h3 {
+        font-size: 14px;
+      }
+
+      .service-card p {
+        font-size: 11px;
+      }
+
+      footer {
         align-items: flex-start;
         flex-direction: column;
+      }
     }
-}
-
-@media (max-width: 600px) {
-    .dlz-hero {
-        min-height: 760px;
-        min-height: min(800px, 100svh);
-        background:
-            linear-gradient(90deg,
-                rgba(13,10,8,.91),
-                rgba(13,10,8,.68)),
-            linear-gradient(0deg,
-                rgba(13,10,8,.78),
-                transparent 65%),
-            url("dlz-hero.png") 58% center / cover no-repeat,
-            var(--dlz-dark);
-    }
-
-    .dlz-hero-inner,
-    .dlz-container {
-        width: min(100% - 36px, 1180px);
-    }
-
-    .dlz-hero-inner {
-        padding: 125px 0 75px;
-    }
-
-    .dlz-logo-line {
-        font-size: 10px;
-        letter-spacing: .16em;
-        margin-bottom: 24px;
-    }
-
-    .dlz-hero h1 {
-        font-size: clamp(38px, 11vw, 58px);
-    }
-
-    .dlz-hero-description {
-        font-size: 15px;
-        line-height: 1.75;
-    }
-
-    .dlz-hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-        max-width: 330px;
-    }
-
-    .dlz-button {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .dlz-hero-bottom {
-        gap: 10px;
-        margin-top: 37px;
-        font-size: 9px;
-        letter-spacing: .07em;
-    }
-
-    .dlz-hero-bottom .divider {
-        width: 18px;
-    }
-
-    .dlz-intro,
-    .dlz-services,
-    .dlz-values {
-        padding: 72px 0;
-    }
-
-    .dlz-service-grid {
-        grid-template-columns: 1fr;
-        gap: 11px;
-    }
-
-    .dlz-service-card {
-        min-height: 175px;
-        padding: 23px;
-    }
-
-    .dlz-service-card h3 {
-        margin-top: 20px;
-    }
-
-    .dlz-values-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .dlz-value,
-    .dlz-value + .dlz-value {
-        padding: 25px 0;
-        border-left: 0;
-    }
-
-    .dlz-value + .dlz-value {
-        border-top: 1px solid var(--dlz-line);
-    }
-
-    .dlz-contact {
-        padding: 60px 0;
-    }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      DLZ<span>.</span>
+      <small>BEDACHUNGEN</small>
+    </a>
 
-<header class="site-header">
-<div class="container header-inner">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="projekte.html">Projekte</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="#kontakt" class="nav-contact">Kontakt</a>
+    </nav>
+  </header>
 
-<a class="brand" href="index.html" aria-label="DLZ-Bedachungen Startseite">
-<span class="brand-main">DLZ<span class="brand-dot">.</span></span>
-<span class="brand-sub">BEDACHUNGEN</span>
-</a>
+  <main>
 
-<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav">
-<span></span><span></span><span></span>
-</button>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">DLZ Bedachungen · Hamburg</p>
 
-<nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
-<a href="index.html" aria-current="page">Startseite</a>
-<a href="ueber-uns.html">Über uns</a>
-<a href="leistungen.html">Leistungen</a>
-<a href="projekte.html">Projekte</a>
-<a href="social-media.html">Social Media</a>
-<a href="kontakt.html" class="nav-cta">Kontakt <span>↗</span></a>
-</nav>
+        <h1>
+          Qualität, die<br>
+          <span>oben bleibt.</span>
+        </h1>
 
-</div>
-</header>
+        <p class="hero-subtitle">
+          Dacharbeiten in Hamburg & Umgebung
+        </p>
 
-<main id="main">
+        <div class="hero-buttons">
+          <a href="leistungen.html" class="btn btn-primary">
+            Unsere Leistungen
+          </a>
 
-<!-- HERO: KLARE BOTSCHAFT WIE AUF DEM FLYER -->
+          <a href="#kontakt" class="btn">
+            Kontakt aufnehmen
+          </a>
+        </div>
+      </div>
+    </section>
 
-<section class="dlz-hero">
-<div class="dlz-hero-inner">
+    <section class="services" id="leistungen">
+      <div class="section-heading">
+        <h2>Unsere <span>Leistungen</span></h2>
+      </div>
 
-<p class="dlz-logo-line">DLZ-Bedachungen · Hamburg</p>
+      <div class="service-grid">
 
-<h1>
-Dacharbeiten in<br>
-<span>Hamburg &amp; Umgebung.</span>
-</h1>
+        <a class="service-card" href="leistungen.html">
+          <h3>Dacharbeiten</h3>
+          <p>Flach- & Steildach</p>
+        </a>
 
-<p class="dlz-hero-description">
-Moderne Dacharbeiten aus Hamburg – <strong>zuverlässig, sauber und persönlich.</strong>
-Für Privatkunden, Gewerbe und Immobilien.
-</p>
+        <a class="service-card" href="leistungen.html">
+          <h3>Abdichtung</h3>
+          <p>Dachabdichtung & Flüssigkunststoff</p>
+        </a>
 
-<div class="dlz-hero-actions">
-<a class="dlz-button dlz-button-primary" href="leistungen.html">
-Leistungen ansehen <span>↗</span>
-</a>
-<a class="dlz-button dlz-button-secondary" href="kontakt.html">
-Kontakt aufnehmen
-</a>
-</div>
+        <a class="service-card" href="leistungen.html">
+          <h3>Klempnerei</h3>
+          <p>Dachrinnen, Bleche & Anschlüsse</p>
+        </a>
 
-<div class="dlz-hero-bottom">
-<span>Hamburg &amp; bis zu 50 km Umgebung</span>
-<span class="divider"></span>
-<span>Qualität, die oben bleibt.</span>
-</div>
+        <a class="service-card" href="leistungen.html">
+          <h3>Sanierung</h3>
+          <p>Dachsanierung & Instandsetzung</p>
+        </a>
 
-</div>
-</section>
+        <a class="service-card" href="leistungen.html">
+          <h3>Dachinspektion</h3>
+          <p>Kontrolle mit Drohne</p>
+        </a>
 
-<!-- KURZER EINSTIEG -->
+      </div>
 
-<section class="dlz-intro" id="unternehmen">
-<div class="dlz-container dlz-intro-grid">
+      <div class="service-more">
+        <a href="leistungen.html" class="btn">
+          Alle Leistungen
+        </a>
+      </div>
+    </section>
 
-<div>
-<p class="dlz-section-label">DLZ-BEDACHUNGEN</p>
-<h2>Qualität, die<br><em>oben bleibt.</em></h2>
-</div>
+    <section class="contact" id="kontakt">
+      <div class="contact-inner">
 
-<div class="dlz-intro-copy">
-<p>
-Wir sind dein Ansprechpartner für Dacharbeiten in Hamburg und Umgebung.
-Wir setzen auf persönliche Absprachen, eine sorgfältige Ausführung
-und nachvollziehbare Angebote.
-</p>
-<p>
-Ob Dachsanierung, Abdichtung oder Montage – wir besprechen mit dir,
-was dein Objekt braucht und welche nächsten Schritte sinnvoll sind.
-</p>
-<a class="dlz-text-link" href="ueber-uns.html">
-Mehr über uns <span>→</span>
-</a>
-</div>
+        <div>
+          <p class="eyebrow">DLZ Bedachungen</p>
 
-</div>
-</section>
+          <h2>
+            Kontakt<br>
+            <span>aufnehmen.</span>
+          </h2>
 
-<!-- LEISTUNGEN: KURZ UND ÜBERSICHTLICH -->
+          <div class="contact-details">
+            <p>
+              <strong>Telefon</strong><br>
+              <a href="tel:+4917642716629">+49 176 42716629</a>
+            </p>
 
-<section class="dlz-services" id="leistungen">
-<div class="dlz-container">
+            <p>
+              <strong>E-Mail</strong><br>
+              <a href="mailto:info@dlz-bedachungen.de">
+                info@dlz-bedachungen.de
+              </a>
+            </p>
 
-<div class="dlz-services-heading">
-<div>
-<p class="dlz-section-label">UNSERE ARBEIT</p>
-<h2>Leistungen für dein <em>Dach.</em></h2>
-</div>
-<p>
-Von Reparaturen bis zur Sanierung – entdecke unsere Leistungen
-und finde den passenden Ansprechpartner für dein Vorhaben.
-</p>
-</div>
+            <p>
+              <strong>Adresse</strong><br>
+              Eddelbüttelstraße 40, 21073 Hamburg
+            </p>
+          </div>
+        </div>
 
-<div class="dlz-service-grid">
+        <form class="contact-form"
+              action="mailto:info@dlz-bedachungen.de"
+              method="post"
+              enctype="text/plain">
 
-<a class="dlz-service-card" href="leistungen.html">
-<span class="dlz-service-number">01 / DACH</span>
-<div>
-<h3>Dacharbeiten</h3>
-<p>Arbeiten rund ums Flach- und Steildach.</p>
-</div>
-<span class="dlz-service-arrow">↗</span>
-</a>
+          <input
+            type="text"
+            name="Name"
+            placeholder="Name"
+            required
+          >
 
-<a class="dlz-service-card" href="leistungen.html">
-<span class="dlz-service-number">02 / ABDICHTUNG</span>
-<div>
-<h3>Abdichtung</h3>
-<p>Schutz für Dachflächen und Anschlüsse.</p>
-</div>
-<span class="dlz-service-arrow">↗</span>
-</a>
+          <input
+            type="email"
+            name="E-Mail"
+            placeholder="E-Mail"
+            required
+          >
 
-<a class="dlz-service-card" href="leistungen.html">
-<span class="dlz-service-number">03 / KLEMPNEREI</span>
-<div>
-<h3>Dachklempnerei</h3>
-<p>Blecharbeiten und saubere Details.</p>
-</div>
-<span class="dlz-service-arrow">↗</span>
-</a>
+          <input
+            type="tel"
+            name="Telefon"
+            placeholder="Telefon (optional)"
+          >
 
-<a class="dlz-service-card" href="leistungen.html">
-<span class="dlz-service-number">04 / SANIERUNG</span>
-<div>
-<h3>Sanierung &amp; Montage</h3>
-<p>Instandsetzung und Arbeiten am Dach.</p>
-</div>
-<span class="dlz-service-arrow">↗</span>
-</a>
+          <textarea
+            name="Nachricht"
+            placeholder="Nachricht"
+            required
+          ></textarea>
 
-</div>
+          <button type="submit">Anfrage senden</button>
+        </form>
 
-<div style="margin-top:30px;">
-<a class="dlz-text-link" href="leistungen.html">
-Alle Leistungen ansehen <span>→</span>
-</a>
-</div>
+      </div>
+    </section>
 
-</div>
-</section>
+  </main>
 
-<!-- VORTEILE -->
+  <footer>
+    <a href="index.html" class="logo">
+      DLZ<span>.</span>
+      <small>BEDACHUNGEN</small>
+    </a>
 
-<section class="dlz-values">
-<div class="dlz-container">
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
 
-<div class="dlz-values-heading">
-<p class="dlz-section-label">WARUM DLZ-BEDACHUNGEN</p>
-<h2>Jung. Persönlich. <em>Zuverlässig.</em></h2>
-<p>
-Direkter Kontakt, klare Absprachen und ein fairer Umgang –
-so möchten wir mit dir zusammenarbeiten.
-</p>
-</div>
-
-<div class="dlz-values-grid">
-
-<article class="dlz-value">
-<span class="dlz-value-number">01</span>
-<h3>Persönlich</h3>
-<p>Direkte Kommunikation und ein Ansprechpartner für dein Vorhaben.</p>
-</article>
-
-<article class="dlz-value">
-<span class="dlz-value-number">02</span>
-<h3>Sorgfältig</h3>
-<p>Wir legen Wert auf eine saubere Ausführung und klare Abläufe.</p>
-</article>
-
-<article class="dlz-value">
-<span class="dlz-value-number">03</span>
-<h3>Transparent</h3>
-<p>Nachvollziehbare Absprachen und faire, transparente Preise.</p>
-</article>
-
-</div>
-</div>
-</section>
-
-<!-- KONTAKT -->
-
-<section class="dlz-contact">
-<div class="dlz-container dlz-contact-inner">
-
-<div>
-<p class="dlz-section-label">DEIN VORHABEN</p>
-<h2>Bereit für den nächsten <em>Schritt?</em></h2>
-<p>Sprich mit uns über dein Projekt in Hamburg und Umgebung.</p>
-</div>
-
-<a class="dlz-button dlz-button-primary" href="kontakt.html">
-Kontakt aufnehmen <span>↗</span>
-</a>
-
-</div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-<div class="container footer-main">
-
-<div class="footer-brand">
-<a class="brand" href="index.html">
-<span class="brand-main">DLZ<span class="brand-dot">.</span></span>
-<span class="brand-sub">BEDACHUNGEN</span>
-</a>
-<p>Qualität, die oben bleibt.</p>
-<p class="muted">Hamburg und bis zu 50 km Umgebung.</p>
-</div>
-
-<div class="footer-column">
-<h3>Navigation</h3>
-<a href="index.html">Startseite</a>
-<a href="ueber-uns.html">Über uns</a>
-<a href="leistungen.html">Leistungen</a>
-<a href="projekte.html">Projekte</a>
-</div>
-
-<div class="footer-column">
-<h3>Kontakt</h3>
-<a href="tel:+4917642716629">+49 176 42716629</a>
-<a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a>
-<p>Eddelbüttelstraße 40<br>21073 Hamburg</p>
-</div>
-
-<div class="footer-column">
-<h3>Weitere Informationen</h3>
-<a href="social-media.html">Social Media</a>
-<a href="kontakt.html">Kontaktformular</a>
-<a href="impressum.html">Impressum</a>
-<a href="datenschutz.html">Datenschutz</a>
-</div>
-
-</div>
-
-<div class="container footer-bottom">
-<span>© <span data-year></span> DLZ-Bedachungen</span>
-<span>Qualität, die oben bleibt.</span>
-</div>
-</footer>
-
-<a class="floating-contact" href="https://wa.me/4917642716629" target="_blank" rel="noopener noreferrer" aria-label="Per WhatsApp kontaktieren">WhatsApp ↗</a>
+    <p>© DLZ-Bedachungen</p>
+  </footer>
 
 </body>
 </html>

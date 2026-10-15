@@ -3,90 +3,292 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Projekte | DLZ-Bedachungen Hamburg</title>
-<meta name="description" content="Einblicke in Dacharbeiten und Projekte von DLZ-Bedachungen aus Hamburg.">
+
+<meta name="description" content="DLZ-Bedachungen aus Hamburg. Unsere ersten Projekte folgen in den kommenden Wochen und Monaten.">
 <meta name="theme-color" content="#120d09">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
+
+<style>
+/* Hero-Bild */
+
+.page-hero {
+  position: relative;
+  min-height: 490px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 7, 6, .94) 0%,
+      rgba(8, 7, 6, .76) 45%,
+      rgba(8, 7, 6, .25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      #090807 0%,
+      transparent 45%
+    ),
+    url("dlz-hero.png") center 45% / cover no-repeat;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  padding-bottom: 65px;
+}
+
+.page-hero h1 {
+  max-width: 750px;
+}
+
+.page-hero > .container > p:last-child {
+  max-width: 650px;
+}
+
+/* Hinweis: Projekte folgen */
+
+.projects-coming {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 65px 35px;
+  text-align: center;
+  background: linear-gradient(145deg, #211812, #100e0c);
+  border: 1px solid rgba(199, 123, 60, .45);
+}
+
+.projects-coming .coming-label {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 9px 14px;
+  border: 1px solid rgba(224, 160, 100, .5);
+  color: #e0a064;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.projects-coming h2 {
+  margin-bottom: 18px;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.2;
+}
+
+.projects-coming h2 em {
+  color: #e0a064;
+  font-style: normal;
+}
+
+.projects-coming p {
+  max-width: 580px;
+  margin: 0 auto;
+  color: #b8b0a7;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.projects-coming .btn {
+  display: inline-block;
+  margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 440px;
+    background-position: 60% center;
+  }
+
+  .page-hero .container {
+    padding-top: 90px;
+    padding-bottom: 45px;
+  }
+
+  .projects-coming {
+    padding: 45px 22px;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
 <header class="site-header">
-<div class="container header-inner">
-<a class="brand" href="index.html"><span class="brand-main">DLZ<span class="brand-dot">.</span></span><span class="brand-sub">BEDACHUNGEN</span></a>
-<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
-<nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
-<a href="index.html">Startseite</a><a href="ueber-uns.html">Über uns</a><a href="leistungen.html">Leistungen</a><a href="projekte.html" aria-current="page">Projekte</a><a href="social-media.html">Social Media</a><a href="kontakt.html" class="nav-cta">Kontakt ↗</a>
-</nav>
-</div>
+  <div class="container header-inner">
+
+    <a class="brand" href="index.html">
+      <span class="brand-main">DLZ<span class="brand-dot">.</span></span>
+      <span class="brand-sub">BEDACHUNGEN</span>
+    </a>
+
+    <button class="menu-toggle"
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+            aria-controls="mainNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="projekte.html" aria-current="page">Projekte</a>
+      <a href="social-media.html">Social Media</a>
+      <a href="kontakt.html" class="nav-cta">Kontakt ↗</a>
+    </nav>
+
+  </div>
 </header>
 
 <main id="main">
 
-<section class="page-hero">
-<div class="container">
-<p class="eyebrow">EINBLICKE IN DIE ARBEIT</p>
-<h1>Arbeit, die man<br><em>sehen kann.</em></h1>
-<p>
-Jedes Gebäude und jede Dachfläche stellt eigene Anforderungen.
-Hier soll mit der Zeit eine Auswahl echter Einblicke in Projekte,
-Arbeitsschritte und Ergebnisse von DLZ-Bedachungen entstehen.
-</p>
-</div>
-</section>
+  <!-- Hero-Bereich -->
 
-<section class="section">
-<div class="container">
+  <section class="page-hero">
+    <div class="container">
 
-<div class="notice-box">
-<strong>Hinweis:</strong> Die nachfolgenden Bilder dienen derzeit als allgemeine Bildmotive.
-Sie sind nicht als Nachweis tatsächlich ausgeführter DLZ-Projekte gedacht.
-Ersetze sie vor der Veröffentlichung durch eigene Projektfotos, sobald diese vorliegen.
-</div>
+      <p class="eyebrow">DLZ-BEDACHUNGEN · HAMBURG</p>
 
-<div class="project-grid">
-<article class="project-card">
-<img src="https://images.unsplash.com/photo-1635424710928-9c8b4c6f4f5f?auto=format&fit=crop&w=1200&q=85" alt="Beispielhafte Dachfläche" loading="lazy">
-<div class="project-caption"><span class="service-index">DACHARBEITEN</span><h3>Dachflächen im Blick</h3><p>Platzhalter für eine Beschreibung des tatsächlichen Projekts.</p></div>
-</article>
+      <h1>
+        Qualität, die<br>
+        <em>oben bleibt.</em>
+      </h1>
 
-<article class="project-card">
-<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85" alt="Solarmodule auf einer Dachfläche" loading="lazy">
-<div class="project-caption"><span class="service-index">SOLAR</span><h3>Dach und Solartechnik</h3><p>Platzhalter für eine Beschreibung des tatsächlichen Projekts.</p></div>
-</article>
+      <p>
+        Dacharbeiten in Hamburg & Umgebung
+      </p>
 
-<article class="project-card">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85" alt="Handwerkliche Arbeiten auf einer Baustelle" loading="lazy">
-<div class="project-caption"><span class="service-index">HANDWERK</span><h3>Sorgfältige Ausführung</h3><p>Platzhalter für eine Beschreibung des tatsächlichen Projekts.</p></div>
-</article>
-</div>
+    </div>
+  </section>
 
-</div>
-</section>
+  <!-- Projekte -->
 
-<section class="contact-band">
-<div class="container contact-band-inner">
-<div><p class="eyebrow">EIN PROJEKT GEPLANT?</p><h2>Dein Vorhaben könnte das nächste sein.</h2><p>Kontaktiere uns, um die Anforderungen deines Daches zu besprechen.</p></div>
-<a class="btn btn-copper" href="kontakt.html">Kontakt aufnehmen ↗</a>
-</div>
-</section>
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">UNSERE PROJEKTE</p>
+
+        <h2>
+          Hier entsteht<br>
+          etwas <em>Neues.</em>
+        </h2>
+      </div>
+
+      <div class="projects-coming">
+
+        <span class="coming-label">
+          NEU GEGRÜNDET · SEI GESPANNT
+        </span>
+
+        <h2>
+          Unsere ersten Projekte<br>
+          folgen <em>bald.</em>
+        </h2>
+
+        <p>
+          DLZ-Bedachungen ist neu gestartet. Aktuell bauen wir unser
+          Unternehmen auf und freuen uns auf die kommenden Projekte.
+          In den nächsten Wochen und Monaten findest du hier nach und
+          nach Einblicke in unsere Arbeit.
+        </p>
+
+        <a class="btn btn-copper" href="kontakt.html">
+          Projekt anfragen ↗
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+
+  <section class="contact-band">
+    <div class="container contact-band-inner">
+
+      <div>
+        <p class="eyebrow">EIN PROJEKT GEPLANT?</p>
+
+        <h2>Wir freuen uns auf deine Anfrage.</h2>
+
+        <p>
+          Du hast ein Dachprojekt in Hamburg oder Umgebung?
+          Melde dich gerne bei uns.
+        </p>
+      </div>
+
+      <a class="btn btn-copper" href="kontakt.html">
+        Kontakt aufnehmen ↗
+      </a>
+
+    </div>
+  </section>
 
 </main>
 
+<!-- Footer -->
+
 <footer class="site-footer">
-<div class="container footer-main">
-<div class="footer-brand"><a class="brand" href="index.html"><span class="brand-main">DLZ<span class="brand-dot">.</span></span><span class="brand-sub">BEDACHUNGEN</span></a><p>Qualität, die oben bleibt.</p></div>
-<div class="footer-column"><h3>Navigation</h3><a href="index.html">Startseite</a><a href="leistungen.html">Leistungen</a><a href="social-media.html">Social Media</a></div>
-<div class="footer-column"><h3>Kontakt</h3><a href="tel:+4917642716629">+49 176 42716629</a><a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a></div>
-<div class="footer-column"><h3>Rechtliches</h3><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
-</div>
-<div class="container footer-bottom"><span>© <span data-year></span> DLZ-Bedachungen</span><span>Hamburg & Umgebung</span></div>
+  <div class="container footer-main">
+
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <span class="brand-main">DLZ<span class="brand-dot">.</span></span>
+        <span class="brand-sub">BEDACHUNGEN</span>
+      </a>
+
+      <p>Qualität, die oben bleibt.</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Navigation</h3>
+      <a href="index.html">Startseite</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="social-media.html">Social Media</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Kontakt</h3>
+      <a href="tel:+4917642716629">+49 176 42716629</a>
+      <a href="mailto:info@dlz-bedachungen.de">
+        info@dlz-bedachungen.de
+      </a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Rechtliches</h3>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© <span data-year></span> DLZ-Bedachungen</span>
+    <span>Hamburg & Umgebung</span>
+  </div>
 </footer>
-<a class="floating-contact" href="https://wa.me/4917642716629" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+
+<a class="floating-contact"
+   href="https://wa.me/4917642716629"
+   target="_blank"
+   rel="noopener noreferrer">
+  WhatsApp ↗
+</a>
+
 </body>
 </html>

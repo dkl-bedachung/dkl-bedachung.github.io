@@ -1690,3 +1690,48 @@ footer a:hover {
         transition-duration: 0.01ms !important;
     }
 }
+/* Mobiler Navigationsbutton – drei sichtbare Striche */
+
+.menu-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid #d9a16f;
+    border-radius: 10px;
+    background: #fffaf4;
+    color: #a65f2e;
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    flex: 0 0 2px;
+    background: #a65f2e;
+    border-radius: 2px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-toggle:focus-visible {
+    outline: 2px solid #a65f2e;
+    outline-offset: 3px;
+}
+
+/* Button auf mobilen Geräten anzeigen */
+
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex;
+    }
+}

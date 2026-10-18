@@ -1,10 +1,13 @@
 /* =========================================================
    DLZ-BEDACHUNGEN
    Helles Creme-Design mit dunkelbraunen Akzenten
-   Zentrale Gestaltung für Startseite und Unterseiten
+   Abgestimmt auf index.html
    ========================================================= */
 
-/* 1. GRUNDLAGEN */
+
+/* =========================================================
+   1. GRUNDLAGEN
+   ========================================================= */
 
 :root {
     --black: #F7F4EE;
@@ -131,7 +134,10 @@ hr {
     border-top: 1px solid var(--border);
 }
 
-/* 2. TYPOGRAFIE */
+
+/* =========================================================
+   2. TYPOGRAFIE
+   ========================================================= */
 
 h1,
 h2,
@@ -199,7 +205,10 @@ small {
     color: var(--gray);
 }
 
-/* 3. HEADER UND NAVIGATION */
+
+/* =========================================================
+   3. HEADER UND NAVIGATION
+   ========================================================= */
 
 .site-header,
 .topbar {
@@ -207,7 +216,7 @@ small {
     z-index: 1000;
     top: 0;
     width: 100%;
-    background: rgba(247, 244, 238, 0.96);
+    background: rgba(247, 244, 238, 0.97);
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -215,6 +224,7 @@ small {
 
 .header-inner,
 .topbar-inner {
+    position: relative;
     min-height: var(--header-height);
     display: flex;
     align-items: center;
@@ -222,12 +232,18 @@ small {
     gap: 28px;
 }
 
+
+/* =========================================================
+   4. DLZ-LOGO
+   Dachlinie oben, DLZ mittig, BEDACHUNGEN darunter
+   ========================================================= */
+
 .brand,
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
     flex-shrink: 0;
+    gap: 11px;
     color: var(--white);
     font-family: var(--font-heading);
     font-weight: 800;
@@ -235,7 +251,10 @@ small {
 }
 
 .brand {
-    font-size: 1.45rem;
+    position: relative;
+    gap: 0;
+    min-width: 135px;
+    padding-top: 2px;
 }
 
 .logo {
@@ -244,8 +263,80 @@ small {
 
 .brand:hover,
 .logo:hover {
-    color: var(--copper-light);
+    color: var(--copper);
 }
+
+/* Wortmarke */
+
+.brand-wordmark {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+/* DLZ-Schriftzug */
+
+.brand-main {
+    display: block;
+    color: #342D26;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.075em;
+    line-height: 0.95;
+}
+
+/* BEDACHUNGEN */
+
+.brand-sub {
+    display: block;
+    margin-top: 6px;
+    color: #625044;
+    font-family: var(--font-body);
+    font-size: 0.59rem;
+    font-weight: 800;
+    letter-spacing: 0.19em;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* Dachlinie über DLZ */
+
+.brand-roof {
+    position: absolute;
+    top: -4px;
+    left: 1px;
+    width: 44px;
+    height: 14px;
+    pointer-events: none;
+}
+
+.brand-roof::before {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    width: 27px;
+    height: 15px;
+    border-top: 2px solid #A87950;
+    border-left: 2px solid #A87950;
+    content: "";
+    transform: rotate(45deg) scale(0.72, 0.72);
+    transform-origin: center;
+}
+
+.brand-roof::after {
+    position: absolute;
+    top: 15px;
+    left: 2px;
+    width: 43px;
+    height: 2px;
+    background: #A87950;
+    content: "";
+    opacity: 0.95;
+}
+
+/* Alte Logo-Klassen für andere Unterseiten */
 
 .brand-mark,
 .logo-mark {
@@ -267,7 +358,6 @@ small {
 
 .brand-mark::before,
 .logo-mark::before {
-    content: "";
     position: absolute;
     top: 10px;
     left: 9px;
@@ -275,6 +365,7 @@ small {
     height: 12px;
     border-top: 2px solid currentColor;
     border-left: 2px solid currentColor;
+    content: "";
     transform: rotate(45deg) skew(-5deg, -5deg);
     opacity: 0.8;
 }
@@ -305,6 +396,9 @@ small {
     text-transform: uppercase;
 }
 
+
+/* Navigation */
+
 .main-nav,
 .nav {
     display: flex;
@@ -319,6 +413,7 @@ small {
     color: var(--gray);
     font-size: 0.91rem;
     font-weight: 600;
+    white-space: nowrap;
     transition: color 0.2s ease;
 }
 
@@ -329,8 +424,10 @@ small {
     color: var(--copper);
 }
 
-.main-nav a:not(.btn)::after,
-.nav a:not(.btn)::after {
+/* Dezente Linie unter normalen Navigationslinks */
+
+.main-nav a:not(.nav-cta):not(.btn)::after,
+.nav a:not(.nav-cta):not(.btn)::after {
     position: absolute;
     right: 0;
     bottom: -7px;
@@ -343,37 +440,83 @@ small {
     transition: transform 0.2s ease;
 }
 
-.main-nav a:not(.btn):hover::after,
-.nav a:not(.btn):hover::after {
+.main-nav a:not(.nav-cta):not(.btn):hover::after,
+.nav a:not(.nav-cta):not(.btn):hover::after {
     transform: scaleX(1);
 }
 
+/* Kontakt-Button: passend zum Creme-Design */
+
+.nav-cta,
 .nav-contact {
-    padding: 11px 18px;
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 17px;
     border: 1px solid #D6C9BA;
     border-radius: var(--button-radius);
-    background: var(--card-bg);
+    background: #FFFEFA;
     color: var(--copper) !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
+.nav-cta:hover,
 .nav-contact:hover {
-    background: var(--dark-2);
+    border-color: #C7B5A1;
+    background: #EEE8DE;
+    transform: translateY(-1px);
 }
+
+.main-nav .nav-cta::after,
+.nav .nav-cta::after,
+.main-nav .nav-contact::after,
+.nav .nav-contact::after {
+    display: none;
+}
+
+
+/* Mobiler Menübutton */
 
 .menu-toggle {
     display: none;
     width: 44px;
     height: 44px;
+    padding: 0;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border);
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+    border: 1px solid #D6C9BA;
     border-radius: 12px;
-    background: var(--card-bg);
-    color: var(--white);
-    font-size: 1.35rem;
+    background: #FFFEFA;
+    color: var(--copper);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
-/* 4. BUTTONS UND LINKS */
+.menu-toggle span {
+    display: block;
+    width: 21px;
+    height: 2px;
+    flex: 0 0 2px;
+    border-radius: 2px;
+    background: var(--copper);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   5. BUTTONS UND LINKS
+   ========================================================= */
 
 .btn,
 .btn-primary,
@@ -426,7 +569,7 @@ small {
 .btn-outline,
 .button-outline {
     border-color: #D6C9BA;
-    background: rgba(255, 254, 250, 0.8);
+    background: rgba(255, 254, 250, 0.9);
     color: var(--copper);
 }
 
@@ -452,7 +595,11 @@ small {
     color: var(--copper-dark);
 }
 
-/* 5. STARTSEITEN-HERO */
+
+/* =========================================================
+   6. STARTSEITEN-HERO
+   Bilddatei: dlz-hero.png.PNG
+   ========================================================= */
 
 .hero {
     position: relative;
@@ -463,18 +610,15 @@ small {
     overflow: hidden;
     padding: clamp(75px, 10vw, 140px) 24px;
     background-color: #EAE2D6;
-
-    /* ANGEPASST: Das Bild ist deutlich besser sichtbar. */
     background-image:
         linear-gradient(
             90deg,
-            rgba(247, 244, 238, 0.78) 0%,
-            rgba(247, 244, 238, 0.62) 40%,
-            rgba(247, 244, 238, 0.28) 72%,
-            rgba(247, 244, 238, 0.08) 100%
+            rgba(247, 244, 238, 0.82) 0%,
+            rgba(247, 244, 238, 0.69) 38%,
+            rgba(247, 244, 238, 0.37) 68%,
+            rgba(247, 244, 238, 0.12) 100%
         ),
         url("dlz-hero.png.PNG");
-
     background-position: center, center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -494,6 +638,8 @@ small {
     pointer-events: none;
 }
 
+/* Unterstützt Unterseiten oder HTML-Varianten mit separatem Bildelement */
+
 .hero-image {
     position: absolute;
     z-index: -2;
@@ -504,22 +650,22 @@ small {
     background-size: cover;
 }
 
-/* ANGEPASST: Zusätzliche Überlagerung weniger hell.
-   Verhindert, dass das Bild durch hero-shade ausgewaschen wirkt. */
 .hero-shade {
     position: absolute;
     z-index: -1;
     inset: 0;
     background: linear-gradient(
         90deg,
-        rgba(247, 244, 238, 0.78) 0%,
-        rgba(247, 244, 238, 0.60) 56%,
+        rgba(247, 244, 238, 0.82) 0%,
+        rgba(247, 244, 238, 0.65) 48%,
         rgba(247, 244, 238, 0.20) 100%
     );
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
+    z-index: 1;
     width: min(var(--max-width), 100%);
     margin-inline: auto;
 }
@@ -530,6 +676,7 @@ small {
 
 .hero h1 {
     margin-bottom: 24px;
+    color: #342D26;
     font-size: clamp(3rem, 7vw, 6rem);
     line-height: 1.02;
     letter-spacing: -0.06em;
@@ -547,7 +694,7 @@ small {
     padding: 8px 13px;
     border: 1px solid rgba(73, 59, 48, 0.17);
     border-radius: 100px;
-    background: rgba(255, 254, 250, 0.7);
+    background: rgba(255, 254, 250, 0.78);
     color: var(--copper);
     letter-spacing: 0.06em;
 }
@@ -581,7 +728,10 @@ small {
     font-size: 0.88rem;
 }
 
-/* 6. SECTIONS UND ABSCHNITTSÜBERSCHRIFTEN */
+
+/* =========================================================
+   7. SECTIONS UND ABSCHNITTSÜBERSCHRIFTEN
+   ========================================================= */
 
 .section,
 .services,
@@ -629,7 +779,10 @@ small {
     max-width: 680px;
 }
 
-/* 7. LEISTUNGEN UND KARTEN */
+
+/* =========================================================
+   8. LEISTUNGEN UND KARTEN
+   ========================================================= */
 
 .service-grid,
 .services-grid,
@@ -737,7 +890,10 @@ small {
     margin-top: 38px;
 }
 
-/* 8. ÜBER UNS UND WERTE */
+
+/* =========================================================
+   9. ÜBER UNS UND WERTE
+   ========================================================= */
 
 .about-grid,
 .intro-grid,
@@ -801,7 +957,10 @@ small {
     margin-bottom: 0;
 }
 
-/* 9. STATEMENT-ABSCHNITT */
+
+/* =========================================================
+   10. STATEMENT-ABSCHNITT
+   ========================================================= */
 
 .statement-section,
 .statement-band {
@@ -826,7 +985,10 @@ small {
     margin: 0 auto 25px;
 }
 
-/* 10. HERO FÜR UNTERSEITEN */
+
+/* =========================================================
+   11. HERO FÜR UNTERSEITEN
+   ========================================================= */
 
 .page-hero {
     position: relative;
@@ -840,17 +1002,15 @@ small {
     border-bottom: 1px solid var(--border);
 }
 
-/* ANGEPASST: Unterseiten-Hero zeigt mehr vom Originalbild. */
 .page-hero-image {
     background-image:
         linear-gradient(
             90deg,
-            rgba(247, 244, 238, 0.78) 0%,
-            rgba(247, 244, 238, 0.60) 52%,
+            rgba(247, 244, 238, 0.82) 0%,
+            rgba(247, 244, 238, 0.65) 48%,
             rgba(247, 244, 238, 0.20) 100%
         ),
         var(--page-image, url("dlz-hero.png.PNG"));
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -877,7 +1037,10 @@ small {
     margin-bottom: 16px;
 }
 
-/* 11. UNTERSEITEN-INHALTE */
+
+/* =========================================================
+   12. UNTERSEITEN-INHALTE
+   ========================================================= */
 
 .page-content,
 .legal-content {
@@ -943,7 +1106,10 @@ small {
     box-shadow: var(--soft-shadow);
 }
 
-/* 12. DETAIL-KARTEN */
+
+/* =========================================================
+   13. DETAIL-KARTEN
+   ========================================================= */
 
 .detail-grid {
     display: grid;
@@ -963,7 +1129,10 @@ small {
     margin-bottom: 0;
 }
 
-/* 13. PROJEKTE */
+
+/* =========================================================
+   14. PROJEKTE
+   ========================================================= */
 
 .projects-grid,
 .project-grid {
@@ -989,7 +1158,10 @@ small {
     margin-bottom: 0;
 }
 
-/* 14. SOCIAL MEDIA */
+
+/* =========================================================
+   15. SOCIAL MEDIA
+   ========================================================= */
 
 .social-grid {
     display: grid;
@@ -1016,7 +1188,10 @@ small {
     margin-top: auto;
 }
 
-/* 15. KONTAKTABSCHNITT */
+
+/* =========================================================
+   16. KONTAKTABSCHNITT
+   ========================================================= */
 
 .contact-band,
 .contact {
@@ -1099,7 +1274,10 @@ small {
     text-decoration: underline;
 }
 
-/* 16. KONTAKTFORMULAR */
+
+/* =========================================================
+   17. KONTAKTFORMULAR
+   ========================================================= */
 
 .contact-form,
 .form-panel {
@@ -1204,7 +1382,10 @@ small {
     font-size: 0.83rem;
 }
 
-/* 17. RECHTLICHE SEITEN */
+
+/* =========================================================
+   18. RECHTLICHE SEITEN
+   ========================================================= */
 
 .legal-content {
     max-width: 900px;
@@ -1245,7 +1426,11 @@ small {
     margin-bottom: 0;
 }
 
-/* 18. FOOTER */
+
+/* =========================================================
+   19. FOOTER
+   Vier Spalten passend zum Index
+   ========================================================= */
 
 .site-footer,
 footer {
@@ -1255,21 +1440,62 @@ footer {
 
 .footer-main {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 50px;
+    grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 35px;
     padding-top: 52px;
     padding-bottom: 40px;
 }
 
+.footer-brand {
+    min-width: 0;
+}
+
+.footer-brand .brand {
+    margin-top: 5px;
+}
+
 .footer-brand p {
-    max-width: 400px;
+    max-width: 330px;
     margin: 18px 0 0;
     font-size: 0.92rem;
 }
 
+.footer-column {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.footer-column h3,
+.footer-links-wrap h3 {
+    margin-bottom: 8px;
+    color: var(--white);
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.footer-column a,
+.footer-links a,
+.footer-nav a,
+footer a {
+    color: var(--gray);
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover,
+.footer-links a:hover,
+.footer-nav a:hover,
+footer a:hover {
+    color: var(--copper);
+}
+
 .footer-links-wrap h3 {
     margin-bottom: 17px;
-    font-size: 1rem;
 }
 
 .footer-links,
@@ -1277,20 +1503,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 12px 22px;
-}
-
-.footer-links a,
-.footer-nav a,
-footer a {
-    color: var(--gray);
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
-}
-
-.footer-links a:hover,
-.footer-nav a:hover,
-footer a:hover {
-    color: var(--copper);
 }
 
 .footer-bottom {
@@ -1308,6 +1520,11 @@ footer a:hover {
     font-size: 0.83rem;
 }
 
+.footer-bottom span {
+    color: var(--gray);
+    font-size: 0.83rem;
+}
+
 .footer-bottom .footer-links {
     gap: 10px 18px;
 }
@@ -1316,7 +1533,10 @@ footer a:hover {
     font-size: 0.83rem;
 }
 
-/* 19. WHATSAPP / SCHWEBENDER KONTAKT */
+
+/* =========================================================
+   20. WHATSAPP / SCHWEBENDER KONTAKT
+   ========================================================= */
 
 .whatsapp-float,
 .whatsapp-button,
@@ -1348,7 +1568,10 @@ footer a:hover {
     box-shadow: var(--hover-shadow);
 }
 
-/* 20. LISTEN UND CHECKMARKS */
+
+/* =========================================================
+   21. LISTEN UND CHECKMARKS
+   ========================================================= */
 
 .check-list,
 .feature-list {
@@ -1375,17 +1598,28 @@ footer a:hover {
     font-weight: 900;
 }
 
-/* 21. MOBILE-NAVIGATION UND TABLET */
+
+/* =========================================================
+   22. TABLET UND MOBILE NAVIGATION
+   ========================================================= */
 
 @media (max-width: 1000px) {
     .main-nav,
     .nav {
-        gap: 15px;
+        gap: 14px;
     }
 
     .main-nav a,
     .nav a {
-        font-size: 0.86rem;
+        font-size: 0.84rem;
+    }
+
+    .brand-main {
+        font-size: 1.85rem;
+    }
+
+    .brand-sub {
+        font-size: 0.55rem;
     }
 
     .service-grid,
@@ -1406,7 +1640,12 @@ footer a:hover {
     }
 }
 
-@media (max-width: 760px) {
+
+/* =========================================================
+   23. MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
     :root {
         --header-height: 72px;
         --card-radius: 17px;
@@ -1424,28 +1663,42 @@ footer a:hover {
         gap: 15px;
     }
 
-    .brand,
-    .logo {
-        font-size: 1.2rem;
+    /* Logo bleibt kompakt und links ausgerichtet */
+
+    .brand {
+        min-width: 125px;
     }
 
-    .brand-mark,
-    .logo-mark {
-        width: 39px;
-        height: 39px;
+    .brand-main {
+        font-size: 1.8rem;
     }
+
+    .brand-sub {
+        margin-top: 5px;
+        font-size: 0.53rem;
+        letter-spacing: 0.17em;
+    }
+
+    .brand-roof {
+        top: -5px;
+        transform: scale(0.94);
+        transform-origin: left top;
+    }
+
+    /* Hamburger sichtbar */
 
     .menu-toggle {
-        display: inline-flex;
-        flex-shrink: 0;
+        display: flex;
     }
+
+    /* Menü liegt direkt unter der Kopfzeile */
 
     .main-nav,
     .nav {
         position: absolute;
         top: calc(100% + 1px);
-        right: 0;
-        left: 0;
+        right: -18px;
+        left: -18px;
         display: none;
         align-items: stretch;
         flex-direction: column;
@@ -1455,6 +1708,8 @@ footer a:hover {
         background: #F7F4EE;
         box-shadow: 0 14px 24px rgba(73, 59, 48, 0.07);
     }
+
+    /* Unterstützt die üblichen Klassen für das geöffnete Menü */
 
     .main-nav.is-open,
     .nav.is-open,
@@ -1468,20 +1723,27 @@ footer a:hover {
         display: block;
         padding: 13px 8px;
         font-size: 0.97rem;
+        white-space: normal;
     }
 
-    .main-nav a:not(.btn)::after,
-    .nav a:not(.btn)::after {
+    .main-nav a:not(.nav-cta):not(.btn)::after,
+    .nav a:not(.nav-cta):not(.btn)::after {
         display: none;
     }
 
+    .main-nav .nav-cta,
     .main-nav .nav-contact,
+    .nav .nav-cta,
     .nav .nav-contact {
+        display: flex;
+        justify-content: center;
         margin-top: 8px;
+        padding: 12px 16px;
         text-align: center;
     }
 
-    /* ANGEPASST: Auch auf dem Handy bleibt das Bild erkennbar. */
+    /* Hero-Bild auf dem Handy */
+
     .hero {
         min-height: 610px;
         padding: 80px 22px;
@@ -1489,21 +1751,19 @@ footer a:hover {
         background-image:
             linear-gradient(
                 90deg,
-                rgba(247, 244, 238, 0.76) 0%,
-                rgba(247, 244, 238, 0.58) 55%,
-                rgba(247, 244, 238, 0.28) 100%
+                rgba(247, 244, 238, 0.80) 0%,
+                rgba(247, 244, 238, 0.66) 52%,
+                rgba(247, 244, 238, 0.35) 100%
             ),
             url("dlz-hero.png.PNG");
     }
 
-    /* ANGEPASST: Verhindert eine zusätzliche starke Aufhellung
-       durch hero-shade auf kleineren Displays. */
     .hero-shade {
         background: linear-gradient(
             90deg,
-            rgba(247, 244, 238, 0.76) 0%,
-            rgba(247, 244, 238, 0.58) 55%,
-            rgba(247, 244, 238, 0.28) 100%
+            rgba(247, 244, 238, 0.80) 0%,
+            rgba(247, 244, 238, 0.62) 55%,
+            rgba(247, 244, 238, 0.26) 100%
         );
     }
 
@@ -1569,14 +1829,13 @@ footer a:hover {
         font-size: clamp(2.35rem, 9vw, 3.6rem);
     }
 
-    /* ANGEPASST: Unterseiten-Hero auf dem Handy. */
     .page-hero-image {
         background-image:
             linear-gradient(
                 90deg,
-                rgba(247, 244, 238, 0.76) 0%,
-                rgba(247, 244, 238, 0.58) 55%,
-                rgba(247, 244, 238, 0.28) 100%
+                rgba(247, 244, 238, 0.80) 0%,
+                rgba(247, 244, 238, 0.62) 55%,
+                rgba(247, 244, 238, 0.26) 100%
             ),
             var(--page-image, url("dlz-hero.png.PNG"));
         background-position: center, 58% center;
@@ -1593,11 +1852,17 @@ footer a:hover {
         padding: 65px 0;
     }
 
+    /* Footer wird auf Mobilgeräten untereinander angeordnet */
+
     .footer-main {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 22px;
         padding-top: 38px;
         padding-bottom: 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
     }
 
     .footer-bottom {
@@ -1607,7 +1872,10 @@ footer a:hover {
     }
 }
 
-/* 22. KLEINE SMARTPHONES */
+
+/* =========================================================
+   24. KLEINE SMARTPHONES
+   ========================================================= */
 
 @media (max-width: 430px) {
     .container,
@@ -1617,20 +1885,28 @@ footer a:hover {
         width: calc(100% - 30px);
     }
 
-    .brand,
-    .logo {
-        gap: 9px;
-        font-size: 1.08rem;
+    .brand {
+        min-width: 118px;
     }
 
-    .brand-text small,
-    .logo-text small {
-        font-size: 0.58rem;
+    .brand-main {
+        font-size: 1.7rem;
+    }
+
+    .brand-sub {
+        font-size: 0.5rem;
+        letter-spacing: 0.16em;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
     }
 
     .hero {
         min-height: 570px;
         padding: 65px 18px;
+        background-position: center, 58% center;
     }
 
     .hero h1 {
@@ -1667,6 +1943,15 @@ footer a:hover {
         padding: 22px;
     }
 
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
     .whatsapp-float,
     .whatsapp-button,
     .floating-contact {
@@ -1678,7 +1963,10 @@ footer a:hover {
     }
 }
 
-/* 23. BARRIEREFREIHEIT UND BEWEGUNGSREDUZIERUNG */
+
+/* =========================================================
+   25. BARRIEREFREIHEIT
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1688,51 +1976,5 @@ footer a:hover {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-    }
-}
-
-/* Mobiler Navigationsbutton – drei sichtbare Striche */
-
-.menu-toggle {
-    display: none;
-    width: 46px;
-    height: 46px;
-    padding: 0;
-    border: 1px solid #d9a16f;
-    border-radius: 10px;
-    background: #fffaf4;
-    color: #a65f2e;
-    cursor: pointer;
-
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 6px;
-
-    -webkit-appearance: none;
-    appearance: none;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    flex: 0 0 2px;
-    background: #a65f2e;
-    border-radius: 2px;
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu-toggle:focus-visible {
-    outline: 2px solid #a65f2e;
-    outline-offset: 3px;
-}
-
-/* Button auf mobilen Geräten anzeigen */
-
-@media (max-width: 900px) {
-    .menu-toggle {
-        display: flex;
     }
 }

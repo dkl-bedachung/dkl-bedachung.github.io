@@ -1,55 +1,42 @@
 /* =========================================================
    DLZ-BEDACHUNGEN
    Helles Creme-Design mit dunkelbraunen Akzenten
-   Abgestimmt auf index.html
+   Einheitlicher Header für Startseite und Unterseiten
    ========================================================= */
-
-
 /* =========================================================
    1. GRUNDLAGEN
    ========================================================= */
-
 :root {
     --black: #F7F4EE;
     --dark: #F7F4EE;
     --dark-2: #EEE8DE;
     --dark-3: #E5DCCE;
-
     --copper: #493B30;
     --copper-light: #625044;
     --copper-bright: #342D26;
     --copper-dark: #30271F;
-
     --white: #342D26;
     --gray: #625B53;
-
     --border: #E5DED3;
     --card-bg: #FFFEFA;
     --card-bg-light: #F5F0E7;
     --card-border: #E5DED3;
-
     --max-width: 1200px;
     --header-height: 82px;
-
     --card-radius: 20px;
     --button-radius: 11px;
-
     --soft-shadow: 0 8px 28px rgba(73, 59, 48, 0.055);
     --hover-shadow: 0 14px 32px rgba(73, 59, 48, 0.10);
-
     --font-heading: "Manrope", sans-serif;
     --font-body: "Inter", sans-serif;
 }
-
 * {
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 105px;
 }
-
 body {
     margin: 0;
     background: var(--black);
@@ -60,7 +47,6 @@ body {
     -webkit-font-smoothing: antialiased;
     overflow-wrap: break-word;
 }
-
 body,
 button,
 input,
@@ -68,24 +54,20 @@ textarea,
 select {
     font-family: var(--font-body);
 }
-
 img {
     display: block;
     max-width: 100%;
 }
-
 a {
     color: inherit;
     text-decoration: none;
 }
-
 button,
 input,
 textarea,
 select {
     font: inherit;
 }
-
 button,
 a,
 input,
@@ -93,22 +75,18 @@ textarea,
 select {
     -webkit-tap-highlight-color: transparent;
 }
-
 button,
 input[type="submit"] {
     cursor: pointer;
 }
-
 ::selection {
     background: #D8C9B7;
     color: #342D26;
 }
-
 :focus-visible {
     outline: 3px solid #8B7764;
     outline-offset: 4px;
 }
-
 .container,
 .header-inner,
 .footer-main,
@@ -116,29 +94,22 @@ input[type="submit"] {
     width: min(var(--max-width), calc(100% - 48px));
     margin-inline: auto;
 }
-
 section {
     position: relative;
 }
-
 section[id] {
     scroll-margin-top: 105px;
 }
-
 main {
     min-height: 60vh;
 }
-
 hr {
     border: 0;
     border-top: 1px solid var(--border);
 }
-
-
 /* =========================================================
    2. TYPOGRAFIE
    ========================================================= */
-
 h1,
 h2,
 h3,
@@ -152,33 +123,26 @@ h6 {
     line-height: 1.2;
     letter-spacing: -0.035em;
 }
-
 h1 {
     font-size: clamp(2.6rem, 6vw, 5.2rem);
 }
-
 h2 {
     font-size: clamp(2rem, 4vw, 3.25rem);
 }
-
 h3 {
     font-size: clamp(1.25rem, 2vw, 1.55rem);
 }
-
 p {
     margin-top: 0;
     color: var(--gray);
 }
-
 strong {
     color: var(--white);
     font-weight: 700;
 }
-
 small {
     font-size: 0.875rem;
 }
-
 .eyebrow,
 .hero-meta,
 .section-label,
@@ -192,7 +156,6 @@ small {
     line-height: 1.5;
     text-transform: uppercase;
 }
-
 .lead,
 .hero-subtitle,
 .hero-description {
@@ -200,44 +163,136 @@ small {
     font-size: clamp(1.05rem, 1.8vw, 1.2rem);
     line-height: 1.8;
 }
-
 .muted {
     color: var(--gray);
 }
-
-
 /* =========================================================
    3. HEADER UND NAVIGATION
+   Einheitliche Kopfzeile auf ALLEN Seiten
    ========================================================= */
-
 .site-header,
 .topbar {
     position: sticky;
     z-index: 1000;
     top: 0;
     width: 100%;
+    min-height: var(--header-height);
     background: rgba(247, 244, 238, 0.97);
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
-
+/* Einheitlicher Innenbereich */
 .header-inner,
 .topbar-inner {
     position: relative;
+    width: min(var(--max-width), calc(100% - 48px));
     min-height: var(--header-height);
+    margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 28px;
 }
-
-
+/* Einheitliche Ausrichtung des Logos */
+.site-header .brand,
+.topbar .brand,
+.site-header .logo,
+.topbar .logo {
+    flex-shrink: 0;
+    margin: 0;
+}
+/* Navigation auf Desktop */
+.main-nav,
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(14px, 2vw, 28px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.main-nav a,
+.nav a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    color: var(--gray);
+    font-size: 0.91rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.main-nav a:hover,
+.nav a:hover,
+.main-nav a[aria-current="page"],
+.nav a[aria-current="page"] {
+    color: var(--copper);
+}
+/* Dezente Linie unter normalen Navigationslinks */
+.main-nav a:not(.nav-cta):not(.nav-contact):not(.btn)::after,
+.nav a:not(.nav-cta):not(.nav-contact):not(.btn)::after {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    left: 0;
+    height: 1px;
+    background: var(--copper);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+.main-nav a:not(.nav-cta):not(.nav-contact):not(.btn):hover::after,
+.nav a:not(.nav-cta):not(.nav-contact):not(.btn):hover::after,
+.main-nav a[aria-current="page"]::after,
+.nav a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+/* Einheitlicher Kontakt-Button */
+.main-nav .nav-cta,
+.main-nav .nav-contact,
+.nav .nav-cta,
+.nav .nav-contact {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 17px;
+    border: 1px solid #D6C9BA;
+    border-radius: var(--button-radius);
+    background: #FFFEFA;
+    color: var(--copper) !important;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+.main-nav .nav-cta:hover,
+.main-nav .nav-contact:hover,
+.nav .nav-cta:hover,
+.nav .nav-contact:hover {
+    border-color: #C7B5A1;
+    background: #EEE8DE;
+    color: var(--copper-dark) !important;
+    transform: translateY(-1px);
+}
+.main-nav .nav-cta::after,
+.main-nav .nav-contact::after,
+.nav .nav-cta::after,
+.nav .nav-contact::after {
+    display: none;
+}
 /* =========================================================
    4. DLZ-LOGO
    Dachlinie oben, DLZ mittig, BEDACHUNGEN darunter
    ========================================================= */
-
 .brand,
 .logo {
     display: inline-flex;
@@ -249,34 +304,27 @@ small {
     font-weight: 800;
     letter-spacing: -0.04em;
 }
-
 .brand {
     position: relative;
     gap: 0;
     min-width: 135px;
     padding-top: 2px;
 }
-
 .logo {
     font-size: 1.4rem;
 }
-
 .brand:hover,
 .logo:hover {
     color: var(--copper);
 }
-
 /* Wortmarke */
-
 .brand-wordmark {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     line-height: 1;
 }
-
 /* DLZ-Schriftzug */
-
 .brand-main {
     display: block;
     color: #342D26;
@@ -286,9 +334,11 @@ small {
     letter-spacing: -0.075em;
     line-height: 0.95;
 }
-
+/* Punkt im alten Logo */
+.brand-dot {
+    color: var(--copper);
+}
 /* BEDACHUNGEN */
-
 .brand-sub {
     display: block;
     margin-top: 6px;
@@ -300,9 +350,7 @@ small {
     line-height: 1.2;
     white-space: nowrap;
 }
-
 /* Dachlinie über DLZ */
-
 .brand-roof {
     position: absolute;
     top: -4px;
@@ -311,7 +359,6 @@ small {
     height: 14px;
     pointer-events: none;
 }
-
 .brand-roof::before {
     position: absolute;
     top: 5px;
@@ -324,7 +371,6 @@ small {
     transform: rotate(45deg) scale(0.72, 0.72);
     transform-origin: center;
 }
-
 .brand-roof::after {
     position: absolute;
     top: 15px;
@@ -335,9 +381,7 @@ small {
     content: "";
     opacity: 0.95;
 }
-
 /* Alte Logo-Klassen für andere Unterseiten */
-
 .brand-mark,
 .logo-mark {
     position: relative;
@@ -355,7 +399,6 @@ small {
     font-size: 1rem;
     font-weight: 900;
 }
-
 .brand-mark::before,
 .logo-mark::before {
     position: absolute;
@@ -369,7 +412,6 @@ small {
     transform: rotate(45deg) skew(-5deg, -5deg);
     opacity: 0.8;
 }
-
 .brand-mark span,
 .logo-mark span {
     position: relative;
@@ -378,14 +420,12 @@ small {
     font-size: 0.72rem;
     letter-spacing: 0.02em;
 }
-
 .brand-text,
 .logo-text {
     display: flex;
     flex-direction: column;
     line-height: 1.15;
 }
-
 .brand-text small,
 .logo-text small {
     margin-top: 4px;
@@ -395,94 +435,7 @@ small {
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
-
-/* Navigation */
-
-.main-nav,
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: clamp(14px, 2vw, 28px);
-}
-
-.main-nav a,
-.nav a {
-    position: relative;
-    color: var(--gray);
-    font-size: 0.91rem;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: color 0.2s ease;
-}
-
-.main-nav a:hover,
-.nav a:hover,
-.main-nav a[aria-current="page"],
-.nav a[aria-current="page"] {
-    color: var(--copper);
-}
-
-/* Dezente Linie unter normalen Navigationslinks */
-
-.main-nav a:not(.nav-cta):not(.btn)::after,
-.nav a:not(.nav-cta):not(.btn)::after {
-    position: absolute;
-    right: 0;
-    bottom: -7px;
-    left: 0;
-    height: 1px;
-    background: var(--copper);
-    content: "";
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.2s ease;
-}
-
-.main-nav a:not(.nav-cta):not(.btn):hover::after,
-.nav a:not(.nav-cta):not(.btn):hover::after {
-    transform: scaleX(1);
-}
-
-/* Kontakt-Button: passend zum Creme-Design */
-
-.nav-cta,
-.nav-contact {
-    display: inline-flex;
-    min-height: 42px;
-    align-items: center;
-    justify-content: center;
-    padding: 9px 17px;
-    border: 1px solid #D6C9BA;
-    border-radius: var(--button-radius);
-    background: #FFFEFA;
-    color: var(--copper) !important;
-    font-size: 0.9rem !important;
-    font-weight: 700 !important;
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-.nav-cta:hover,
-.nav-contact:hover {
-    border-color: #C7B5A1;
-    background: #EEE8DE;
-    transform: translateY(-1px);
-}
-
-.main-nav .nav-cta::after,
-.nav .nav-cta::after,
-.main-nav .nav-contact::after,
-.nav .nav-contact::after {
-    display: none;
-}
-
-
-/* Mobiler Menübutton */
-
+/* Hamburger-Menü */
 .menu-toggle {
     display: none;
     width: 44px;
@@ -501,7 +454,6 @@ small {
     -webkit-appearance: none;
     appearance: none;
 }
-
 .menu-toggle span {
     display: block;
     width: 21px;
@@ -512,12 +464,9 @@ small {
     opacity: 1;
     visibility: visible;
 }
-
-
 /* =========================================================
    5. BUTTONS UND LINKS
    ========================================================= */
-
 .btn,
 .btn-primary,
 .btn-copper,
@@ -542,7 +491,6 @@ small {
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
-
 .btn:hover,
 .btn-primary:hover,
 .btn-copper:hover,
@@ -550,7 +498,6 @@ small {
 .button:hover {
     transform: translateY(-2px);
 }
-
 .btn-primary,
 .btn-copper,
 .button-primary {
@@ -558,27 +505,23 @@ small {
     color: #FFFEFA;
     box-shadow: 0 5px 14px rgba(73, 59, 48, 0.12);
 }
-
 .btn-primary:hover,
 .btn-copper:hover,
 .button-primary:hover {
     background: var(--copper-dark);
     box-shadow: var(--hover-shadow);
 }
-
 .btn-outline,
 .button-outline {
     border-color: #D6C9BA;
     background: rgba(255, 254, 250, 0.9);
     color: var(--copper);
 }
-
 .btn-outline:hover,
 .button-outline:hover {
     border-color: var(--copper);
     background: var(--dark-2);
 }
-
 .text-link,
 .service-more {
     display: inline-flex;
@@ -588,19 +531,15 @@ small {
     font-weight: 700;
     transition: gap 0.2s ease, color 0.2s ease;
 }
-
 .text-link:hover,
 .service-more:hover {
     gap: 12px;
     color: var(--copper-dark);
 }
-
-
 /* =========================================================
    6. STARTSEITEN-HERO
    Bilddatei: dlz-hero.png.PNG
    ========================================================= */
-
 .hero {
     position: relative;
     isolation: isolate;
@@ -624,7 +563,6 @@ small {
     background-size: cover;
     border-bottom: 1px solid var(--border);
 }
-
 .hero::after {
     position: absolute;
     z-index: -1;
@@ -637,9 +575,7 @@ small {
     content: "";
     pointer-events: none;
 }
-
 /* Unterstützt Unterseiten oder HTML-Varianten mit separatem Bildelement */
-
 .hero-image {
     position: absolute;
     z-index: -2;
@@ -649,7 +585,6 @@ small {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .hero-shade {
     position: absolute;
     z-index: -1;
@@ -662,18 +597,15 @@ small {
     );
     pointer-events: none;
 }
-
 .hero-content {
     position: relative;
     z-index: 1;
     width: min(var(--max-width), 100%);
     margin-inline: auto;
 }
-
 .hero-content > * {
     max-width: 760px;
 }
-
 .hero h1 {
     margin-bottom: 24px;
     color: #342D26;
@@ -681,11 +613,9 @@ small {
     line-height: 1.02;
     letter-spacing: -0.06em;
 }
-
 .hero h1 span {
     color: var(--copper);
 }
-
 .hero-meta {
     display: inline-flex;
     align-items: center;
@@ -698,7 +628,6 @@ small {
     color: var(--copper);
     letter-spacing: 0.06em;
 }
-
 .hero-meta::before {
     width: 7px;
     height: 7px;
@@ -706,14 +635,12 @@ small {
     background: var(--copper);
     content: "";
 }
-
 .hero-subtitle,
 .hero-description {
     max-width: 660px;
     margin-bottom: 32px;
     color: #625B53;
 }
-
 .hero-buttons,
 .hero-actions {
     display: flex;
@@ -721,69 +648,53 @@ small {
     gap: 13px;
     margin-top: 30px;
 }
-
 .hero-note {
     margin-top: 28px;
     color: var(--gray);
     font-size: 0.88rem;
 }
-
-
 /* =========================================================
    7. SECTIONS UND ABSCHNITTSÜBERSCHRIFTEN
    ========================================================= */
-
 .section,
 .services,
 .content-section {
     padding: clamp(70px, 9vw, 120px) 0;
 }
-
 .section-light {
     background: var(--card-bg);
 }
-
 .section-muted {
     background: var(--dark-2);
 }
-
 .section-heading {
     max-width: 740px;
     margin: 0 auto 48px;
     text-align: center;
 }
-
 .section-heading h2 {
     margin-bottom: 18px;
 }
-
 .section-heading p {
     max-width: 650px;
     margin-inline: auto;
 }
-
 .section-heading .section-label {
     margin-bottom: 15px;
 }
-
 .section-intro {
     max-width: 780px;
     margin-bottom: 40px;
 }
-
 .section-intro h2 {
     margin-bottom: 18px;
 }
-
 .section-intro p {
     max-width: 680px;
 }
-
-
 /* =========================================================
    8. LEISTUNGEN UND KARTEN
    ========================================================= */
-
 .service-grid,
 .services-grid,
 .card-grid {
@@ -791,7 +702,6 @@ small {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
 }
-
 .service-card,
 .detail-card,
 .value-card,
@@ -808,7 +718,6 @@ small {
         border-color 0.25s ease,
         box-shadow 0.25s ease;
 }
-
 .service-card:hover,
 .detail-card:hover,
 .value-card:hover,
@@ -818,7 +727,6 @@ small {
     border-color: #D1C2B1;
     box-shadow: var(--hover-shadow);
 }
-
 .service-card {
     display: flex;
     min-height: 230px;
@@ -826,19 +734,15 @@ small {
     align-items: flex-start;
     padding: 29px;
 }
-
 .service-card h3 {
     margin: 18px 0 12px;
 }
-
 .service-card p {
     margin-bottom: 20px;
 }
-
 .service-card .service-more {
     margin-top: auto;
 }
-
 .service-icon,
 .card-icon {
     display: flex;
@@ -854,7 +758,6 @@ small {
     font-size: 1.2rem;
     font-weight: 800;
 }
-
 .service-card img,
 .detail-card img,
 .project-card img {
@@ -862,39 +765,31 @@ small {
     height: 220px;
     object-fit: cover;
 }
-
 .service-card .service-content,
 .detail-card .card-content,
 .project-card .project-content {
     padding: 25px;
 }
-
 .service-card .service-content {
     display: flex;
     flex: 1;
     flex-direction: column;
 }
-
 .service-card .service-content .service-more {
     margin-top: auto;
 }
-
 .service-more {
     margin-top: 8px;
 }
-
 .services-footer,
 .service-grid-footer {
     display: flex;
     justify-content: center;
     margin-top: 38px;
 }
-
-
 /* =========================================================
    9. ÜBER UNS UND WERTE
    ========================================================= */
-
 .about-grid,
 .intro-grid,
 .content-grid,
@@ -904,19 +799,16 @@ small {
     align-items: center;
     gap: clamp(35px, 6vw, 80px);
 }
-
 .about-copy h2,
 .intro-copy h2,
 .content-copy h2 {
     margin-bottom: 22px;
 }
-
 .about-copy p,
 .intro-copy p,
 .content-copy p {
     margin-bottom: 18px;
 }
-
 .about-image,
 .intro-image,
 .photo-frame,
@@ -927,7 +819,6 @@ small {
     background: var(--dark-2);
     box-shadow: var(--soft-shadow);
 }
-
 .about-image img,
 .intro-image img,
 .photo-frame img,
@@ -937,31 +828,24 @@ small {
     min-height: 320px;
     object-fit: cover;
 }
-
 .values-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     margin-top: 35px;
 }
-
 .value-card {
     padding: 26px;
 }
-
 .value-card h3 {
     margin: 0 0 12px;
 }
-
 .value-card p {
     margin-bottom: 0;
 }
-
-
 /* =========================================================
    10. STATEMENT-ABSCHNITT
    ========================================================= */
-
 .statement-section,
 .statement-band {
     padding: clamp(65px, 9vw, 110px) 24px;
@@ -970,26 +854,21 @@ small {
     background: #EEE8DE;
     text-align: center;
 }
-
 .statement-inner {
     width: min(850px, 100%);
     margin-inline: auto;
 }
-
 .statement-inner h2 {
     margin-bottom: 22px;
 }
-
 .statement-inner p {
     max-width: 700px;
     margin: 0 auto 25px;
 }
-
-
 /* =========================================================
    11. HERO FÜR UNTERSEITEN
+   Bilddatei: dlz-hero.png.PNG
    ========================================================= */
-
 .page-hero {
     position: relative;
     isolation: isolate;
@@ -1001,7 +880,6 @@ small {
     background: #EEE8DE;
     border-bottom: 1px solid var(--border);
 }
-
 .page-hero-image {
     background-image:
         linear-gradient(
@@ -1015,62 +893,50 @@ small {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .page-hero-content {
     width: min(var(--max-width), 100%);
     margin-inline: auto;
 }
-
 .page-hero h1 {
     max-width: 850px;
     margin-bottom: 20px;
     font-size: clamp(2.5rem, 5vw, 4.6rem);
 }
-
 .page-hero p {
     max-width: 680px;
     margin-bottom: 0;
     font-size: 1.08rem;
 }
-
 .page-hero .page-eyebrow {
     margin-bottom: 16px;
 }
-
-
 /* =========================================================
    12. UNTERSEITEN-INHALTE
    ========================================================= */
-
 .page-content,
 .legal-content {
     width: min(900px, calc(100% - 48px));
     margin-inline: auto;
     padding: clamp(55px, 8vw, 95px) 0;
 }
-
 .page-content > h2,
 .legal-content > h2 {
     margin-top: 38px;
     margin-bottom: 17px;
 }
-
 .page-content > h2:first-child,
 .legal-content > h2:first-child {
     margin-top: 0;
 }
-
 .page-content h3,
 .legal-content h3 {
     margin-top: 28px;
     margin-bottom: 12px;
 }
-
 .page-content p,
 .legal-content p {
     margin-bottom: 18px;
 }
-
 .page-content ul,
 .page-content ol,
 .legal-content ul,
@@ -1078,12 +944,10 @@ small {
     padding-left: 24px;
     color: var(--gray);
 }
-
 .page-content li,
 .legal-content li {
     margin-bottom: 9px;
 }
-
 .page-content a,
 .legal-content a {
     color: var(--copper);
@@ -1092,12 +956,10 @@ small {
     text-decoration-color: #C9B9A7;
     text-underline-offset: 3px;
 }
-
 .page-content a:hover,
 .legal-content a:hover {
     color: var(--copper-dark);
 }
-
 .content-panel {
     padding: clamp(25px, 4vw, 42px);
     border: 1px solid var(--border);
@@ -1105,94 +967,71 @@ small {
     background: var(--card-bg);
     box-shadow: var(--soft-shadow);
 }
-
-
 /* =========================================================
    13. DETAIL-KARTEN
    ========================================================= */
-
 .detail-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
-
 .detail-card {
     padding: 28px;
 }
-
 .detail-card h3 {
     margin-bottom: 12px;
 }
-
 .detail-card p:last-child {
     margin-bottom: 0;
 }
-
-
 /* =========================================================
    14. PROJEKTE
    ========================================================= */
-
 .projects-grid,
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
 }
-
 .project-card {
     display: flex;
     flex-direction: column;
 }
-
 .project-card .project-content {
     flex: 1;
 }
-
 .project-card h3 {
     margin-bottom: 12px;
 }
-
 .project-card p {
     margin-bottom: 0;
 }
-
-
 /* =========================================================
    15. SOCIAL MEDIA
    ========================================================= */
-
 .social-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
-
 .social-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 30px;
 }
-
 .social-card h3 {
     margin: 18px 0 12px;
 }
-
 .social-card p {
     margin-bottom: 22px;
 }
-
 .social-card .btn {
     margin-top: auto;
 }
-
-
 /* =========================================================
    16. KONTAKTABSCHNITT
    ========================================================= */
-
 .contact-band,
 .contact {
     padding: clamp(65px, 8vw, 100px) 0;
@@ -1200,7 +1039,6 @@ small {
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
-
 .contact-inner,
 .contact-grid {
     display: grid;
@@ -1208,23 +1046,19 @@ small {
     align-items: start;
     gap: clamp(35px, 6vw, 75px);
 }
-
 .contact-copy h2,
 .contact-details h2 {
     margin-bottom: 18px;
 }
-
 .contact-copy > p,
 .contact-details > p {
     margin-bottom: 28px;
 }
-
 .contact-items,
 .contact-list {
     display: grid;
     gap: 15px;
 }
-
 .contact-item,
 .contact-detail {
     display: flex;
@@ -1235,7 +1069,6 @@ small {
     border-radius: 15px;
     background: var(--card-bg);
 }
-
 .contact-item-icon,
 .contact-detail-icon {
     display: flex;
@@ -1249,36 +1082,29 @@ small {
     color: var(--copper);
     font-weight: 800;
 }
-
 .contact-item h3,
 .contact-detail h3 {
     margin: 0 0 4px;
     font-size: 1rem;
 }
-
 .contact-item p,
 .contact-detail p {
     margin: 0;
     font-size: 0.94rem;
 }
-
 .contact-item a,
 .contact-detail a {
     color: var(--copper);
     font-weight: 600;
     overflow-wrap: anywhere;
 }
-
 .contact-item a:hover,
 .contact-detail a:hover {
     text-decoration: underline;
 }
-
-
 /* =========================================================
    17. KONTAKTFORMULAR
    ========================================================= */
-
 .contact-form,
 .form-panel {
     padding: clamp(25px, 4vw, 38px);
@@ -1287,17 +1113,14 @@ small {
     background: var(--card-bg);
     box-shadow: var(--soft-shadow);
 }
-
 .contact-form h3,
 .form-panel h3 {
     margin-bottom: 10px;
 }
-
 .contact-form > p,
 .form-panel > p {
     margin-bottom: 25px;
 }
-
 .form-group,
 .form-field {
     display: flex;
@@ -1305,7 +1128,6 @@ small {
     gap: 8px;
     margin-bottom: 18px;
 }
-
 .contact-form label,
 .form-panel label,
 .form-group label,
@@ -1314,7 +1136,6 @@ small {
     font-size: 0.91rem;
     font-weight: 700;
 }
-
 .contact-form input,
 .contact-form textarea,
 .contact-form select,
@@ -1338,7 +1159,6 @@ small {
     font-size: 0.96rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 .contact-form textarea,
 .form-panel textarea,
 .form-group textarea,
@@ -1346,14 +1166,12 @@ small {
     min-height: 145px;
     resize: vertical;
 }
-
 .contact-form input::placeholder,
 .contact-form textarea::placeholder,
 .form-panel input::placeholder,
 .form-panel textarea::placeholder {
     color: #93877B;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus,
@@ -1369,48 +1187,38 @@ small {
     border-color: #8B7764;
     box-shadow: 0 0 0 3px rgba(139, 119, 100, 0.12);
 }
-
 .contact-form button,
 .contact-form input[type="submit"],
 .form-panel button,
 .form-panel input[type="submit"] {
     width: 100%;
 }
-
 .form-note {
     margin-top: 14px;
     font-size: 0.83rem;
 }
-
-
 /* =========================================================
    18. RECHTLICHE SEITEN
    ========================================================= */
-
 .legal-content {
     max-width: 900px;
 }
-
 .legal-content h1 {
     margin-bottom: 32px;
     font-size: clamp(2.3rem, 4vw, 3.6rem);
 }
-
 .legal-content h2 {
     margin-top: 36px;
     font-size: 1.45rem;
 }
-
 .legal-content h3 {
     font-size: 1.1rem;
 }
-
 .legal-content address {
     color: var(--gray);
     font-style: normal;
     line-height: 1.8;
 }
-
 .notice,
 .info-box {
     margin: 25px 0;
@@ -1420,24 +1228,19 @@ small {
     border-radius: 12px;
     background: var(--card-bg);
 }
-
 .notice p:last-child,
 .info-box p:last-child {
     margin-bottom: 0;
 }
-
-
 /* =========================================================
    19. FOOTER
    Vier Spalten passend zum Index
    ========================================================= */
-
 .site-footer,
 footer {
     background: #F1EBE2;
     border-top: 1px solid var(--border);
 }
-
 .footer-main {
     display: grid;
     grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(0, 1fr));
@@ -1446,21 +1249,17 @@ footer {
     padding-top: 52px;
     padding-bottom: 40px;
 }
-
 .footer-brand {
     min-width: 0;
 }
-
 .footer-brand .brand {
     margin-top: 5px;
 }
-
 .footer-brand p {
     max-width: 330px;
     margin: 18px 0 0;
     font-size: 0.92rem;
 }
-
 .footer-column {
     display: flex;
     min-width: 0;
@@ -1468,7 +1267,6 @@ footer {
     align-items: flex-start;
     gap: 11px;
 }
-
 .footer-column h3,
 .footer-links-wrap h3 {
     margin-bottom: 8px;
@@ -1476,7 +1274,6 @@ footer {
     font-size: 1rem;
     letter-spacing: -0.02em;
 }
-
 .footer-column a,
 .footer-links a,
 .footer-nav a,
@@ -1486,25 +1283,21 @@ footer a {
     overflow-wrap: anywhere;
     transition: color 0.2s ease;
 }
-
 .footer-column a:hover,
 .footer-links a:hover,
 .footer-nav a:hover,
 footer a:hover {
     color: var(--copper);
 }
-
 .footer-links-wrap h3 {
     margin-bottom: 17px;
 }
-
 .footer-links,
 .footer-nav {
     display: flex;
     flex-wrap: wrap;
     gap: 12px 22px;
 }
-
 .footer-bottom {
     display: flex;
     align-items: center;
@@ -1514,30 +1307,23 @@ footer a:hover {
     padding-bottom: 24px;
     border-top: 1px solid var(--border);
 }
-
 .footer-bottom p {
     margin: 0;
     font-size: 0.83rem;
 }
-
 .footer-bottom span {
     color: var(--gray);
     font-size: 0.83rem;
 }
-
 .footer-bottom .footer-links {
     gap: 10px 18px;
 }
-
 .footer-bottom .footer-links a {
     font-size: 0.83rem;
 }
-
-
 /* =========================================================
    20. WHATSAPP / SCHWEBENDER KONTAKT
    ========================================================= */
-
 .whatsapp-float,
 .whatsapp-button,
 .floating-contact {
@@ -1560,19 +1346,15 @@ footer a:hover {
     font-weight: 800;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .whatsapp-float:hover,
 .whatsapp-button:hover,
 .floating-contact:hover {
     transform: translateY(-3px);
     box-shadow: var(--hover-shadow);
 }
-
-
 /* =========================================================
    21. LISTEN UND CHECKMARKS
    ========================================================= */
-
 .check-list,
 .feature-list {
     display: grid;
@@ -1580,14 +1362,12 @@ footer a:hover {
     padding: 0;
     list-style: none;
 }
-
 .check-list li,
 .feature-list li {
     position: relative;
     padding-left: 28px;
     color: var(--gray);
 }
-
 .check-list li::before,
 .feature-list li::before {
     position: absolute;
@@ -1597,31 +1377,24 @@ footer a:hover {
     content: "✓";
     font-weight: 900;
 }
-
-
 /* =========================================================
-   22. TABLET UND MOBILE NAVIGATION
+   22. TABLET
    ========================================================= */
-
 @media (max-width: 1000px) {
     .main-nav,
     .nav {
         gap: 14px;
     }
-
     .main-nav a,
     .nav a {
         font-size: 0.84rem;
     }
-
     .brand-main {
         font-size: 1.85rem;
     }
-
     .brand-sub {
         font-size: 0.55rem;
     }
-
     .service-grid,
     .services-grid,
     .card-grid,
@@ -1629,121 +1402,115 @@ footer a:hover {
     .project-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
     .hero {
         min-height: 620px;
     }
-
     .contact-inner,
     .contact-grid {
         gap: 32px;
     }
 }
-
-
 /* =========================================================
    23. MOBILE
+   Menü kompatibel mit script.js und .is-open
    ========================================================= */
-
 @media (max-width: 900px) {
     :root {
-        --header-height: 72px;
+        --header-height: 74px;
         --card-radius: 17px;
     }
-
     .container,
     .header-inner,
     .footer-main,
     .footer-bottom {
-        width: min(100% - 36px, var(--max-width));
+        width: min(calc(100% - 36px), var(--max-width));
     }
-
+    /* Gleiche Kopfzeilenhöhe auf sämtlichen Seiten */
+    .site-header,
+    .topbar {
+        min-height: var(--header-height);
+    }
     .header-inner,
     .topbar-inner {
+        min-height: var(--header-height);
         gap: 15px;
     }
-
-    /* Logo bleibt kompakt und links ausgerichtet */
-
+    /* Logo */
     .brand {
         min-width: 125px;
     }
-
     .brand-main {
         font-size: 1.8rem;
     }
-
     .brand-sub {
         margin-top: 5px;
         font-size: 0.53rem;
         letter-spacing: 0.17em;
     }
-
     .brand-roof {
         top: -5px;
         transform: scale(0.94);
         transform-origin: left top;
     }
-
     /* Hamburger sichtbar */
-
     .menu-toggle {
         display: flex;
     }
-
-    /* Menü liegt direkt unter der Kopfzeile */
-
+    /* Mobiles Menü */
     .main-nav,
     .nav {
         position: absolute;
-        top: calc(100% + 1px);
+        top: 100%;
         right: -18px;
         left: -18px;
         display: none;
         align-items: stretch;
+        justify-content: flex-start;
         flex-direction: column;
         gap: 0;
+        max-height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+        margin: 0;
         padding: 12px 18px 20px;
         border-bottom: 1px solid var(--border);
         background: #F7F4EE;
         box-shadow: 0 14px 24px rgba(73, 59, 48, 0.07);
     }
-
-    /* Unterstützt die üblichen Klassen für das geöffnete Menü */
-
+    /* Öffnen durch deine bestehende script.js */
     .main-nav.is-open,
     .nav.is-open,
     .main-nav.active,
     .nav.active {
         display: flex;
     }
-
     .main-nav a,
     .nav a {
-        display: block;
-        padding: 13px 8px;
+        display: flex;
+        width: 100%;
+        min-height: 46px;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 12px 8px;
         font-size: 0.97rem;
         white-space: normal;
     }
-
-    .main-nav a:not(.nav-cta):not(.btn)::after,
-    .nav a:not(.nav-cta):not(.btn)::after {
+    .main-nav a:not(.nav-cta):not(.nav-contact):not(.btn)::after,
+    .nav a:not(.nav-cta):not(.nav-contact):not(.btn)::after {
         display: none;
     }
-
     .main-nav .nav-cta,
     .main-nav .nav-contact,
     .nav .nav-cta,
     .nav .nav-contact {
         display: flex;
         justify-content: center;
+        width: 100%;
+        min-height: 46px;
         margin-top: 8px;
         padding: 12px 16px;
         text-align: center;
     }
-
     /* Hero-Bild auf dem Handy */
-
     .hero {
         min-height: 610px;
         padding: 80px 22px;
@@ -1757,7 +1524,6 @@ footer a:hover {
             ),
             url("dlz-hero.png.PNG");
     }
-
     .hero-shade {
         background: linear-gradient(
             90deg,
@@ -1766,26 +1532,21 @@ footer a:hover {
             rgba(247, 244, 238, 0.26) 100%
         );
     }
-
     .hero h1 {
         font-size: clamp(2.7rem, 11vw, 4.3rem);
     }
-
     .hero-subtitle,
     .hero-description {
         font-size: 1rem;
     }
-
     .section,
     .services,
     .content-section {
         padding: 70px 0;
     }
-
     .section-heading {
         margin-bottom: 34px;
     }
-
     .service-grid,
     .services-grid,
     .card-grid,
@@ -1797,12 +1558,10 @@ footer a:hover {
         grid-template-columns: 1fr;
         gap: 17px;
     }
-
     .service-card {
         min-height: auto;
         padding: 25px;
     }
-
     .about-grid,
     .intro-grid,
     .content-grid,
@@ -1812,23 +1571,19 @@ footer a:hover {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
     .about-image img,
     .intro-image img,
     .photo-frame img,
     .content-image img {
         min-height: 260px;
     }
-
     .page-hero {
         min-height: 330px;
         padding: 65px 22px;
     }
-
     .page-hero h1 {
         font-size: clamp(2.35rem, 9vw, 3.6rem);
     }
-
     .page-hero-image {
         background-image:
             linear-gradient(
@@ -1840,43 +1595,34 @@ footer a:hover {
             var(--page-image, url("dlz-hero.png.PNG"));
         background-position: center, 58% center;
     }
-
     .page-content,
     .legal-content {
         width: calc(100% - 36px);
         padding: 55px 0;
     }
-
     .contact-band,
     .contact {
         padding: 65px 0;
     }
-
-    /* Footer wird auf Mobilgeräten untereinander angeordnet */
-
+    /* Footer */
     .footer-main {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 30px 22px;
         padding-top: 38px;
         padding-bottom: 30px;
     }
-
     .footer-brand {
         grid-column: 1 / -1;
     }
-
     .footer-bottom {
         align-items: flex-start;
         flex-direction: column;
         gap: 13px;
     }
 }
-
-
 /* =========================================================
    24. KLEINE SMARTPHONES
    ========================================================= */
-
 @media (max-width: 430px) {
     .container,
     .header-inner,
@@ -1884,74 +1630,60 @@ footer a:hover {
     .footer-bottom {
         width: calc(100% - 30px);
     }
-
     .brand {
         min-width: 118px;
     }
-
     .brand-main {
         font-size: 1.7rem;
     }
-
     .brand-sub {
         font-size: 0.5rem;
         letter-spacing: 0.16em;
     }
-
     .menu-toggle {
         width: 42px;
         height: 42px;
     }
-
     .hero {
         min-height: 570px;
         padding: 65px 18px;
         background-position: center, 58% center;
     }
-
     .hero h1 {
         font-size: 2.65rem;
     }
-
     .hero-buttons,
     .hero-actions {
         align-items: stretch;
         flex-direction: column;
     }
-
     .hero-buttons .btn,
     .hero-actions .btn,
     .hero-buttons .btn-primary,
     .hero-buttons .btn-outline {
         width: 100%;
     }
-
     .section-heading h2,
     .section-intro h2 {
         font-size: 2rem;
     }
-
     .service-card,
     .detail-card,
     .value-card,
     .social-card {
         padding: 22px;
     }
-
     .contact-form,
     .form-panel {
         padding: 22px;
     }
-
     .footer-main {
         grid-template-columns: 1fr;
         gap: 26px;
     }
-
     .footer-brand {
         grid-column: auto;
     }
-
     .whatsapp-float,
     .whatsapp-button,
     .floating-contact {
@@ -1962,12 +1694,9 @@ footer a:hover {
         padding: 10px 13px;
     }
 }
-
-
 /* =========================================================
    25. BARRIEREFREIHEIT
    ========================================================= */
-
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

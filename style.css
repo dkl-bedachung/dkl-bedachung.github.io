@@ -1707,3 +1707,236 @@ footer a:hover {
         transition-duration: 0.01ms !important;
     }
 }
+/* =========================================================
+   26. EINHEITLICHER HEADER UND LOGO AUF ALLEN SEITEN
+   Ergänzung – vorhandenen CSS-Code nicht ersetzen
+   ========================================================= */
+/* Einheitliche Kopfzeile */
+.site-header,
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: var(--header-height);
+    background: rgba(247, 244, 238, 0.97);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 18px rgba(73, 59, 48, 0.035);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+/* Einheitliche Ausrichtung */
+.site-header .header-inner,
+.site-header .topbar-inner,
+.topbar .header-inner,
+.topbar .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: min(var(--max-width), calc(100% - 48px));
+    min-height: var(--header-height);
+    margin-inline: auto;
+}
+/* Einheitliche Logo-Grundform – unabhängig von der HTML-Variante */
+.site-header .brand,
+.topbar .brand,
+.site-header .logo,
+.topbar .logo {
+    position: relative;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    min-width: 135px;
+    margin: 0;
+    padding: 5px 0 0;
+    color: #342D26;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+}
+/* DLZ-Schriftzug: für beide vorhandenen HTML-Varianten */
+.site-header .brand-main,
+.topbar .brand-main,
+.site-header .logo .brand-main,
+.topbar .logo .brand-main {
+    display: block;
+    margin: 0;
+    color: #342D26;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.075em;
+}
+/* Punkt im Logo */
+.site-header .brand-dot,
+.topbar .brand-dot {
+    color: #625044;
+}
+/* Unterzeile BEDACHUNGEN */
+.site-header .brand-sub,
+.topbar .brand-sub {
+    display: block;
+    margin-top: 6px;
+    color: #625044;
+    font-family: var(--font-body);
+    font-size: 0.59rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.19em;
+    white-space: nowrap;
+}
+/* Wortmarke der Startseite */
+.site-header .brand-wordmark,
+.topbar .brand-wordmark {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    line-height: 1;
+}
+/* Dachlinie: wird verwendet, wenn das HTML sie enthält */
+.site-header .brand-roof,
+.topbar .brand-roof {
+    position: absolute;
+    top: -4px;
+    left: 1px;
+    width: 44px;
+    height: 14px;
+    pointer-events: none;
+}
+/* Einheitliches Logo-Verhalten beim Darüberfahren */
+.site-header .brand:hover,
+.topbar .brand:hover,
+.site-header .logo:hover,
+.topbar .logo:hover {
+    color: #493B30;
+}
+/* Einheitliche Navigation */
+.site-header .main-nav,
+.site-header .nav,
+.topbar .main-nav,
+.topbar .nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(14px, 2vw, 28px);
+    margin: 0;
+    padding: 0;
+}
+/* Einheitliche Navigationslinks */
+.site-header .main-nav > a,
+.site-header .nav > a,
+.topbar .main-nav > a,
+.topbar .nav > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    color: #625B53;
+    font-family: var(--font-body);
+    font-size: 0.91rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-decoration: none;
+}
+/* Hover und aktive Seite */
+.site-header .main-nav > a:hover,
+.site-header .nav > a:hover,
+.topbar .main-nav > a:hover,
+.topbar .nav > a:hover,
+.site-header .main-nav > a[aria-current="page"],
+.site-header .nav > a[aria-current="page"],
+.topbar .main-nav > a[aria-current="page"],
+.topbar .nav > a[aria-current="page"] {
+    color: #493B30;
+}
+/* Einheitlicher Kontakt-Button */
+.site-header .main-nav > .nav-cta,
+.site-header .main-nav > .nav-contact,
+.site-header .nav > .nav-cta,
+.site-header .nav > .nav-contact,
+.topbar .main-nav > .nav-cta,
+.topbar .main-nav > .nav-contact,
+.topbar .nav > .nav-cta,
+.topbar .nav > .nav-contact {
+    min-height: 42px;
+    padding: 9px 17px;
+    border: 1px solid #D6C9BA;
+    border-radius: var(--button-radius);
+    background: #FFFEFA;
+    color: #493B30;
+    font-weight: 700;
+}
+/* Einheitlicher Hamburger-Button */
+.site-header .menu-toggle,
+.topbar .menu-toggle {
+    flex-shrink: 0;
+    border: 1px solid #D6C9BA;
+    border-radius: 12px;
+    background: #FFFEFA;
+    color: #493B30;
+}
+/* Mobile Anpassungen */
+@media (max-width: 900px) {
+    .site-header .header-inner,
+    .site-header .topbar-inner,
+    .topbar .header-inner,
+    .topbar .topbar-inner {
+        width: calc(100% - 36px);
+        min-height: var(--header-height);
+        gap: 15px;
+    }
+    .site-header .brand,
+    .topbar .brand,
+    .site-header .logo,
+    .topbar .logo {
+        min-width: 125px;
+    }
+    .site-header .brand-main,
+    .topbar .brand-main {
+        font-size: 1.8rem;
+    }
+    .site-header .brand-sub,
+    .topbar .brand-sub {
+        margin-top: 5px;
+        font-size: 0.53rem;
+        letter-spacing: 0.17em;
+    }
+    .site-header .main-nav,
+    .site-header .nav,
+    .topbar .main-nav,
+    .topbar .nav {
+        gap: 0;
+    }
+}
+@media (max-width: 430px) {
+    .site-header .header-inner,
+    .site-header .topbar-inner,
+    .topbar .header-inner,
+    .topbar .topbar-inner {
+        width: calc(100% - 30px);
+    }
+    .site-header .brand,
+    .topbar .brand,
+    .site-header .logo,
+    .topbar .logo {
+        min-width: 118px;
+    }
+    .site-header .brand-main,
+    .topbar .brand-main {
+        font-size: 1.7rem;
+    }
+    .site-header .brand-sub,
+    .topbar .brand-sub {
+        font-size: 0.5rem;
+        letter-spacing: 0.16em;
+    }
+}

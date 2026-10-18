@@ -3,61 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Projekte | DLZ-Bedachungen Hamburg</title>
-
 <meta name="description" content="DLZ-Bedachungen aus Hamburg. Unsere ersten Projekte folgen in den kommenden Wochen und Monaten.">
 <meta name="theme-color" content="#f7f3ed">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
-
 <style>
 /* ========================================
-   PROJEKTE – HELLER KUPFER-LOOK
+   PROJEKTE – BRAUN-BEIGE-DESIGN
 ======================================== */
-
 :root {
-  --projects-cream: #f7f3ed;
-  --projects-white: #fffdf9;
-  --projects-copper: #b96f38;
-  --projects-copper-light: #d99a63;
-  --projects-text: #30271f;
-  --projects-muted: #71675e;
-  --projects-border: rgba(185, 111, 56, 0.22);
+  --projects-cream: #f7f4ee;
+  --projects-white: #fffefa;
+  --projects-brown: #625044;
+  --projects-brown-light: #8b7968;
+  --projects-text: #342d26;
+  --projects-muted: #625b53;
+  --projects-border: #e5ded3;
 }
-
 /* Seitenhintergrund */
-
 body {
   background: var(--projects-cream);
   color: var(--projects-text);
 }
-
 /* Hero-Bereich */
-
 .page-hero {
   position: relative;
+  isolation: isolate;
   min-height: 490px;
   display: flex;
   align-items: center;
   overflow: hidden;
-
-  background:
+  background-color: #eee8de;
+  background-image:
     linear-gradient(
       90deg,
-      rgba(247, 243, 237, 0.96) 0%,
-      rgba(247, 243, 237, 0.87) 42%,
-      rgba(247, 243, 237, 0.50) 100%
+      rgba(247, 244, 238, 0.96) 0%,
+      rgba(247, 244, 238, 0.87) 42%,
+      rgba(247, 244, 238, 0.50) 100%
     ),
-    url("dlz-hero.png") center 45% / cover no-repeat;
+    url("dlz-hero.png.PNG");
+  background-position: center, center 45%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid var(--projects-border);
 }
-
 .page-hero .container {
   position: relative;
   z-index: 1;
@@ -65,11 +58,9 @@ body {
   padding-top: 100px;
   padding-bottom: 65px;
 }
-
 .page-hero .eyebrow {
-  color: var(--projects-copper);
+  color: var(--projects-brown);
 }
-
 .page-hero h1 {
   max-width: 750px;
   color: var(--projects-text);
@@ -78,35 +69,28 @@ body {
   line-height: 1.08;
   letter-spacing: -1.5px;
 }
-
 .page-hero h1 em {
-  color: var(--projects-copper);
+  color: var(--projects-brown);
   font-style: normal;
 }
-
 .page-hero > .container > p:last-child {
   max-width: 650px;
   color: var(--projects-muted);
   font-size: 17px;
   line-height: 1.7;
 }
-
 /* Allgemeiner Inhaltsbereich */
-
 .section {
   background: var(--projects-cream);
   padding-top: 85px;
   padding-bottom: 90px;
 }
-
 .section-heading {
   margin-bottom: 38px;
 }
-
 .section-heading .eyebrow {
-  color: var(--projects-copper);
+  color: var(--projects-brown);
 }
-
 .section-heading h2 {
   color: var(--projects-text);
   font-family: "Manrope", sans-serif;
@@ -114,43 +98,33 @@ body {
   line-height: 1.15;
   letter-spacing: -1px;
 }
-
 .section-heading h2 em {
-  color: var(--projects-copper);
+  color: var(--projects-brown);
   font-style: normal;
 }
-
 /* Projekte-Hinweis */
-
 .projects-coming {
   max-width: 850px;
   margin: 0 auto;
   padding: 65px 35px;
   text-align: center;
-
   background: var(--projects-white);
   border: 1px solid var(--projects-border);
   border-radius: 22px;
-
-  box-shadow: 0 16px 45px rgba(78, 54, 34, 0.06);
+  box-shadow: 0 16px 45px rgba(52, 45, 38, 0.06);
 }
-
 .projects-coming .coming-label {
   display: inline-block;
   margin-bottom: 22px;
   padding: 9px 14px;
-
-  border: 1px solid rgba(185, 111, 56, 0.30);
+  border: 1px solid #d8cfc3;
   border-radius: 5px;
-
-  background: #f8eee3;
-  color: var(--projects-copper);
-
+  background: #eee8de;
+  color: var(--projects-brown);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.5px;
 }
-
 .projects-coming h2 {
   margin-bottom: 18px;
   color: var(--projects-text);
@@ -160,62 +134,61 @@ body {
   line-height: 1.2;
   letter-spacing: -0.8px;
 }
-
 .projects-coming h2 em {
-  color: var(--projects-copper);
+  color: var(--projects-brown);
   font-style: normal;
 }
-
 .projects-coming p {
   max-width: 580px;
   margin: 0 auto;
-
   color: var(--projects-muted);
   font-size: 15px;
   line-height: 1.9;
 }
-
 .projects-coming .btn {
   display: inline-block;
   margin-top: 28px;
 }
-
-/* Kupferfarbene Buttons */
-
+/* Buttons */
 .page-hero .btn,
 .projects-coming .btn,
 .contact-band .btn {
-  border-radius: 8px;
+  border-radius: 11px;
   transition:
     transform 0.2s ease,
     background-color 0.2s ease,
     box-shadow 0.2s ease;
 }
-
 .projects-coming .btn:hover,
 .contact-band .btn:hover {
   transform: translateY(-2px);
 }
-
+/* Braun-Beige-Button statt Kupfer */
+.btn-copper {
+  background: var(--projects-brown);
+  border-color: var(--projects-brown);
+  color: #fffefa;
+}
+.btn-copper:hover {
+  background: #493d33;
+  border-color: #493d33;
+  color: #fffefa;
+}
 /* Kontaktbereich */
-
 .contact-band {
   padding: 65px 0;
-  background: #efe4d7;
-  border-top: 1px solid rgba(185, 111, 56, 0.14);
+  background: #eee8de;
+  border-top: 1px solid var(--projects-border);
 }
-
 .contact-band-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 35px;
 }
-
 .contact-band .eyebrow {
-  color: var(--projects-copper);
+  color: var(--projects-brown);
 }
-
 .contact-band h2 {
   margin-bottom: 14px;
   color: var(--projects-text);
@@ -223,127 +196,120 @@ body {
   font-weight: 800;
   line-height: 1.2;
 }
-
 .contact-band p:not(.eyebrow) {
   max-width: 600px;
   color: var(--projects-muted);
   line-height: 1.8;
 }
-
 .contact-band .btn {
   flex-shrink: 0;
 }
-
 /* Footer */
-
 .site-footer {
-  background: #fffdf9;
+  background: #fffefa;
   color: var(--projects-text);
   border-top: 1px solid var(--projects-border);
 }
-
 .site-footer .footer-brand p {
   color: var(--projects-muted);
 }
-
 .site-footer .footer-column h3 {
   color: var(--projects-text);
 }
-
 .site-footer .footer-column a {
   color: var(--projects-muted);
   transition: color 0.2s ease;
 }
-
 .site-footer .footer-column a:hover {
-  color: var(--projects-copper);
+  color: var(--projects-brown);
 }
-
 .site-footer .footer-bottom {
   border-top: 1px solid var(--projects-border);
   color: var(--projects-muted);
 }
-
 /* Mobile */
-
 @media (max-width: 768px) {
   .page-hero {
     min-height: 440px;
-    background-position: 60% center;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(247, 244, 238, 0.90) 0%,
+        rgba(247, 244, 238, 0.76) 45%,
+        rgba(247, 244, 238, 0.40) 100%
+      ),
+      url("dlz-hero.png.PNG");
+    background-position: center, 60% center;
   }
-
   .page-hero .container {
     padding-top: 90px;
     padding-bottom: 45px;
   }
-
   .page-hero h1 {
     letter-spacing: -0.8px;
   }
-
   .section {
     padding-top: 60px;
     padding-bottom: 65px;
   }
-
   .projects-coming {
     padding: 45px 22px;
     border-radius: 16px;
   }
-
   .projects-coming .coming-label {
     font-size: 10px;
     letter-spacing: 1px;
   }
-
   .contact-band {
     padding: 45px 0;
   }
-
   .contact-band-inner {
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
   }
 }
-
 @media (max-width: 480px) {
   .page-hero {
     min-height: 400px;
   }
-
   .projects-coming {
     padding: 38px 20px;
   }
-
   .projects-coming p {
     font-size: 14px;
   }
 }
+/* Bewegungen reduzieren */
+@media (prefers-reduced-motion: reduce) {
+  .projects-coming .btn,
+  .contact-band .btn {
+    transition: none;
+  }
+  .projects-coming .btn:hover,
+  .contact-band .btn:hover {
+    transform: none;
+  }
+}
 </style>
 </head>
-
 <body>
-
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
-
 <header class="site-header">
   <div class="container header-inner">
-
     <a class="brand" href="index.html">
       <span class="brand-main">DLZ<span class="brand-dot">.</span></span>
       <span class="brand-sub">BEDACHUNGEN</span>
     </a>
-
     <button class="menu-toggle"
             aria-label="Menü öffnen"
             aria-expanded="false"
-            aria-controls="mainNav">
+            aria-controls="mainNav"
+            type="button">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
     <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
       <a href="index.html">Startseite</a>
       <a href="ueber-uns.html">Über uns</a>
@@ -352,118 +318,85 @@ body {
       <a href="social-media.html">Social Media</a>
       <a href="kontakt.html" class="nav-cta">Kontakt</a>
     </nav>
-
   </div>
 </header>
-
 <main id="main">
-
   <!-- Hero-Bereich -->
-
   <section class="page-hero">
     <div class="container">
-
       <p class="eyebrow">DLZ-BEDACHUNGEN · HAMBURG</p>
-
       <h1>
         Qualität, die<br>
         <em>oben bleibt.</em>
       </h1>
-
       <p>
         Dacharbeiten in Hamburg &amp; Umgebung
       </p>
-
     </div>
   </section>
-
   <!-- Projekte -->
-
   <section class="section">
     <div class="container">
-
       <div class="section-heading">
         <p class="eyebrow">UNSERE PROJEKTE</p>
-
         <h2>
           Hier entsteht<br>
           etwas <em>Neues.</em>
         </h2>
       </div>
-
       <div class="projects-coming">
-
         <span class="coming-label">
           NEU GEGRÜNDET · SEI GESPANNT
         </span>
-
         <h2>
           Unsere ersten Projekte<br>
           folgen <em>bald.</em>
         </h2>
-
         <p>
           DLZ-Bedachungen ist neu gestartet. Aktuell bauen wir unser
           Unternehmen auf und freuen uns auf die kommenden Projekte.
           In den nächsten Wochen und Monaten findest du hier nach und
           nach Einblicke in unsere Arbeit.
         </p>
-
         <a class="btn btn-copper" href="kontakt.html">
           Projekt anfragen
         </a>
-
       </div>
-
     </div>
   </section>
-
   <!-- Kontakt -->
-
   <section class="contact-band">
     <div class="container contact-band-inner">
-
       <div>
         <p class="eyebrow">EIN PROJEKT GEPLANT?</p>
-
         <h2>Wir freuen uns auf deine Anfrage.</h2>
-
         <p>
           Du hast ein Dachprojekt in Hamburg oder Umgebung?
           Melde dich gerne bei uns.
         </p>
       </div>
-
       <a class="btn btn-copper" href="kontakt.html">
         Kontakt aufnehmen
       </a>
-
     </div>
   </section>
-
 </main>
-
 <!-- Footer -->
-
 <footer class="site-footer">
   <div class="container footer-main">
-
     <div class="footer-brand">
       <a class="brand" href="index.html">
         <span class="brand-main">DLZ<span class="brand-dot">.</span></span>
         <span class="brand-sub">BEDACHUNGEN</span>
       </a>
-
       <p>Qualität, die oben bleibt.</p>
     </div>
-
     <div class="footer-column">
       <h3>Navigation</h3>
       <a href="index.html">Startseite</a>
       <a href="leistungen.html">Leistungen</a>
       <a href="social-media.html">Social Media</a>
     </div>
-
     <div class="footer-column">
       <h3>Kontakt</h3>
       <a href="tel:+4917642716629">+49 176 42716629</a>
@@ -471,27 +404,22 @@ body {
         info@dlz-bedachungen.de
       </a>
     </div>
-
     <div class="footer-column">
       <h3>Rechtliches</h3>
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </div>
-
   </div>
-
   <div class="container footer-bottom">
     <span>© <span data-year></span> DLZ-Bedachungen</span>
     <span>Hamburg &amp; Umgebung</span>
   </div>
 </footer>
-
 <a class="floating-contact"
    href="https://wa.me/4917642716629"
    target="_blank"
    rel="noopener noreferrer">
   WhatsApp
 </a>
-
 </body>
 </html>

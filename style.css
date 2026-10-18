@@ -1940,3 +1940,12 @@ footer a:hover {
         letter-spacing: 0.16em;
     }
 }
+/* =========================================================
+26. WHATSAPP-BUTTON AUF ALLEN SEITEN AUSBLENDEN
+========================================================= */
+
+.whatsapp-float,
+.whatsapp-button,
+.floating-contact {
+display: none !important;
+}

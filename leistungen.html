@@ -14,7 +14,7 @@
 <style>
 /* =========================================
    HERO-BEREICH
-   Einheitliches Creme-Kupfer-Design
+   Einheitliches Braun-Beige-Design
    Bilddatei: dlz-hero.png.PNG
 ========================================= */
 .page-hero {
@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: #eae2d6;
+    background-color: #eee8de;
     background-image:
         linear-gradient(
             90deg,
@@ -38,7 +38,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 1px solid #e5ded3;
-    color: #281b12;
+    color: #342d26;
 }
 .page-hero .container {
     position: relative;
@@ -50,18 +50,18 @@
 }
 .page-hero h1 {
     max-width: 750px;
-    color: #281b12;
+    color: #342d26;
 }
 .page-hero h1 em {
-    color: #b96e35;
+    color: #625044;
     font-style: normal;
 }
 .page-hero .eyebrow {
-    color: #a96532;
+    color: #625044;
 }
 .page-hero > .container > p:last-child {
     max-width: 650px;
-    color: #514338;
+    color: #625b53;
     line-height: 1.8;
 }
 /* =========================================
@@ -73,10 +73,10 @@
     flex-direction: column;
     min-width: 0;
     overflow: hidden;
-    background: #fffdf9;
-    border: 1px solid rgba(199, 123, 60, 0.25);
+    background: #fffefa;
+    border: 1px solid #e5ded3;
     border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(62, 42, 25, 0.06);
+    box-shadow: 0 8px 24px rgba(52, 45, 38, 0.06);
     text-decoration: none;
     transition:
         border-color 0.25s ease,
@@ -97,8 +97,8 @@
     align-items: flex-start;
     background: linear-gradient(
         145deg,
-        #fffdf9 0%,
-        #f5eee5 100%
+        #fffefa 0%,
+        #f5f0e7 100%
     );
     border: 1px solid transparent;
     transition: border-color 0.25s ease;
@@ -106,17 +106,17 @@
 /* Hover-Effekt */
 .service-card:hover {
     transform: translateY(-3px);
-    border-color: #c77b3c;
-    box-shadow: 0 14px 30px rgba(62, 42, 25, 0.11);
+    border-color: #b8a795;
+    box-shadow: 0 14px 30px rgba(52, 45, 38, 0.10);
 }
 .service-card:hover .service-card-content {
-    border-color: rgba(199, 123, 60, 0.30);
+    border-color: #e5ded3;
 }
 /* Nummer und Kategorie */
 .service-card-content .service-index {
     display: inline-block;
     margin-bottom: 14px;
-    color: #a96532;
+    color: #766657;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -125,46 +125,62 @@
 /* Überschriften */
 .service-card-content h3 {
     margin-bottom: 12px;
-    color: #281b12;
+    color: #342d26;
 }
 /* Beschreibung */
 .service-card-content p {
     flex: 1;
     margin-bottom: 0;
-    color: #5c5045;
+    color: #625b53;
     line-height: 1.7;
 }
 /* Textlink */
 .service-card-content .card-link {
     margin-top: 22px;
-    color: #a96532;
+    color: #625044;
     font-weight: 700;
     transition: color 0.2s ease;
 }
 .service-card:hover .card-link {
-    color: #87471f;
+    color: #342d26;
 }
 /* =========================================
    ABSCHNITTSÜBERSCHRIFTEN
 ========================================= */
 .section-heading h2 {
-    color: #281b12;
+    color: #342d26;
+}
+.section-heading h2 em {
+    color: #625044;
+    font-style: normal;
 }
 .section-heading > p:last-child {
-    color: #5c5045;
+    color: #625b53;
 }
 /* =========================================
    KONTAKTBEREICH
 ========================================= */
 .contact-band {
-    background: #eee4d7;
-    color: #281b12;
+    background: #eee8de;
+    color: #342d26;
+    border-top: 1px solid #e5ded3;
 }
 .contact-band h2 {
-    color: #281b12;
+    color: #342d26;
 }
 .contact-band p {
-    color: #5c5045;
+    color: #625b53;
+}
+/* Button in Braun statt Kupfer */
+.contact-band .btn-copper {
+    background: #625044;
+    border-color: #625044;
+    color: #fffefa;
+}
+.contact-band .btn-copper:hover {
+    background: #493d33;
+    border-color: #493d33;
+    color: #fffefa;
 }
 /* =========================================
    MOBILE DARSTELLUNG
@@ -223,9 +239,7 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
-<!-- =======================================
-     HEADER UND NAVIGATION
-======================================= -->
+<!-- HEADER UND NAVIGATION -->
 <header class="site-header">
     <div class="container header-inner">
         <a class="brand" href="index.html" aria-label="DLZ-Bedachungen – Startseite">
@@ -253,9 +267,7 @@
         </nav>
     </div>
 </header>
-<!-- =======================================
-     HAUPTINHALT
-======================================= -->
+<!-- HAUPTINHALT -->
 <main id="main">
     <!-- HERO MIT HINTERGRUNDBILD -->
     <section class="page-hero">
@@ -384,9 +396,7 @@
         </div>
     </section>
 </main>
-<!-- =======================================
-     FOOTER
-======================================= -->
+<!-- FOOTER -->
 <footer class="site-footer">
     <div class="container footer-main">
         <div class="footer-brand">

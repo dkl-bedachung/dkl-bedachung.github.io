@@ -473,7 +473,7 @@ small {
             rgba(247, 244, 238, 0.28) 72%,
             rgba(247, 244, 238, 0.08) 100%
         ),
-        url("dlz-hero.png");
+        url("dlz-hero.png.PNG");
 
     background-position: center, center;
     background-repeat: no-repeat;
@@ -498,7 +498,7 @@ small {
     position: absolute;
     z-index: -2;
     inset: 0;
-    background-image: url("dlz-hero.png");
+    background-image: url("dlz-hero.png.PNG");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -849,7 +849,7 @@ small {
             rgba(247, 244, 238, 0.60) 52%,
             rgba(247, 244, 238, 0.20) 100%
         ),
-        var(--page-image, url("dlz-hero.png"));
+        var(--page-image, url("dlz-hero.png.PNG"));
 
     background-position: center;
     background-repeat: no-repeat;
@@ -1493,7 +1493,7 @@ footer a:hover {
                 rgba(247, 244, 238, 0.58) 55%,
                 rgba(247, 244, 238, 0.28) 100%
             ),
-            url("dlz-hero.png");
+            url("dlz-hero.png.PNG");
     }
 
     /* ANGEPASST: Verhindert eine zusätzliche starke Aufhellung
@@ -1578,7 +1578,7 @@ footer a:hover {
                 rgba(247, 244, 238, 0.58) 55%,
                 rgba(247, 244, 238, 0.28) 100%
             ),
-            var(--page-image, url("dlz-hero.png"));
+            var(--page-image, url("dlz-hero.png.PNG"));
         background-position: center, 58% center;
     }
 
@@ -1690,6 +1690,7 @@ footer a:hover {
         transition-duration: 0.01ms !important;
     }
 }
+
 /* Mobiler Navigationsbutton – drei sichtbare Striche */
 
 .menu-toggle {

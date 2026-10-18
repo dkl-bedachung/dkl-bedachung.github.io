@@ -22,33 +22,43 @@
 
 /* =========================================
    HERO-BEREICH
-   Helles Creme-Kupfer-Design
+   Einheitliches Creme-Kupfer-Design
+   Bilddatei: dlz-hero.png.PNG
 ========================================= */
 
 .page-hero {
     position: relative;
+    isolation: isolate;
     min-height: 490px;
     display: flex;
     align-items: center;
     overflow: hidden;
 
-    background:
+    background-color: #eae2d6;
+
+    background-image:
         linear-gradient(
             90deg,
-            rgba(247, 244, 238, 0.78) 0%,
-            rgba(247, 244, 238, 0.60) 40%,
-            rgba(247, 244, 238, 0.25) 72%,
-            rgba(247, 244, 238, 0.05) 100%
+            rgba(247, 244, 238, 0.84) 0%,
+            rgba(247, 244, 238, 0.68) 35%,
+            rgba(247, 244, 238, 0.35) 65%,
+            rgba(247, 244, 238, 0.10) 100%
         ),
-        url("dlz-hero.png") center 45% / cover no-repeat;
+        url("dlz-hero.png.PNG");
 
+    background-position: center, center 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-bottom: 1px solid #e5ded3;
     color: #281b12;
 }
 
 .page-hero .container {
     position: relative;
     z-index: 1;
-    width: 100%;
+    width: min(1200px, calc(100% - 48px));
+    margin-inline: auto;
     padding-top: 100px;
     padding-bottom: 65px;
 }
@@ -60,6 +70,7 @@
 
 .page-hero h1 em {
     color: #b96e35;
+    font-style: normal;
 }
 
 .page-hero .eyebrow {
@@ -81,11 +92,12 @@
 .service-card {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     overflow: hidden;
 
     background: #fffdf9;
     border: 1px solid rgba(199, 123, 60, 0.25);
-    border-radius: 16px;
+    border-radius: 20px;
 
     box-shadow: 0 8px 24px rgba(62, 42, 25, 0.06);
 
@@ -129,9 +141,7 @@
 
 .service-card:hover {
     transform: translateY(-3px);
-
     border-color: #c77b3c;
-
     box-shadow: 0 14px 30px rgba(62, 42, 25, 0.11);
 }
 
@@ -174,7 +184,6 @@
 
 .service-card-content .card-link {
     margin-top: 22px;
-
     color: #a96532;
     font-weight: 700;
 
@@ -221,19 +230,21 @@
    MOBILE DARSTELLUNG
 ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     .page-hero {
         min-height: 440px;
 
-        background:
+        background-image:
             linear-gradient(
                 90deg,
-                rgba(247, 244, 238, 0.82) 0%,
-                rgba(247, 244, 238, 0.62) 55%,
-                rgba(247, 244, 238, 0.30) 100%
+                rgba(247, 244, 238, 0.84) 0%,
+                rgba(247, 244, 238, 0.68) 45%,
+                rgba(247, 244, 238, 0.34) 100%
             ),
-            url("dlz-hero.png") 60% center / cover no-repeat;
+            url("dlz-hero.png.PNG");
+
+        background-position: center, 58% center;
     }
 
     .page-hero .container {
@@ -243,20 +254,27 @@
 
     .service-card-content {
         min-height: 200px;
-        padding: 20px;
+        padding: 24px;
     }
-
 }
+
 
 @media (max-width: 480px) {
 
     .page-hero {
         min-height: 420px;
+        background-position: center, 58% center;
+    }
+
+    .page-hero .container {
+        width: calc(100% - 36px);
+        padding-top: 75px;
+        padding-bottom: 40px;
     }
 
     .service-card-content {
         min-height: 190px;
-        padding: 17px;
+        padding: 20px;
     }
 
 }
@@ -296,7 +314,7 @@
 
     <div class="container header-inner">
 
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="DLZ-Bedachungen – Startseite">
             <span class="brand-main">DLZ<span class="brand-dot">.</span></span>
             <span class="brand-sub">BEDACHUNGEN</span>
         </a>
@@ -306,6 +324,7 @@
             aria-label="Menü öffnen"
             aria-expanded="false"
             aria-controls="mainNav"
+            type="button"
         >
             <span></span>
             <span></span>
@@ -335,7 +354,7 @@
 <main id="main">
 
 
-    <!-- HERO -->
+    <!-- HERO MIT HINTERGRUNDBILD -->
 
     <section class="page-hero">
 
@@ -571,7 +590,7 @@
 
         <div class="footer-brand">
 
-            <a class="brand" href="index.html">
+            <a class="brand" href="index.html" aria-label="DLZ-Bedachungen – Startseite">
                 <span class="brand-main">DLZ<span class="brand-dot">.</span></span>
                 <span class="brand-sub">BEDACHUNGEN</span>
             </a>
@@ -636,6 +655,7 @@
     href="https://wa.me/4917642716629"
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="DLZ-Bedachungen über WhatsApp kontaktieren"
 >WhatsApp</a>
 
 

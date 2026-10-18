@@ -131,7 +131,6 @@ hr {
     border-top: 1px solid var(--border);
 }
 
-
 /* 2. TYPOGRAFIE */
 
 h1,
@@ -199,7 +198,6 @@ small {
 .muted {
     color: var(--gray);
 }
-
 
 /* 3. HEADER UND NAVIGATION */
 
@@ -375,7 +373,6 @@ small {
     font-size: 1.35rem;
 }
 
-
 /* 4. BUTTONS UND LINKS */
 
 .btn,
@@ -455,7 +452,6 @@ small {
     color: var(--copper-dark);
 }
 
-
 /* 5. STARTSEITEN-HERO */
 
 .hero {
@@ -467,15 +463,18 @@ small {
     overflow: hidden;
     padding: clamp(75px, 10vw, 140px) 24px;
     background-color: #EAE2D6;
+
+    /* ANGEPASST: Das Bild ist deutlich besser sichtbar. */
     background-image:
         linear-gradient(
             90deg,
-            rgba(247, 244, 238, 0.97) 0%,
-            rgba(247, 244, 238, 0.90) 40%,
-            rgba(247, 244, 238, 0.48) 72%,
-            rgba(247, 244, 238, 0.18) 100%
+            rgba(247, 244, 238, 0.78) 0%,
+            rgba(247, 244, 238, 0.62) 40%,
+            rgba(247, 244, 238, 0.28) 72%,
+            rgba(247, 244, 238, 0.08) 100%
         ),
         url("dlz-hero.png");
+
     background-position: center, center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -505,15 +504,17 @@ small {
     background-size: cover;
 }
 
+/* ANGEPASST: Zusätzliche Überlagerung weniger hell.
+   Verhindert, dass das Bild durch hero-shade ausgewaschen wirkt. */
 .hero-shade {
     position: absolute;
     z-index: -1;
     inset: 0;
     background: linear-gradient(
         90deg,
-        rgba(247, 244, 238, 0.96),
-        rgba(247, 244, 238, 0.78) 56%,
-        rgba(247, 244, 238, 0.35)
+        rgba(247, 244, 238, 0.78) 0%,
+        rgba(247, 244, 238, 0.60) 56%,
+        rgba(247, 244, 238, 0.20) 100%
     );
 }
 
@@ -580,7 +581,6 @@ small {
     font-size: 0.88rem;
 }
 
-
 /* 6. SECTIONS UND ABSCHNITTSÜBERSCHRIFTEN */
 
 .section,
@@ -628,7 +628,6 @@ small {
 .section-intro p {
     max-width: 680px;
 }
-
 
 /* 7. LEISTUNGEN UND KARTEN */
 
@@ -738,7 +737,6 @@ small {
     margin-top: 38px;
 }
 
-
 /* 8. ÜBER UNS UND WERTE */
 
 .about-grid,
@@ -803,7 +801,6 @@ small {
     margin-bottom: 0;
 }
 
-
 /* 9. STATEMENT-ABSCHNITT */
 
 .statement-section,
@@ -829,7 +826,6 @@ small {
     margin: 0 auto 25px;
 }
 
-
 /* 10. HERO FÜR UNTERSEITEN */
 
 .page-hero {
@@ -844,15 +840,17 @@ small {
     border-bottom: 1px solid var(--border);
 }
 
+/* ANGEPASST: Unterseiten-Hero zeigt mehr vom Originalbild. */
 .page-hero-image {
     background-image:
         linear-gradient(
             90deg,
-            rgba(247, 244, 238, 0.96) 0%,
-            rgba(247, 244, 238, 0.84) 52%,
-            rgba(247, 244, 238, 0.42) 100%
+            rgba(247, 244, 238, 0.78) 0%,
+            rgba(247, 244, 238, 0.60) 52%,
+            rgba(247, 244, 238, 0.20) 100%
         ),
         var(--page-image, url("dlz-hero.png"));
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -878,7 +876,6 @@ small {
 .page-hero .page-eyebrow {
     margin-bottom: 16px;
 }
-
 
 /* 11. UNTERSEITEN-INHALTE */
 
@@ -946,7 +943,6 @@ small {
     box-shadow: var(--soft-shadow);
 }
 
-
 /* 12. DETAIL-KARTEN */
 
 .detail-grid {
@@ -966,7 +962,6 @@ small {
 .detail-card p:last-child {
     margin-bottom: 0;
 }
-
 
 /* 13. PROJEKTE */
 
@@ -994,7 +989,6 @@ small {
     margin-bottom: 0;
 }
 
-
 /* 14. SOCIAL MEDIA */
 
 .social-grid {
@@ -1021,7 +1015,6 @@ small {
 .social-card .btn {
     margin-top: auto;
 }
-
 
 /* 15. KONTAKTABSCHNITT */
 
@@ -1105,7 +1098,6 @@ small {
 .contact-detail a:hover {
     text-decoration: underline;
 }
-
 
 /* 16. KONTAKTFORMULAR */
 
@@ -1212,7 +1204,6 @@ small {
     font-size: 0.83rem;
 }
 
-
 /* 17. RECHTLICHE SEITEN */
 
 .legal-content {
@@ -1253,7 +1244,6 @@ small {
 .info-box p:last-child {
     margin-bottom: 0;
 }
-
 
 /* 18. FOOTER */
 
@@ -1326,7 +1316,6 @@ footer a:hover {
     font-size: 0.83rem;
 }
 
-
 /* 19. WHATSAPP / SCHWEBENDER KONTAKT */
 
 .whatsapp-float,
@@ -1359,7 +1348,6 @@ footer a:hover {
     box-shadow: var(--hover-shadow);
 }
 
-
 /* 20. LISTEN UND CHECKMARKS */
 
 .check-list,
@@ -1386,7 +1374,6 @@ footer a:hover {
     content: "✓";
     font-weight: 900;
 }
-
 
 /* 21. MOBILE-NAVIGATION UND TABLET */
 
@@ -1494,6 +1481,7 @@ footer a:hover {
         text-align: center;
     }
 
+    /* ANGEPASST: Auch auf dem Handy bleibt das Bild erkennbar. */
     .hero {
         min-height: 610px;
         padding: 80px 22px;
@@ -1501,10 +1489,22 @@ footer a:hover {
         background-image:
             linear-gradient(
                 90deg,
-                rgba(247, 244, 238, 0.96),
-                rgba(247, 244, 238, 0.82)
+                rgba(247, 244, 238, 0.76) 0%,
+                rgba(247, 244, 238, 0.58) 55%,
+                rgba(247, 244, 238, 0.28) 100%
             ),
             url("dlz-hero.png");
+    }
+
+    /* ANGEPASST: Verhindert eine zusätzliche starke Aufhellung
+       durch hero-shade auf kleineren Displays. */
+    .hero-shade {
+        background: linear-gradient(
+            90deg,
+            rgba(247, 244, 238, 0.76) 0%,
+            rgba(247, 244, 238, 0.58) 55%,
+            rgba(247, 244, 238, 0.28) 100%
+        );
     }
 
     .hero h1 {
@@ -1569,6 +1569,19 @@ footer a:hover {
         font-size: clamp(2.35rem, 9vw, 3.6rem);
     }
 
+    /* ANGEPASST: Unterseiten-Hero auf dem Handy. */
+    .page-hero-image {
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(247, 244, 238, 0.76) 0%,
+                rgba(247, 244, 238, 0.58) 55%,
+                rgba(247, 244, 238, 0.28) 100%
+            ),
+            var(--page-image, url("dlz-hero.png"));
+        background-position: center, 58% center;
+    }
+
     .page-content,
     .legal-content {
         width: calc(100% - 36px);
@@ -1593,7 +1606,6 @@ footer a:hover {
         gap: 13px;
     }
 }
-
 
 /* 22. KLEINE SMARTPHONES */
 
@@ -1665,7 +1677,6 @@ footer a:hover {
         padding: 10px 13px;
     }
 }
-
 
 /* 23. BARRIEREFREIHEIT UND BEWEGUNGSREDUZIERUNG */
 

@@ -3,208 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>DLZ Bedachungen | Qualität, die oben bleibt.</title>
-    <meta name="description" content="DLZ Bedachungen – Dacharbeiten in Hamburg und Umgebung.">
-    <meta name="theme-color" content="#faf7f1">
+
+    <meta
+        name="description"
+        content="DLZ Bedachungen – Dacharbeiten in Hamburg und Umgebung."
+    >
+
+    <meta name="theme-color" content="#F7F4EE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    <!-- HEADER -->
 
-    <header class="topbar site-header">
-        <a href="index.html" class="logo" aria-label="DLZ Bedachungen – Startseite">
-            <span class="logo-mark" aria-hidden="true"></span>
-            <span class="logo-text">
-                <strong>DLZ.</strong>
-                <small>BEDACHUNGEN</small>
-            </span>
-        </a>
+    <header class="topbar">
+        <div class="header-inner">
 
-        <nav class="nav site-nav" aria-label="Hauptnavigation">
-            <a href="index.html">Startseite</a>
-            <a href="leistungen.html">Leistungen</a>
-            <a href="ueber-uns.html">Über uns</a>
-            <a href="projekte.html">Projekte</a>
-            <a href="social-media.html">Social Media</a>
-            <a href="#kontakt" class="nav-contact nav-cta">Kontakt</a>
-        </nav>
+            <a href="index.html" class="logo" aria-label="DLZ Bedachungen – Startseite">
+                <span class="logo-mark" aria-hidden="true">
+                    <span>DLZ</span>
+                </span>
+
+                <span class="logo-text">
+                    DLZ Bedachungen
+                    <small>Qualität, die oben bleibt.</small>
+                </span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Menü öffnen"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                ☰
+            </button>
+
+            <nav class="nav" id="main-nav" aria-label="Hauptnavigation">
+                <a href="index.html" aria-current="page">Startseite</a>
+                <a href="leistungen.html">Leistungen</a>
+                <a href="ueber-uns.html">Über uns</a>
+                <a href="projekte.html">Projekte</a>
+                <a href="social-media.html">Social Media</a>
+                <a href="#kontakt" class="nav-contact">Kontakt</a>
+            </nav>
+
+        </div>
     </header>
+
+
+    <!-- HERO -->
 
     <main>
 
-        <!-- Hero-Bereich -->
-
-        <section class="hero">
-            <div class="hero-image" aria-hidden="true"></div>
-            <div class="hero-shade" aria-hidden="true"></div>
-
+        <section class="hero" id="start">
             <div class="hero-content">
-                <p class="eyebrow">DLZ Bedachungen · Hamburg</p>
+
+                <span class="hero-meta">DLZ Bedachungen · Hamburg</span>
 
                 <h1>
                     Qualität, die<br>
-                    <span>oben bleibt.</span>
+                    oben bleibt.
                 </h1>
 
-                <p class="hero-subtitle hero-description">
+                <p class="hero-subtitle">
                     Dacharbeiten in Hamburg &amp; Umgebung
                 </p>
 
-                <div class="hero-buttons hero-actions">
+                <div class="hero-buttons">
                     <a href="leistungen.html" class="btn btn-primary">
                         Unsere Leistungen
                     </a>
 
-                    <a href="#kontakt" class="btn btn-secondary">
+                    <a href="#kontakt" class="btn btn-outline">
                         Kontakt aufnehmen
                     </a>
                 </div>
+
             </div>
         </section>
 
-        <!-- Leistungen -->
 
-        <section class="services services-section" id="leistungen">
-            <div class="section-heading">
-                <h2>Unsere <span>Leistungen</span></h2>
-            </div>
+        <!-- LEISTUNGEN -->
 
-            <div class="service-grid">
+        <section class="services" id="leistungen">
+            <div class="container">
 
-                <a class="service-card" href="leistungen.html">
-                    <h3>Dacharbeiten</h3>
-                    <p>Flach- &amp; Steildach</p>
-                </a>
+                <div class="section-heading">
+                    <span class="section-label">Unsere Leistungen</span>
 
-                <a class="service-card" href="leistungen.html">
-                    <h3>Abdichtung</h3>
-                    <p>Dachabdichtung &amp; Flüssigkunststoff</p>
-                </a>
+                    <h2>Rund ums Dach.</h2>
 
-                <a class="service-card" href="leistungen.html">
-                    <h3>Klempnerei</h3>
-                    <p>Dachrinnen, Bleche &amp; Anschlüsse</p>
-                </a>
+                    <p>
+                        Moderne Dacharbeiten aus Hamburg – zuverlässig, sauber
+                        und mit persönlichem Kontakt.
+                    </p>
+                </div>
 
-                <a class="service-card" href="leistungen.html">
-                    <h3>Sanierung</h3>
-                    <p>Dachsanierung &amp; Instandsetzung</p>
-                </a>
 
-                <a class="service-card" href="leistungen.html">
-                    <h3>Dachinspektion</h3>
-                    <p>Kontrolle mit Drohne</p>
-                </a>
+                <div class="service-grid">
 
-            </div>
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">01</div>
 
-            <div class="service-more">
-                <a href="leistungen.html" class="btn btn-secondary">
-                    Alle Leistungen
-                </a>
+                        <h3>Dacharbeiten</h3>
+
+                        <p>
+                            Flach- &amp; Steildach
+                        </p>
+
+                        <a href="dacharbeiten.html" class="service-more">
+                            Mehr erfahren
+                        </a>
+                    </article>
+
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">02</div>
+
+                        <h3>Abdichtung</h3>
+
+                        <p>
+                            Dachabdichtung &amp; Flüssigkunststoff
+                        </p>
+
+                        <a href="abdichtung-fluessigkunststoff.html" class="service-more">
+                            Mehr erfahren
+                        </a>
+                    </article>
+
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">03</div>
+
+                        <h3>Klempnerei</h3>
+
+                        <p>
+                            Dachrinnen, Bleche &amp; Anschlüsse
+                        </p>
+
+                        <a href="dacharbeiten.html" class="service-more">
+                            Mehr erfahren
+                        </a>
+                    </article>
+
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">04</div>
+
+                        <h3>Sanierung</h3>
+
+                        <p>
+                            Dachsanierung &amp; Instandsetzung
+                        </p>
+
+                        <a href="dachsanierung-dachreinigung.html" class="service-more">
+                            Mehr erfahren
+                        </a>
+                    </article>
+
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">05</div>
+
+                        <h3>Dachinspektion</h3>
+
+                        <p>
+                            Kontrolle mit Drohne
+                        </p>
+
+                        <a href="dachinspektion-mit-drohne.html" class="service-more">
+                            Mehr erfahren
+                        </a>
+                    </article>
+
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">06</div>
+
+                        <h3>Weitere Leistungen</h3>
+
+                        <p>
+                            Montagearbeiten, Solararbeiten und mehr.
+                        </p>
+
+                        <a href="leistungen.html" class="service-more">
+                            Alle Leistungen ansehen
+                        </a>
+                    </article>
+
+                </div>
+
+
+                <div class="services-footer">
+                    <a href="leistungen.html" class="btn btn-outline">
+                        Alle Leistungen
+                    </a>
+                </div>
+
             </div>
         </section>
 
-        <!-- Kontakt -->
 
-        <section class="contact contact-section" id="kontakt">
-            <div class="contact-inner">
+        <!-- KONTAKT -->
 
-                <div>
-                    <p class="eyebrow">DLZ Bedachungen</p>
+        <section class="contact" id="kontakt">
+            <div class="container">
 
-                    <h2>
-                        Kontakt<br>
-                        <span>aufnehmen.</span>
-                    </h2>
+                <div class="contact-inner">
 
                     <div class="contact-details">
 
-                        <p>
-                            <strong>Telefon</strong><br>
-                            <a href="tel:+4917642716629">+49 176 42716629</a>
-                        </p>
+                        <span class="section-label">Kontakt</span>
+
+                        <h2>Wir sind für Sie da.</h2>
 
                         <p>
-                            <strong>E-Mail</strong><br>
-                            <a href="mailto:info@dlz-bedachungen.de">info@dlz-bedachungen.de</a>
+                            Sie haben Fragen oder möchten ein Vorhaben
+                            besprechen? Nehmen Sie gerne Kontakt mit uns auf.
                         </p>
 
-                        <p>
-                            <strong>Adresse</strong><br>
-                            Eddelbüttelstraße 40, 21073 Hamburg
-                        </p>
+
+                        <div class="contact-list">
+
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon" aria-hidden="true">
+                                    T
+                                </div>
+
+                                <div>
+                                    <h3>Telefon</h3>
+
+                                    <p>
+                                        <a href="tel:+4917642716629">
+                                            +49 176 42716629
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon" aria-hidden="true">
+                                    E
+                                </div>
+
+                                <div>
+                                    <h3>E-Mail</h3>
+
+                                    <p>
+                                        <a href="mailto:info@dlz-bedachungen.de">
+                                            info@dlz-bedachungen.de
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="contact-detail">
+                                <div class="contact-detail-icon" aria-hidden="true">
+                                    A
+                                </div>
+
+                                <div>
+                                    <h3>Adresse</h3>
+
+                                    <p>
+                                        Eddelbüttelstraße 40<br>
+                                        21073 Hamburg
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
 
                     </div>
+
+
+                    <form
+                        class="contact-form"
+                        action="mailto:info@dlz-bedachungen.de"
+                        method="post"
+                        enctype="text/plain"
+                    >
+
+                        <h3>Nachricht senden</h3>
+
+                        <p>
+                            Schreiben Sie uns kurz, worum es geht.
+                        </p>
+
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="Name"
+                                autocomplete="name"
+                                placeholder="Ihr Name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email">E-Mail</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="E-Mail"
+                                autocomplete="email"
+                                placeholder="Ihre E-Mail-Adresse"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="telefon">Telefon (optional)</label>
+
+                            <input
+                                type="tel"
+                                id="telefon"
+                                name="Telefon"
+                                autocomplete="tel"
+                                placeholder="Ihre Telefonnummer"
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="nachricht">Nachricht</label>
+
+                            <textarea
+                                id="nachricht"
+                                name="Nachricht"
+                                placeholder="Wie können wir Ihnen helfen?"
+                                required
+                            ></textarea>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">
+                            Nachricht vorbereiten
+                        </button>
+
+                    </form>
+
                 </div>
-
-                <form class="contact-form"
-                      action="mailto:info@dlz-bedachungen.de"
-                      method="post"
-                      enctype="text/plain">
-
-                    <input
-                        type="text"
-                        name="Name"
-                        placeholder="Name"
-                        aria-label="Name"
-                        required
-                    >
-
-                    <input
-                        type="email"
-                        name="E-Mail"
-                        placeholder="E-Mail"
-                        aria-label="E-Mail"
-                        required
-                    >
-
-                    <input
-                        type="tel"
-                        name="Telefon"
-                        placeholder="Telefon (optional)"
-                        aria-label="Telefon (optional)"
-                    >
-
-                    <textarea
-                        name="Nachricht"
-                        placeholder="Nachricht"
-                        aria-label="Nachricht"
-                        required
-                    ></textarea>
-
-                    <button type="submit">Anfrage senden</button>
-
-                </form>
 
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
+
+    <!-- FOOTER -->
 
     <footer class="site-footer">
 
-        <a href="index.html" class="logo" aria-label="DLZ Bedachungen – Startseite">
-            <span class="logo-mark" aria-hidden="true"></span>
-            <span class="logo-text">
-                <strong>DLZ.</strong>
-                <small>BEDACHUNGEN</small>
-            </span>
-        </a>
+        <div class="footer-main">
 
-        <div class="footer-links">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
-            <a href="#kontakt">Kontakt</a>
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo" aria-label="DLZ Bedachungen – Startseite">
+                    <span class="logo-mark" aria-hidden="true">
+                        <span>DLZ</span>
+                    </span>
+
+                    <span class="logo-text">
+                        DLZ Bedachungen
+                        <small>Qualität, die oben bleibt.</small>
+                    </span>
+                </a>
+
+                <p>
+                    Moderne Dacharbeiten aus Hamburg – zuverlässig, sauber
+                    und mit persönlichem Kontakt.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links-wrap">
+
+                <h3>Auf einen Blick</h3>
+
+                <nav class="footer-links" aria-label="Footer-Navigation">
+                    <a href="index.html">Startseite</a>
+                    <a href="leistungen.html">Leistungen</a>
+                    <a href="ueber-uns.html">Über uns</a>
+                    <a href="projekte.html">Projekte</a>
+                    <a href="social-media.html">Social Media</a>
+                    <a href="#kontakt">Kontakt</a>
+                </nav>
+
+            </div>
+
         </div>
 
-        <p>© DLZ-Bedachungen</p>
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="current-year">2026</span> DLZ Bedachungen.
+                Alle Rechte vorbehalten.
+            </p>
+
+            <nav class="footer-links" aria-label="Rechtliche Informationen">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
+
+        </div>
 
     </footer>
+
+
+    <!-- MOBILE-MENÜ UND JAHR -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.querySelector(".menu-toggle");
+            const navigation = document.querySelector("#main-nav");
+
+            if (menuButton && navigation) {
+                menuButton.addEventListener("click", function () {
+                    const isOpen = navigation.classList.toggle("is-open");
+
+                    menuButton.setAttribute("aria-expanded", String(isOpen));
+                    menuButton.setAttribute(
+                        "aria-label",
+                        isOpen ? "Menü schließen" : "Menü öffnen"
+                    );
+
+                    menuButton.textContent = isOpen ? "×" : "☰";
+                });
+
+                navigation.querySelectorAll("a").forEach(function (link) {
+                    link.addEventListener("click", function () {
+                        navigation.classList.remove("is-open");
+                        menuButton.setAttribute("aria-expanded", "false");
+                        menuButton.setAttribute("aria-label", "Menü öffnen");
+                        menuButton.textContent = "☰";
+                    });
+                });
+
+                document.addEventListener("click", function (event) {
+                    if (
+                        !navigation.contains(event.target) &&
+                        !menuButton.contains(event.target)
+                    ) {
+                        navigation.classList.remove("is-open");
+                        menuButton.setAttribute("aria-expanded", "false");
+                        menuButton.setAttribute("aria-label", "Menü öffnen");
+                        menuButton.textContent = "☰";
+                    }
+                });
+            }
+
+            const yearElement = document.querySelector("#current-year");
+
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
 
 </body>
 </html>
